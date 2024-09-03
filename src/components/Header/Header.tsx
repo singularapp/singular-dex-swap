@@ -99,8 +99,8 @@ export function Header({ disconnectAccountAndCloseSettings, openSettings, showRe
             <div className="App-header-content">
               <div className="App-header-container-left">
                 <Link className="App-header-link-main" to="/">
-                  <img src={logoImg} className="big" alt="GMX Logo" />
-                  <img src={logoSmallImg} className="small" alt="GMX Logo" />
+                  <img src={logoImg} className="big" alt="SINGULAR Logo" />
+                  <img src={logoSmallImg} className="small" alt="SINGULAR Logo" />
                 </Link>
               </div>
               <div className="App-header-container-right">
@@ -126,8 +126,8 @@ export function Header({ disconnectAccountAndCloseSettings, openSettings, showRe
                   {isDrawerVisible && <FaTimes className="App-header-menu-icon" />}
                 </div>
                 <div className="App-header-link-main clickable" onClick={() => setIsDrawerVisible(!isDrawerVisible)}>
-                  <img src={logoImg} className="big" alt="GMX Logo" />
-                  <img src={logoSmallImg} className="small" alt="GMX Logo" />
+                  <img src={logoImg} className="big" alt="SINGULAR Logo" />
+                  <img src={logoSmallImg} className="small" alt="SINGULAR Logo" />
                 </div>
               </div>
               <div className="App-header-container-right">

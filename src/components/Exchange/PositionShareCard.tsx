@@ -3,7 +3,7 @@ import SpinningLoader from "components/Common/SpinningLoader";
 import { makeSelectMarketPriceDecimals } from "context/SyntheticsStateContext/selectors/statsSelectors";
 import { useSelector } from "context/SyntheticsStateContext/utils";
 import { Token } from "domain/tokens";
-import gmxLogo from "img/gmx-logo-with-name.svg";
+import singularLogo from "img/singular-logo-with-name.png";
 import { getHomeUrl } from "lib/legacy";
 import { formatAmount, formatPercentage, formatUsd } from "lib/numbers";
 import { QRCodeSVG } from "qrcode.react";
@@ -46,7 +46,7 @@ export const PositionShareCard = forwardRef<HTMLDivElement, Props>(
     return (
       <div className="relative">
         <div ref={ref} className="position-share" style={style}>
-          <img className="logo" src={gmxLogo} alt="GMX Logo" />
+          <img className="logo" src={singularLogo} alt="SINGULAR Logo" />
           <ul className="info">
             <li className="side">{isLong ? "LONG" : "SHORT"}</li>
             <li>{formatAmount(leverage, 4, 2, true)}x&nbsp;</li>

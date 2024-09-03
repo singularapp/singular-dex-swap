@@ -1347,7 +1347,7 @@ export function getProcessedData(
 }
 
 export function getPageTitle(data) {
-  const title = t`Decentralized Perpetual Exchange | GMX`;
+  const title = t`Decentralized Perpetual Exchange | SINGULAR`;
   return `${data} | ${title}`;
 }
 
@@ -1363,7 +1363,7 @@ export function getHomeUrl() {
     return "http://localhost:3010";
   }
 
-  return "https://gmx.io";
+  return "https://singulardex.com";
 }
 
 export function getAppBaseUrl() {
@@ -1371,7 +1371,7 @@ export function getAppBaseUrl() {
     return "http://localhost:3011/#";
   }
 
-  return "https://app.gmx.io/#";
+  return "https://singulardex.com/#";
 }
 
 export function getRootShareApiUrl() {
@@ -1387,7 +1387,7 @@ export function getTradePageUrl() {
     return "http://localhost:3011/#/trade";
   }
 
-  return "https://app.gmx.io/#/trade";
+  return "https://singulardex.com/#/trade";
 }
 
 // Resolves all images in the folder that match the pattern and store them as `fileName -> path` pairs
