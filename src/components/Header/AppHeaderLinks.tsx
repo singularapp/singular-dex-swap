@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useNotifyModalState } from "lib/useNotifyModalState";
 import { HeaderLink } from "./HeaderLink";
 import "./Header.scss";
-import { isHomeSite } from "lib/legacy";
+import { getSwapAppUrl, isHomeSite } from "lib/legacy";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import logoImg from "img/logo_SINGULAR.png";
 
@@ -45,9 +45,9 @@ export function AppHeaderLinks({ small, openSettings, clickCloseIcon, showRedire
         </HeaderLink>
       </div>
       <div className="App-header-link-container">
-        <HeaderLink qa="swap" to="/swap" showRedirectModal={showRedirectModal}>
+        <ExternalLink href={getSwapAppUrl()} newTab={true}>
           <Trans>Swap</Trans>
-        </HeaderLink>
+        </ExternalLink>
       </div>
       <div className="App-header-link-container">
         <HeaderLink qa="slp" to="/slp" showRedirectModal={showRedirectModal}>

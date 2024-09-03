@@ -1390,6 +1390,10 @@ export function getPerpetualsPageUrl() {
   return "https://singulardex.com/#/perpetuals";
 }
 
+export function getSwapAppUrl () {
+  return "https://app.singulardex.com/#/"
+}
+
 // Resolves all images in the folder that match the pattern and store them as `fileName -> path` pairs
 const imageStaticMap = mapKeys(
   import.meta.glob("img/*.*", {
