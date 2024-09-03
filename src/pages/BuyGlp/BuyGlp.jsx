@@ -28,7 +28,7 @@ export default function BuyGlp() {
   return (
     <div className="default-container page-layout">
       <PageTitle
-        title={t`Buy / Sell GLP`}
+        title={t`Buy / Sell SLP`}
         isTop
         qa="buy-glp-page"
         subtitle={
@@ -36,13 +36,13 @@ export default function BuyGlp() {
             {incentiveState?.migration?.isActive && (
               <div>
                 <Trans>
-                  GLP to GM migration has reduced Fees due to STIP incentives.{" "}
+                  SLP to GM migration has reduced Fees due to STIP incentives.{" "}
                   <ExternalLink href={getIncentivesV2Url(chainId)}>Read more</ExternalLink>.
                 </Trans>
               </div>
             )}
             <Trans>
-              Purchase <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v1">GLP tokens</ExternalLink> to
+              Purchase <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v1">SLP tokens</ExternalLink> to
               earn {nativeTokenSymbol} fees from swaps and leverage trading.
             </Trans>
           </div>
