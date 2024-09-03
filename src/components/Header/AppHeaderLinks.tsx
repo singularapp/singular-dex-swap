@@ -8,7 +8,7 @@ import { HeaderLink } from "./HeaderLink";
 import "./Header.scss";
 import { isHomeSite } from "lib/legacy";
 import ExternalLink from "components/ExternalLink/ExternalLink";
-import logoImg from "img/logo_GMX.svg";
+import logoImg from "img/logo_SINGULAR.png";
 
 type Props = {
   small?: boolean;

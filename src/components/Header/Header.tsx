@@ -4,8 +4,8 @@ import cx from "classnames";
 import { AppHeaderUser } from "./AppHeaderUser";
 import { AppHeaderLinks } from "./AppHeaderLinks";
 
-import logoImg from "img/logo_GMX.svg";
-import logoSmallImg from "img/logo_GMX_small.svg";
+import logoImg from "img/logo_SINGULAR.png";
+import logoSmallImg from "img/logo_SINGULAR_small.png";
 import { RiMenuLine } from "react-icons/ri";
 import { FaTimes } from "react-icons/fa";
 import { AnimatePresence as FramerAnimatePresence, motion } from "framer-motion";
@@ -96,23 +96,20 @@ export function Header({ disconnectAccountAndCloseSettings, openSettings, showRe
       <header data-qa="header">
         {!isMobile && (
           <div className="App-header large">
-            <div className="App-header-container-left">
-              <Link className="App-header-link-main" to="/">
-                <img src={logoImg} className="big" alt="GMX Logo" />
-                <img src={logoSmallImg} className="small" alt="GMX Logo" />
-              </Link>
-              {isHomeSite() ? (
-                <HomeHeaderLinks showRedirectModal={showRedirectModal} />
-              ) : (
-                <AppHeaderLinks showRedirectModal={showRedirectModal} />
-              )}
-            </div>
-            <div className="App-header-container-right">
-              <AppHeaderUser
-                disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
-                openSettings={openSettings}
-                showRedirectModal={showRedirectModal}
-              />
+            <div className="App-header-content">
+              <div className="App-header-container-left">
+                <Link className="App-header-link-main" to="/">
+                  <img src={logoImg} className="big" alt="GMX Logo" />
+                  <img src={logoSmallImg} className="small" alt="GMX Logo" />
+                </Link>
+              </div>
+              <div className="App-header-container-right">
+                <AppHeaderUser
+                  disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
+                  openSettings={openSettings}
+                  showRedirectModal={showRedirectModal}
+                />
+              </div>
             </div>
           </div>
         )}
