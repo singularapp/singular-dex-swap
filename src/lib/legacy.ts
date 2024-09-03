@@ -1371,7 +1371,7 @@ export function getAppBaseUrl() {
     return "http://localhost:3011/#";
   }
 
-  return "https://singulardex.com/#";
+  return "https://dapp.singulardex.com/#";
 }
 
 export function getRootShareApiUrl() {
