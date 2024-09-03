@@ -150,6 +150,11 @@ msgstr "Typ"
 msgid "Close order"
 msgstr ""
 
+#: src/pages/ComingSoon/ComingSoon.js
+#: src/pages/PageNotFound/PageNotFound.js
+msgid "<0>Return to </0><1>Homepage</1> <2>or </2> <3>Perpetuals</3>"
+msgstr ""
+
 #: src/components/Exchange/PositionSeller.jsx
 msgid "Order submitted!"
 msgstr ""
@@ -1220,7 +1225,6 @@ msgstr ""
 msgid "Leftover position below 10 USD"
 msgstr ""
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Dashboard/DashboardV2.tsx
 msgid "Dashboard"
 msgstr "Dashboard"
@@ -1274,6 +1278,8 @@ msgstr ""
 msgid "{orderTypeLabel} {positionText}, -{0}"
 msgstr ""
 
+#: src/pages/PageNotFound/PageNotFound.js
+#: src/pages/PageNotFound/PageNotFound.js
 #: src/pages/PageNotFound/PageNotFound.jsx
 #: src/pages/PageNotFound/PageNotFound.jsx
 msgid "Page not found"
@@ -3021,6 +3027,8 @@ msgstr "Liquidiert"
 msgid "The ask price is used for opening longs and closing shorts."
 msgstr ""
 
+#: src/components/LanguageDropdown/LanguageDropdown.tsx
+#: src/components/LanguageDropdown/LanguagePopupHome.tsx
 #: src/components/NetworkDropdown/LanguagePopupHome.tsx
 #: src/components/NetworkDropdown/NetworkDropdown.tsx
 msgid "Select Language"
@@ -3173,6 +3181,10 @@ msgstr "Die Website ist eine von der Community betriebene und gewartete Instanz 
 
 #: src/components/Exchange/PositionEditor.jsx
 msgid "Deposit failed."
+msgstr ""
+
+#: src/components/Header/AppHeaderLinks.tsx
+msgid "SLP"
 msgstr ""
 
 #: src/components/Synthetics/Claims/ClaimableCard.tsx
@@ -3457,6 +3469,10 @@ msgstr ""
 msgid "Funding Fees"
 msgstr "Finanzierungsgebühren"
 
+#: src/lib/legacy.ts
+msgid "Decentralized Perpetual Exchange | SINGULAR"
+msgstr ""
+
 #: src/domain/tokens/approveTokens.tsx
 msgid "Approval failed"
 msgstr "Genehmigung gescheitert"
@@ -3574,7 +3590,6 @@ msgstr "Finanzberichte und Protokollanalyse"
 msgid "Request increase {0} {longOrShortText}, +{1} USD, Acceptable Price: {2} {3} USD"
 msgstr "Erhöhungsanfrage {0} {longOrShortText}, +{1} USD, Akzeptabler Preis: {2} {3} USD"
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Stake/StakeV2.tsx
 #: src/pages/Stake/StakeV2.tsx
 msgid "Earn"
@@ -3596,6 +3611,10 @@ msgstr ""
 
 #: src/components/UserFeedbackModal/UserFeedbackModal.tsx
 msgid "Your opinions and experiences matter to us. Your feedback helps us understand what we are doing well and where we can make enhancements."
+msgstr ""
+
+#: src/pages/ComingSoon/ComingSoon.js
+msgid "COMING SOON!"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.tsx
@@ -3841,8 +3860,8 @@ msgid "You will receive at least {0} {1} if this order is executed. The exact ex
 msgstr "Du wirst mind. {0} {1} erhalten, wenn dieser Auftrag ausgeführt wird. Der genaue Ausführungspreis kann je nach den Gebühren zum Zeitpunkt der Ausführung des Auftrags variieren."
 
 #: src/components/Common/SEO.tsx
-msgid "GMX | Decentralized Perpetual Exchange"
-msgstr ""
+#~ msgid "GMX | Decentralized Perpetual Exchange"
+#~ msgstr ""
 
 #: src/pages/OrdersOverview/OrdersOverview.jsx
 msgid "No position"
@@ -4024,7 +4043,6 @@ msgstr "Beanspruchbar"
 msgid "Additionally, trigger orders are market orders and are not guaranteed to settle at the trigger price."
 msgstr "Außerdem handelt es sich bei Trigger-Order um Markt-Orders, bei denen nicht garantiert wird, dass sie zum Trigger-Kurs abgerechnet werden."
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/components/Header/HomeHeaderLinks.tsx
 msgid "Docs"
 msgstr "Dokumente"
@@ -4216,6 +4234,18 @@ msgstr ""
 #: src/pages/Exchange/Exchange.tsx
 msgid "Withdrew {0} USD from {tokenSymbol} {longOrShortText}."
 msgstr "{0} USD von {tokenSymbol} {longOrShortText} abgehoben."
+
+#: src/components/Header/AppHeaderLinks.tsx
+msgid "Perpetuals"
+msgstr ""
+
+#: src/components/Common/SEO.tsx
+msgid "SingularApp"
+msgstr ""
+
+#: src/pages/ComingSoon/ComingSoon.js
+msgid "Coming Soon"
+msgstr ""
 
 #: src/components/Synthetics/SettleAccruedFundingFeeModal/SettleAccruedFundingFeeModal.tsx
 msgid "Accrued Funding Fee."
@@ -4576,7 +4606,6 @@ msgstr "NUTZUNG"
 msgid "GMX Announcements"
 msgstr ""
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Referrals/Referrals.tsx
 #: src/pages/Referrals/Referrals.tsx
 msgid "Referrals"
@@ -5627,8 +5656,8 @@ msgid "Select an option"
 msgstr "Option wählen"
 
 #: src/components/Header/AppHeaderLinks.tsx
-msgid "Ecosystem"
-msgstr "Ökosystem"
+#~ msgid "Ecosystem"
+#~ msgstr "Ökosystem"
 
 #: src/components/Exchange/SwapBox.jsx
 msgid "High USDG Slippage, Long Anyway"
@@ -6230,8 +6259,8 @@ msgid "V1 Rebates and V1/V2 esGMX are airdropped weekly. V2 Rebates are claimed 
 msgstr ""
 
 #: src/components/Common/SEO.tsx
-msgid "Trade spot or perpetual BTC, ETH, AVAX and other top cryptocurrencies with up to 100x leverage directly from your wallet on Arbitrum and Avalanche."
-msgstr ""
+#~ msgid "Trade spot or perpetual BTC, ETH, AVAX and other top cryptocurrencies with up to 100x leverage directly from your wallet on Arbitrum and Avalanche."
+#~ msgstr ""
 
 #: src/components/Exchange/ChartTokenSelector.tsx
 msgid "Max In"
@@ -6367,6 +6396,10 @@ msgstr "Datum"
 #: src/domain/synthetics/trade/utils/validation.ts
 #: src/domain/synthetics/trade/utils/validation.ts
 msgid "Price Impact not yet acknowledged"
+msgstr ""
+
+#: src/components/Common/SEO.tsx
+msgid "Singular"
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.tsx
@@ -6992,7 +7025,6 @@ msgstr ""
 msgid "Order size is bigger than position, will only be executable if position increases"
 msgstr "Ordergröße ist größer als die Position. Wird nur ausgeführt, wenn sich die Position erhöht"
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/components/Synthetics/GmList/GmList.tsx
 msgid "Buy"
 msgstr "Kaufen"
@@ -7015,8 +7047,8 @@ msgid "Success claimings"
 msgstr ""
 
 #: src/lib/legacy.ts
-msgid "Decentralized Perpetual Exchange | GMX"
-msgstr ""
+#~ msgid "Decentralized Perpetual Exchange | GMX"
+#~ msgstr ""
 
 #: src/components/Exchange/PositionEditor.jsx
 msgid "The pending borrow fee will be charged on this transaction."
@@ -7310,7 +7342,6 @@ msgid "Settling..."
 msgstr ""
 
 #: src/components/Exchange/UsefulLinks.tsx
-#: src/components/Header/AppHeaderLinks.tsx
 msgid "Leaderboard"
 msgstr "Bestenliste"
 
@@ -7511,6 +7542,7 @@ msgstr ""
 #: src/components/Exchange/SwapBox.jsx
 #: src/components/Exchange/SwapBox.jsx
 #: src/components/Exchange/SwapBox.jsx
+#: src/components/Header/AppHeaderLinks.tsx
 #: src/components/Synthetics/OrderList/filters/OrderTypeFilter.tsx
 #: src/components/Synthetics/StatusNotification/OrderStatusNotification.tsx
 #: src/components/Synthetics/SwapCard/SwapCard.tsx
@@ -7545,8 +7577,8 @@ msgid "A Size percentage is required."
 msgstr ""
 
 #: src/components/NetworkDropdown/NetworkDropdown.tsx
-msgid "Language"
-msgstr "Sprache"
+#~ msgid "Language"
+#~ msgstr "Sprache"
 
 #: src/pages/CompleteAccountTransfer/CompleteAccountTransfer.jsx
 msgid "Complete Transfer"

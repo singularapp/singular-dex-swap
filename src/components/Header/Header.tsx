@@ -102,6 +102,7 @@ export function Header({ disconnectAccountAndCloseSettings, openSettings, showRe
                   <img src={logoImg} className="big" alt="SINGULAR Logo" />
                   <img src={logoSmallImg} className="small" alt="SINGULAR Logo" />
                 </Link>
+                <AppHeaderLinks showRedirectModal={showRedirectModal} />
               </div>
               <div className="App-header-container-right">
                 <AppHeaderUser

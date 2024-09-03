@@ -41,6 +41,7 @@ import Stats from "pages/Stats/Stats";
 import { SyntheticsFallbackPage } from "pages/SyntheticsFallbackPage/SyntheticsFallbackPage";
 import { SyntheticsPage } from "pages/SyntheticsPage/SyntheticsPage";
 import { SyntheticsStats } from "pages/SyntheticsStats/SyntheticsStats";
+import ComingSoon from "pages/ComingSoon/ComingSoon";
 
 import PositionRouter from "abis/PositionRouter.json";
 import VaultV2 from "abis/VaultV2.json";
@@ -88,7 +89,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
   return (
     <Switch>
       <Route exact path="/">
-        <Redirect to="/trade" />
+        <Redirect to="/perpetuals" />
       </Route>
       <Route exact path="/price_impact_rebates_stats">
         <PriceImpactRebatesStatsPage />
@@ -128,7 +129,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
         )}
       </Route>
 
-      <Route exact path="/trade/:tradeType?">
+      <Route exact path="/perpetuals/:tradeType?">
         {getIsSyntheticsSupported(chainId) ? (
           <SyntheticsStateContextProvider skipLocalReferralCode={false} pageType="trade">
             <SyntheticsPage openSettings={openSettings} />
@@ -137,7 +138,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
           <SyntheticsFallbackPage />
         )}
       </Route>
-      <Redirect from="/v2" to="/trade" />
+      <Redirect from="/v2" to="/perpetuals" />
       <Route exact path="/buy_glp">
         <BuyGlp />
       </Route>
@@ -232,6 +233,13 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
           <UiPage />
         </Route>
       )}
+
+      <Route exact path="/swap">
+        <ComingSoon />
+      </Route>
+      <Route exact path="/slp">
+        <ComingSoon />
+      </Route>
 
       <Route path="*">
         <PageNotFound />

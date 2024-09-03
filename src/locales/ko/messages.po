@@ -150,6 +150,11 @@ msgstr "타입"
 msgid "Close order"
 msgstr ""
 
+#: src/pages/ComingSoon/ComingSoon.js
+#: src/pages/PageNotFound/PageNotFound.js
+msgid "<0>Return to </0><1>Homepage</1> <2>or </2> <3>Perpetuals</3>"
+msgstr ""
+
 #: src/components/Exchange/PositionSeller.jsx
 msgid "Order submitted!"
 msgstr ""
@@ -1220,7 +1225,6 @@ msgstr ""
 msgid "Leftover position below 10 USD"
 msgstr ""
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Dashboard/DashboardV2.tsx
 msgid "Dashboard"
 msgstr "대시보드"
@@ -1274,6 +1278,8 @@ msgstr ""
 msgid "{orderTypeLabel} {positionText}, -{0}"
 msgstr ""
 
+#: src/pages/PageNotFound/PageNotFound.js
+#: src/pages/PageNotFound/PageNotFound.js
 #: src/pages/PageNotFound/PageNotFound.jsx
 #: src/pages/PageNotFound/PageNotFound.jsx
 msgid "Page not found"
@@ -3021,6 +3027,8 @@ msgstr "청산"
 msgid "The ask price is used for opening longs and closing shorts."
 msgstr ""
 
+#: src/components/LanguageDropdown/LanguageDropdown.tsx
+#: src/components/LanguageDropdown/LanguagePopupHome.tsx
 #: src/components/NetworkDropdown/LanguagePopupHome.tsx
 #: src/components/NetworkDropdown/NetworkDropdown.tsx
 msgid "Select Language"
@@ -3173,6 +3181,10 @@ msgstr "웹사이트는 오픈소스인 <0>GMX front end</0>를 이용하고 커
 
 #: src/components/Exchange/PositionEditor.jsx
 msgid "Deposit failed."
+msgstr ""
+
+#: src/components/Header/AppHeaderLinks.tsx
+msgid "SLP"
 msgstr ""
 
 #: src/components/Synthetics/Claims/ClaimableCard.tsx
@@ -3457,6 +3469,10 @@ msgstr ""
 msgid "Funding Fees"
 msgstr "자금 수수료"
 
+#: src/lib/legacy.ts
+msgid "Decentralized Perpetual Exchange | SINGULAR"
+msgstr ""
+
 #: src/domain/tokens/approveTokens.tsx
 msgid "Approval failed"
 msgstr "승인 실패"
@@ -3574,7 +3590,6 @@ msgstr "금융 보고서 및 프로토콜 분석"
 msgid "Request increase {0} {longOrShortText}, +{1} USD, Acceptable Price: {2} {3} USD"
 msgstr "{0} {longOrShortText} 증가 요청, +{1} USD, 허용가능한 가격: {2} {3} USD"
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Stake/StakeV2.tsx
 #: src/pages/Stake/StakeV2.tsx
 msgid "Earn"
@@ -3596,6 +3611,10 @@ msgstr ""
 
 #: src/components/UserFeedbackModal/UserFeedbackModal.tsx
 msgid "Your opinions and experiences matter to us. Your feedback helps us understand what we are doing well and where we can make enhancements."
+msgstr ""
+
+#: src/pages/ComingSoon/ComingSoon.js
+msgid "COMING SOON!"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.tsx
@@ -3841,8 +3860,8 @@ msgid "You will receive at least {0} {1} if this order is executed. The exact ex
 msgstr "해당 주문이 실행되게 되면 최소 {0} {1}을 받을 수 있습니다. 정확한 실행가격은 주문이 실행된 수수료에 의해 상이합니다."
 
 #: src/components/Common/SEO.tsx
-msgid "GMX | Decentralized Perpetual Exchange"
-msgstr ""
+#~ msgid "GMX | Decentralized Perpetual Exchange"
+#~ msgstr ""
 
 #: src/pages/OrdersOverview/OrdersOverview.jsx
 msgid "No position"
@@ -4024,7 +4043,6 @@ msgstr "수령가능"
 msgid "Additionally, trigger orders are market orders and are not guaranteed to settle at the trigger price."
 msgstr "추가로, 트리거 주문은 시장가 주문이며 트리거 가격으로 결제되지 않을 수도 있습니다."
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/components/Header/HomeHeaderLinks.tsx
 msgid "Docs"
 msgstr ""
@@ -4216,6 +4234,18 @@ msgstr ""
 #: src/pages/Exchange/Exchange.tsx
 msgid "Withdrew {0} USD from {tokenSymbol} {longOrShortText}."
 msgstr "{tokenSymbol} {longOrShortText} {0} USD 인출됨."
+
+#: src/components/Header/AppHeaderLinks.tsx
+msgid "Perpetuals"
+msgstr ""
+
+#: src/components/Common/SEO.tsx
+msgid "SingularApp"
+msgstr ""
+
+#: src/pages/ComingSoon/ComingSoon.js
+msgid "Coming Soon"
+msgstr ""
 
 #: src/components/Synthetics/SettleAccruedFundingFeeModal/SettleAccruedFundingFeeModal.tsx
 msgid "Accrued Funding Fee."
@@ -4576,7 +4606,6 @@ msgstr "이용률"
 msgid "GMX Announcements"
 msgstr ""
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Referrals/Referrals.tsx
 #: src/pages/Referrals/Referrals.tsx
 msgid "Referrals"
@@ -5627,8 +5656,8 @@ msgid "Select an option"
 msgstr "옵션 선택"
 
 #: src/components/Header/AppHeaderLinks.tsx
-msgid "Ecosystem"
-msgstr "이코시스템"
+#~ msgid "Ecosystem"
+#~ msgstr "이코시스템"
 
 #: src/components/Exchange/SwapBox.jsx
 msgid "High USDG Slippage, Long Anyway"
@@ -6230,8 +6259,8 @@ msgid "V1 Rebates and V1/V2 esGMX are airdropped weekly. V2 Rebates are claimed 
 msgstr ""
 
 #: src/components/Common/SEO.tsx
-msgid "Trade spot or perpetual BTC, ETH, AVAX and other top cryptocurrencies with up to 100x leverage directly from your wallet on Arbitrum and Avalanche."
-msgstr ""
+#~ msgid "Trade spot or perpetual BTC, ETH, AVAX and other top cryptocurrencies with up to 100x leverage directly from your wallet on Arbitrum and Avalanche."
+#~ msgstr ""
 
 #: src/components/Exchange/ChartTokenSelector.tsx
 msgid "Max In"
@@ -6367,6 +6396,10 @@ msgstr "날짜"
 #: src/domain/synthetics/trade/utils/validation.ts
 #: src/domain/synthetics/trade/utils/validation.ts
 msgid "Price Impact not yet acknowledged"
+msgstr ""
+
+#: src/components/Common/SEO.tsx
+msgid "Singular"
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.tsx
@@ -6992,7 +7025,6 @@ msgstr ""
 msgid "Order size is bigger than position, will only be executable if position increases"
 msgstr "주문의 사이즈가 포지션을 초과했습니다. 포지션을 증가하는 경우에만 실행 가능합니다."
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/components/Synthetics/GmList/GmList.tsx
 msgid "Buy"
 msgstr "구매"
@@ -7015,8 +7047,8 @@ msgid "Success claimings"
 msgstr ""
 
 #: src/lib/legacy.ts
-msgid "Decentralized Perpetual Exchange | GMX"
-msgstr ""
+#~ msgid "Decentralized Perpetual Exchange | GMX"
+#~ msgstr ""
 
 #: src/components/Exchange/PositionEditor.jsx
 msgid "The pending borrow fee will be charged on this transaction."
@@ -7310,7 +7342,6 @@ msgid "Settling..."
 msgstr ""
 
 #: src/components/Exchange/UsefulLinks.tsx
-#: src/components/Header/AppHeaderLinks.tsx
 msgid "Leaderboard"
 msgstr "리더보드"
 
@@ -7511,6 +7542,7 @@ msgstr ""
 #: src/components/Exchange/SwapBox.jsx
 #: src/components/Exchange/SwapBox.jsx
 #: src/components/Exchange/SwapBox.jsx
+#: src/components/Header/AppHeaderLinks.tsx
 #: src/components/Synthetics/OrderList/filters/OrderTypeFilter.tsx
 #: src/components/Synthetics/StatusNotification/OrderStatusNotification.tsx
 #: src/components/Synthetics/SwapCard/SwapCard.tsx
@@ -7545,8 +7577,8 @@ msgid "A Size percentage is required."
 msgstr ""
 
 #: src/components/NetworkDropdown/NetworkDropdown.tsx
-msgid "Language"
-msgstr "언어"
+#~ msgid "Language"
+#~ msgstr "언어"
 
 #: src/pages/CompleteAccountTransfer/CompleteAccountTransfer.jsx
 msgid "Complete Transfer"

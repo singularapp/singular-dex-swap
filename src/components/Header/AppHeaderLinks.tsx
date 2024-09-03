@@ -40,44 +40,19 @@ export function AppHeaderLinks({ small, openSettings, clickCloseIcon, showRedire
         </div>
       )}
       <div className="App-header-link-container">
-        <HeaderLink qa="dashboard" to="/dashboard" showRedirectModal={showRedirectModal}>
-          <Trans>Dashboard</Trans>
+        <HeaderLink qa="perpetuals" to="/perpetuals" showRedirectModal={showRedirectModal}>
+          <Trans>Perpetuals</Trans>
         </HeaderLink>
       </div>
       <div className="App-header-link-container">
-        <HeaderLink qa="earn" to="/earn" showRedirectModal={showRedirectModal}>
-          <Trans>Earn</Trans>
+        <HeaderLink qa="swap" to="/swap" showRedirectModal={showRedirectModal}>
+          <Trans>Swap</Trans>
         </HeaderLink>
       </div>
       <div className="App-header-link-container">
-        <HeaderLink qa="buy" to="/buy" showRedirectModal={showRedirectModal}>
-          <Trans>Buy</Trans>
+        <HeaderLink qa="slp" to="/slp" showRedirectModal={showRedirectModal}>
+          <Trans>SLP</Trans>
         </HeaderLink>
-      </div>
-      <div className="App-header-link-container">
-        <HeaderLink qa="referrals" to="/referrals" showRedirectModal={showRedirectModal}>
-          <Trans>Referrals</Trans>
-        </HeaderLink>
-      </div>
-      <div className="App-header-link-container">
-        <HeaderLink
-          qa="leaderboard"
-          to="/leaderboard"
-          showRedirectModal={showRedirectModal}
-          isActive={isLeaderboardActive}
-        >
-          <Trans>Leaderboard</Trans>
-        </HeaderLink>
-      </div>
-      <div className="App-header-link-container">
-        <HeaderLink qa="ecosystem" to="/ecosystem" showRedirectModal={showRedirectModal}>
-          <Trans>Ecosystem</Trans>
-        </HeaderLink>
-      </div>
-      <div className="App-header-link-container">
-        <ExternalLink href="https://docs.gmx.io/">
-          <Trans>Docs</Trans>
-        </ExternalLink>
       </div>
       {small && (
         <div className="App-header-link-container">

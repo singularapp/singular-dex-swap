@@ -150,6 +150,11 @@ msgstr "Type"
 msgid "Close order"
 msgstr "Close order"
 
+#: src/pages/ComingSoon/ComingSoon.js
+#: src/pages/PageNotFound/PageNotFound.js
+msgid "<0>Return to </0><1>Homepage</1> <2>or </2> <3>Perpetuals</3>"
+msgstr "<0>Return to </0><1>Homepage</1> <2>or </2> <3>Perpetuals</3>"
+
 #: src/components/Exchange/PositionSeller.jsx
 msgid "Order submitted!"
 msgstr "Order submitted!"
@@ -1220,7 +1225,6 @@ msgstr "The owner of this Referral Code has set a custom discount of {currentTie
 msgid "Leftover position below 10 USD"
 msgstr "Leftover position below 10 USD"
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Dashboard/DashboardV2.tsx
 msgid "Dashboard"
 msgstr "Dashboard"
@@ -1274,6 +1278,8 @@ msgstr "Withdraw {0} USD from {1}{longOrShortText}"
 msgid "{orderTypeLabel} {positionText}, -{0}"
 msgstr "{orderTypeLabel} {positionText}, -{0}"
 
+#: src/pages/PageNotFound/PageNotFound.js
+#: src/pages/PageNotFound/PageNotFound.js
 #: src/pages/PageNotFound/PageNotFound.jsx
 #: src/pages/PageNotFound/PageNotFound.jsx
 msgid "Page not found"
@@ -3021,6 +3027,8 @@ msgstr "Liquidated"
 msgid "The ask price is used for opening longs and closing shorts."
 msgstr "The ask price is used for opening longs and closing shorts."
 
+#: src/components/LanguageDropdown/LanguageDropdown.tsx
+#: src/components/LanguageDropdown/LanguagePopupHome.tsx
 #: src/components/NetworkDropdown/LanguagePopupHome.tsx
 #: src/components/NetworkDropdown/NetworkDropdown.tsx
 msgid "Select Language"
@@ -3174,6 +3182,10 @@ msgstr "The website is a community deployed and maintained instance of the open 
 #: src/components/Exchange/PositionEditor.jsx
 msgid "Deposit failed."
 msgstr "Deposit failed."
+
+#: src/components/Header/AppHeaderLinks.tsx
+msgid "SLP"
+msgstr "SLP"
 
 #: src/components/Synthetics/Claims/ClaimableCard.tsx
 msgid "Claimable Price Impact Rebates.<0/><1/><2>Read more</2>."
@@ -3457,6 +3469,10 @@ msgstr "Trigger order disabled, pending {0} upgrade"
 msgid "Funding Fees"
 msgstr "Funding Fees"
 
+#: src/lib/legacy.ts
+msgid "Decentralized Perpetual Exchange | SINGULAR"
+msgstr "Decentralized Perpetual Exchange | SINGULAR"
+
 #: src/domain/tokens/approveTokens.tsx
 msgid "Approval failed"
 msgstr "Approval failed"
@@ -3574,7 +3590,6 @@ msgstr "Financial reports and protocol analytics"
 msgid "Request increase {0} {longOrShortText}, +{1} USD, Acceptable Price: {2} {3} USD"
 msgstr "Request increase {0} {longOrShortText}, +{1} USD, Acceptable Price: {2} {3} USD"
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Stake/StakeV2.tsx
 #: src/pages/Stake/StakeV2.tsx
 msgid "Earn"
@@ -3597,6 +3612,10 @@ msgstr "GM Markets"
 #: src/components/UserFeedbackModal/UserFeedbackModal.tsx
 msgid "Your opinions and experiences matter to us. Your feedback helps us understand what we are doing well and where we can make enhancements."
 msgstr "Your opinions and experiences matter to us. Your feedback helps us understand what we are doing well and where we can make enhancements."
+
+#: src/pages/ComingSoon/ComingSoon.js
+msgid "COMING SOON!"
+msgstr "COMING SOON!"
 
 #: src/pages/Stake/StakeV2.tsx
 msgid "Stake <0>GMX</0> and buy <1>GM</1> or <2>GLP</2> to earn rewards."
@@ -3844,8 +3863,8 @@ msgid "You will receive at least {0} {1} if this order is executed. The exact ex
 msgstr "You will receive at least {0} {1} if this order is executed. The exact execution price may vary depending on fees at the time the order is executed."
 
 #: src/components/Common/SEO.tsx
-msgid "GMX | Decentralized Perpetual Exchange"
-msgstr "GMX | Decentralized Perpetual Exchange"
+#~ msgid "GMX | Decentralized Perpetual Exchange"
+#~ msgstr "GMX | Decentralized Perpetual Exchange"
 
 #: src/pages/OrdersOverview/OrdersOverview.jsx
 msgid "No position"
@@ -4027,7 +4046,6 @@ msgstr "Claimable"
 msgid "Additionally, trigger orders are market orders and are not guaranteed to settle at the trigger price."
 msgstr "Additionally, trigger orders are market orders and are not guaranteed to settle at the trigger price."
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/components/Header/HomeHeaderLinks.tsx
 msgid "Docs"
 msgstr "Docs"
@@ -4219,6 +4237,18 @@ msgstr "Expected 365d Fees are projected based on past {daysConsidered}d base AP
 #: src/pages/Exchange/Exchange.tsx
 msgid "Withdrew {0} USD from {tokenSymbol} {longOrShortText}."
 msgstr "Withdrew {0} USD from {tokenSymbol} {longOrShortText}."
+
+#: src/components/Header/AppHeaderLinks.tsx
+msgid "Perpetuals"
+msgstr "Perpetuals"
+
+#: src/components/Common/SEO.tsx
+msgid "SingularApp"
+msgstr "SingularApp"
+
+#: src/pages/ComingSoon/ComingSoon.js
+msgid "Coming Soon"
+msgstr "Coming Soon"
 
 #: src/components/Synthetics/SettleAccruedFundingFeeModal/SettleAccruedFundingFeeModal.tsx
 msgid "Accrued Funding Fee."
@@ -4579,7 +4609,6 @@ msgstr "UTILIZATION"
 msgid "GMX Announcements"
 msgstr "GMX Announcements"
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Referrals/Referrals.tsx
 #: src/pages/Referrals/Referrals.tsx
 msgid "Referrals"
@@ -5630,8 +5659,8 @@ msgid "Select an option"
 msgstr "Select an option"
 
 #: src/components/Header/AppHeaderLinks.tsx
-msgid "Ecosystem"
-msgstr "Ecosystem"
+#~ msgid "Ecosystem"
+#~ msgstr "Ecosystem"
 
 #: src/components/Exchange/SwapBox.jsx
 msgid "High USDG Slippage, Long Anyway"
@@ -6236,8 +6265,8 @@ msgid "V1 Rebates and V1/V2 esGMX are airdropped weekly. V2 Rebates are claimed 
 msgstr "V1 Rebates and V1/V2 esGMX are airdropped weekly. V2 Rebates are claimed manually."
 
 #: src/components/Common/SEO.tsx
-msgid "Trade spot or perpetual BTC, ETH, AVAX and other top cryptocurrencies with up to 100x leverage directly from your wallet on Arbitrum and Avalanche."
-msgstr "Trade spot or perpetual BTC, ETH, AVAX and other top cryptocurrencies with up to 100x leverage directly from your wallet on Arbitrum and Avalanche."
+#~ msgid "Trade spot or perpetual BTC, ETH, AVAX and other top cryptocurrencies with up to 100x leverage directly from your wallet on Arbitrum and Avalanche."
+#~ msgstr "Trade spot or perpetual BTC, ETH, AVAX and other top cryptocurrencies with up to 100x leverage directly from your wallet on Arbitrum and Avalanche."
 
 #: src/components/Exchange/ChartTokenSelector.tsx
 msgid "Max In"
@@ -6374,6 +6403,10 @@ msgstr "Date"
 #: src/domain/synthetics/trade/utils/validation.ts
 msgid "Price Impact not yet acknowledged"
 msgstr "Price Impact not yet acknowledged"
+
+#: src/components/Common/SEO.tsx
+msgid "Singular"
+msgstr "Singular"
 
 #: src/pages/BuyGMX/BuyGMX.tsx
 msgid "Buy GMX using FIAT gateways:"
@@ -6998,7 +7031,6 @@ msgstr "{avalancheLink} GM Pools are <0>incentivized{sparkle}.</0>"
 msgid "Order size is bigger than position, will only be executable if position increases"
 msgstr "Order size is bigger than position, will only be executable if position increases"
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/components/Synthetics/GmList/GmList.tsx
 msgid "Buy"
 msgstr "Buy"
@@ -7021,8 +7053,8 @@ msgid "Success claimings"
 msgstr "Success claimings"
 
 #: src/lib/legacy.ts
-msgid "Decentralized Perpetual Exchange | GMX"
-msgstr "Decentralized Perpetual Exchange | GMX"
+#~ msgid "Decentralized Perpetual Exchange | GMX"
+#~ msgstr "Decentralized Perpetual Exchange | GMX"
 
 #: src/components/Exchange/PositionEditor.jsx
 msgid "The pending borrow fee will be charged on this transaction."
@@ -7316,7 +7348,6 @@ msgid "Settling..."
 msgstr "Settling..."
 
 #: src/components/Exchange/UsefulLinks.tsx
-#: src/components/Header/AppHeaderLinks.tsx
 msgid "Leaderboard"
 msgstr "Leaderboard"
 
@@ -7517,6 +7548,7 @@ msgstr "Activate Subaccount"
 #: src/components/Exchange/SwapBox.jsx
 #: src/components/Exchange/SwapBox.jsx
 #: src/components/Exchange/SwapBox.jsx
+#: src/components/Header/AppHeaderLinks.tsx
 #: src/components/Synthetics/OrderList/filters/OrderTypeFilter.tsx
 #: src/components/Synthetics/StatusNotification/OrderStatusNotification.tsx
 #: src/components/Synthetics/SwapCard/SwapCard.tsx
@@ -7551,8 +7583,8 @@ msgid "A Size percentage is required."
 msgstr "A Size percentage is required."
 
 #: src/components/NetworkDropdown/NetworkDropdown.tsx
-msgid "Language"
-msgstr "Language"
+#~ msgid "Language"
+#~ msgstr "Language"
 
 #: src/pages/CompleteAccountTransfer/CompleteAccountTransfer.jsx
 msgid "Complete Transfer"

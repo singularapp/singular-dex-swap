@@ -10,7 +10,7 @@ type Props = {
   };
 };
 
-export default function LanguageModalContent({ currentLanguage }: Props) {
+const LanguageModalContent = ({ currentLanguage }: Props) => {
   return (
     <>
       {Object.keys(locales).map((item) => {
@@ -42,4 +42,6 @@ export default function LanguageModalContent({ currentLanguage }: Props) {
       })}
     </>
   );
-}
+};
+
+export default LanguageModalContent;

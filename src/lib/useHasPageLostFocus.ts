@@ -81,7 +81,7 @@ export function useHasLostFocus() {
     debugId: "V1 Events",
   });
 
-  const v2WhiteListedPages = useMemo(() => ["/trade", "/v2", "/pools"], []);
+  const v2WhiteListedPages = useMemo(() => ["/perpetuals", "/v2", "/pools"], []);
 
   const hasV2LostFocus = useHasLostFocusHelper({
     timeout: TRADE_LOST_FOCUS_TIMEOUT,

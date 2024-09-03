@@ -1382,12 +1382,12 @@ export function getRootShareApiUrl() {
   return "https://share.gmx.io";
 }
 
-export function getTradePageUrl() {
+export function getPerpetualsPageUrl() {
   if (isLocal()) {
-    return "http://localhost:3011/#/trade";
+    return "http://localhost:3010/#/perpetuals";
   }
 
-  return "https://singulardex.com/#/trade";
+  return "https://singulardex.com/#/perpetuals";
 }
 
 // Resolves all images in the folder that match the pattern and store them as `fileName -> path` pairs
