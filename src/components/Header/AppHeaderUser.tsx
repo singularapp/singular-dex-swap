@@ -11,6 +11,7 @@ import { useChainId } from "lib/chains";
 import { getAccountUrl, isHomeSite } from "lib/legacy";
 import LanguagePopupHome from "../NetworkDropdown/LanguagePopupHome";
 import NetworkDropdown from "../NetworkDropdown/NetworkDropdown";
+import LanguageDropdown from "../LanguageDropdown/LanguageDropdown";
 import { NotifyButton } from "../NotifyButton/NotifyButton";
 import "./Header.scss";
 import { HeaderLink } from "./HeaderLink";
@@ -77,6 +78,12 @@ export function AppHeaderUser({ openSettings, small, disconnectAccountAndCloseSe
 
         {showConnectionOptions && openConnectModal ? (
           <>
+            <LanguageDropdown
+              small={small}
+              networkOptions={NETWORK_OPTIONS}
+              selectorLabel={selectorLabel}
+              openSettings={openSettings}
+            />
             <ConnectWalletButton onClick={openConnectModal} imgSrc={connectWalletImg}>
               {small ? <Trans>Connect</Trans> : <Trans>Connect Wallet</Trans>}
             </ConnectWalletButton>
@@ -107,6 +114,13 @@ export function AppHeaderUser({ openSettings, small, disconnectAccountAndCloseSe
 
       {showConnectionOptions ? (
         <>
+          <div>
+            <AddressDropdown
+              account={account}
+              accountUrl={accountUrl}
+              disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
+            />
+          </div>
           <div data-qa="user-address" className="App-header-user-address">
             <AddressDropdown
               account={account}

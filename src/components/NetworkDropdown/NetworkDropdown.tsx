@@ -140,7 +140,7 @@ function DesktopDropdown({ setActiveModal, selectorLabel, networkOptions, openSe
               </div>
             </div>
           </Menu.Item>
-          <Menu.Item>
+          {/* <Menu.Item>
             <div
               className="network-dropdown-menu-item menu-item last-dropdown-menu"
               onClick={() => setActiveModal(LANGUAGE_MODAL_KEY)}
@@ -154,7 +154,7 @@ function DesktopDropdown({ setActiveModal, selectorLabel, networkOptions, openSe
                 </span>
               </div>
             </div>
-          </Menu.Item>
+          </Menu.Item> */}
         </Menu.Items>
       </Menu>
     </div>
