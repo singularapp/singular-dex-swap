@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import GlpSwap from "components/Glp/GlpSwap";
-import Footer from "components/Footer/Footer";
 import "./BuyGlp.css";
 
 import { Trans, t } from "@lingui/macro";
