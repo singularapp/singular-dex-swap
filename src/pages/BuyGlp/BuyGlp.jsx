@@ -50,7 +50,6 @@ export default function BuyGlp() {
         }
       />
       <GlpSwap isBuying={isBuying} setIsBuying={setIsBuying} />
-      <Footer />
     </div>
   );
 }

@@ -139,7 +139,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
         )}
       </Route>
       <Redirect from="/v2" to="/perpetuals" />
-      <Route exact path="/buy_glp">
+      <Route exact path="/slp">
         <BuyGlp />
       </Route>
       <Route exact path="/jobs">
@@ -233,13 +233,6 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
           <UiPage />
         </Route>
       )}
-
-      <Route exact path="/swap">
-        <ComingSoon />
-      </Route>
-      <Route exact path="/slp">
-        <ComingSoon />
-      </Route>
 
       <Route path="*">
         <PageNotFound />
