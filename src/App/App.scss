@@ -412,6 +412,7 @@ button.App-connect-wallet:hover {
   align-items: center;
   color: var(--color-white);
   position: relative;
+  margin-right: 1.5rem;
 }
 
 .mobile-menu-divider {
@@ -926,9 +927,6 @@ button.App-button-option:disabled {
   vertical-align: middle;
   width: 1.85rem;
   height: 1.85rem;
-}
-.App-header-user {
-  gap: 1.6rem;
 }
 
 .App-content {

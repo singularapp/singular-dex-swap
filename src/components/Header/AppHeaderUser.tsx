@@ -16,6 +16,8 @@ import useWallet from "lib/wallets/useWallet";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useTradePageVersion } from "lib/useTradePageVersion";
 
+import { BuyCrypto } from "components/Transak";
+
 type Props = {
   openSettings: () => void;
   small?: boolean;
@@ -95,6 +97,9 @@ export function AppHeaderUser({ openSettings, small, disconnectAccountAndCloseSe
     <div className="App-header-user">
       {showConnectionOptions ? (
         <>
+          <div>
+            <BuyCrypto />
+          </div>
           <div>
             <LanguageDropdown
               small={small}
