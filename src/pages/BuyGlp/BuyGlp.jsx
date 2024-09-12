@@ -42,8 +42,11 @@ export default function BuyGlp() {
               </div>
             )}
             <Trans>
-              Purchase <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v1">SLP tokens</ExternalLink> to
-              earn {nativeTokenSymbol} fees from swaps and leverage trading.
+              Purchase{" "}
+              <ExternalLink href="https://singulardao.gitbook.io/singular-dao/tokenomics-and-governance/liquidity-for-v1">
+                SLP tokens
+              </ExternalLink>{" "}
+              to earn {`ETH`} fees from swaps and leverage trading.
             </Trans>
           </div>
         }
