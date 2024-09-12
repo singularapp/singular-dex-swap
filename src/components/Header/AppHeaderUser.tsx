@@ -16,13 +16,14 @@ import useWallet from "lib/wallets/useWallet";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useTradePageVersion } from "lib/useTradePageVersion";
 
-import { BuyCrypto } from "components/Transak";
+import { BuyCryptoButton } from "components/BuyCrypto/BuyCryptoButton";
 
 type Props = {
   openSettings: () => void;
   small?: boolean;
   disconnectAccountAndCloseSettings: () => void;
   showRedirectModal: (to: string) => void;
+  openBuyCryptoModal: () => void;
 };
 
 const NETWORK_OPTIONS = [
@@ -55,7 +56,13 @@ if (isDevelopment()) {
   });
 }
 
-export function AppHeaderUser({ openSettings, small, disconnectAccountAndCloseSettings, showRedirectModal }: Props) {
+export function AppHeaderUser({
+  openSettings,
+  small,
+  disconnectAccountAndCloseSettings,
+  showRedirectModal,
+  openBuyCryptoModal,
+}: Props) {
   const { chainId } = useChainId();
   const { active, account } = useWallet();
   const { openConnectModal } = useConnectModal();
@@ -70,9 +77,7 @@ export function AppHeaderUser({ openSettings, small, disconnectAccountAndCloseSe
       <div className="App-header-user">
         {showConnectionOptions && openConnectModal ? (
           <>
-            <div>
-              <BuyCrypto />
-            </div>
+            <BuyCryptoButton onOpen={openBuyCryptoModal} />
             <LanguageDropdown
               small={small}
               networkOptions={NETWORK_OPTIONS}
@@ -101,7 +106,7 @@ export function AppHeaderUser({ openSettings, small, disconnectAccountAndCloseSe
       {showConnectionOptions ? (
         <>
           <div>
-            <BuyCrypto />
+            <BuyCryptoButton onOpen={openBuyCryptoModal} />
           </div>
           <div>
             <LanguageDropdown

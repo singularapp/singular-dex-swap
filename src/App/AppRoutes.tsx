@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { ToastContainer, cssTransition } from "react-toastify";
 import { useDisconnect } from "wagmi";
@@ -28,6 +28,10 @@ import { MainRoutes } from "./MainRoutes";
 import { useConfigureMetrics } from "lib/metrics/useConfigureMetrics";
 import { useOpenAppMetric } from "lib/metrics";
 import { useAccountInitedMetric } from "lib/metrics";
+
+import { BuyCryptoModal } from "components/BuyCrypto/BuyCryptoModal";
+import { GateFiDisplayModeEnum, GateFiSDK } from "@gatefi/js-sdk";
+import { randomHash } from "lib/crypto";
 
 const Zoom = cssTransition({
   enter: "zoomIn",
@@ -79,6 +83,48 @@ export function AppRoutes() {
     setIsSettingsVisible(false);
   };
 
+  /**
+   * Buy Crypto via Fiat - Transak & Unlimit Crypto
+   */
+  const [isBuyCryptoModalVisible, setBuyCryptoModalVisible] = useState(false);
+  const overlayInstanceSDK = useRef<GateFiSDK | null>(null);
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+  const handleLaunchUnlimitCrypto = () => {
+    setBuyCryptoModalVisible(false);
+
+    try {
+      if (overlayInstanceSDK.current) {
+        if (isOverlayVisible) {
+          overlayInstanceSDK.current.hide();
+          setIsOverlayVisible(false);
+        } else {
+          overlayInstanceSDK.current.show();
+          setIsOverlayVisible(true);
+        }
+      } else {
+        const randomString = randomHash(64);
+        overlayInstanceSDK.current = new GateFiSDK({
+          merchantId: import.meta.env.VITE_APP_UNLIMIT_CRYPTO_PARTNER_ID || "",
+          displayMode: GateFiDisplayModeEnum.Overlay,
+          nodeSelector: "#overlay-button",
+          isSandbox: true,
+          externalId: randomString,
+          defaultFiat: {
+            currency: "USD",
+            amount: "0",
+          },
+          defaultCrypto: {
+            currency: "ETH",
+          },
+        });
+      }
+
+      overlayInstanceSDK.current?.show();
+      setIsOverlayVisible(true);
+    } catch (e) {}
+  };
+  // ---------------------------------------------------------------------------
+
   const [redirectModalVisible, setRedirectModalVisible] = useState(false);
   const [shouldHideRedirectModal, setShouldHideRedirectModal] = useState(false);
 
@@ -99,7 +145,7 @@ export function AppRoutes() {
     }
   }
 
-  const showRedirectModal = useCallback((to: string) => {
+  const showRedirectModal = useCallback((to) => {
     setRedirectModalVisible(true);
     setSelectedToPage(to);
   }, []);
@@ -114,6 +160,7 @@ export function AppRoutes() {
             disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
             openSettings={openSettings}
             showRedirectModal={showRedirectModal}
+            openBuyCryptoModal={() => setBuyCryptoModalVisible(true)}
           />
           {isHome && <HomeRoutes showRedirectModal={showRedirectModal} />}
           {!isHome && <MainRoutes openSettings={openSettings} />}
@@ -140,9 +187,15 @@ export function AppRoutes() {
         setShouldHideRedirectModal={setShouldHideRedirectModal}
         shouldHideRedirectModal={shouldHideRedirectModal}
       />
+      <BuyCryptoModal
+        show={isBuyCryptoModalVisible}
+        setShow={setBuyCryptoModalVisible}
+        onLaunchUnlimitCryptoOverlay={handleLaunchUnlimitCrypto}
+      />
       <SettingsModal isSettingsVisible={isSettingsVisible} setIsSettingsVisible={setIsSettingsVisible} />
       <SubaccountModal />
       <NotifyModal />
+      <div id="overlay-button"></div>
     </>
   );
 }
