@@ -54,6 +54,11 @@ export function AppHeaderLinks({ small, openSettings, clickCloseIcon, showRedire
           <Trans>SLP</Trans>
         </HeaderLink>
       </div>
+      <div className="App-header-link-container">
+        <HeaderLink qa="referrals" to="/referrals" showRedirectModal={showRedirectModal}>
+          <Trans>Referrals</Trans>
+        </HeaderLink>
+      </div>
       {small && (
         <div className="App-header-link-container">
           <a href="#" onClick={openNotifyModal}>

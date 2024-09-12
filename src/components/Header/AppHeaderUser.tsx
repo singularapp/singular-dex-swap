@@ -70,6 +70,9 @@ export function AppHeaderUser({ openSettings, small, disconnectAccountAndCloseSe
       <div className="App-header-user">
         {showConnectionOptions && openConnectModal ? (
           <>
+            <div>
+              <BuyCrypto />
+            </div>
             <LanguageDropdown
               small={small}
               networkOptions={NETWORK_OPTIONS}
