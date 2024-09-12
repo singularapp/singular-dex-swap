@@ -667,11 +667,7 @@ table.Position-list .Exchange-list-item-active {
   padding: 1.5rem;
   margin-bottom: 1.05rem;
   border-radius: 0.3rem;
-  background: linear-gradient(
-    90deg,
-    var(--color-cold-blue-900) 0%,
-    color-mix(in srgb, var(--color-slate-500) 40%, transparent) 100%
-  );
+  background: #343341;
   outline: 0.05rem solid transparent;
   outline-offset: -0.1rem;
 }
@@ -724,7 +720,7 @@ table.Position-list .Exchange-list-item-active {
   top: 0;
   padding: 0.465rem 0.8rem;
   color: var(--color-white);
-  outline: 1rem solid rgba(33, 37, 64, 1);
+  outline: 1rem solid #343341;
   border-radius: 3px;
   z-index: 1;
   cursor: pointer;
