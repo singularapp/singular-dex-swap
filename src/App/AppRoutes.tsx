@@ -32,6 +32,7 @@ import { useAccountInitedMetric } from "lib/metrics";
 import { BuyCryptoModal } from "components/BuyCrypto/BuyCryptoModal";
 import { GateFiDisplayModeEnum, GateFiSDK } from "@gatefi/js-sdk";
 import { randomHash } from "lib/crypto";
+import classNames from "classnames";
 
 const Zoom = cssTransition({
   enter: "zoomIn",
@@ -155,7 +156,7 @@ export function AppRoutes() {
   return (
     <>
       <div className="App">
-        <div className="App-content">
+        <div className={classNames("App-content", { launchpad: location.pathname.includes("/launchpad") })}>
           <Header
             disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
             openSettings={openSettings}

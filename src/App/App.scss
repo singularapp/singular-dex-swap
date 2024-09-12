@@ -931,6 +931,14 @@ button.App-button-option:disabled {
 
 .App-content {
   position: static !important;
+
+  &.launchpad {
+    background: black;
+    background-image: url('../img/launchpad_bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .App-footer {

@@ -46,6 +46,7 @@ import ComingSoon from "pages/ComingSoon/ComingSoon";
 import PositionRouter from "abis/PositionRouter.json";
 import VaultV2 from "abis/VaultV2.json";
 import VaultV2b from "abis/VaultV2b.json";
+import LaunchPad from "pages/LaunchPad/LaunchPad";
 
 const LazyUiPage = lazy(() => import("pages/UiPage/UiPage"));
 export const UiPage = () => <Suspense fallback={<Trans>Loading...</Trans>}>{<LazyUiPage />}</Suspense>;
@@ -186,6 +187,9 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
       </Route>
       <Route exact path="/referrals-tier">
         <ReferralsTier />
+      </Route>
+      <Route exact path="/launchpad">
+        <LaunchPad />
       </Route>
       {/* <Route exact path="/nft_wallet">
         <NftWallet />
