@@ -50,6 +50,7 @@
     "@types/react": "18.2.64",
     "@types/react-dom": "18.2.21",
     "@types/react-router-dom": "5.3.3",
+    "@uidotdev/usehooks": "2.4.1",
     "@uniswap/sdk-core": "3.0.1",
     "@uniswap/v3-sdk": "3.9.0",
     "@wagmi/connectors": "4.1.14",
