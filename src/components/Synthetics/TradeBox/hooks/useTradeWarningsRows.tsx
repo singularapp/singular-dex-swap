@@ -30,7 +30,7 @@ export function useTradeboxWarningsRows(priceImpactWarningState: ReturnType<type
   const swapAmounts = useSelector(selectTradeboxSwapAmounts);
   const executionFee = useSelector(selectTradeboxExecutionFee);
   const { tokensAllowanceData } = useTokensAllowanceData(chainId, {
-    spenderAddress: getContract(chainId, "SyntheticsRouter"),
+    spenderAddress: getContract(chainId, "CustomSingularRouter"),
     tokenAddresses: fromToken ? [fromToken.address] : [],
   });
 
@@ -88,7 +88,7 @@ export function useTradeboxWarningsRows(priceImpactWarningState: ReturnType<type
         <ApproveTokenButton
           tokenAddress={fromToken.address}
           tokenSymbol={fromToken.assetSymbol ?? fromToken.symbol}
-          spenderAddress={getContract(chainId, "SyntheticsRouter")}
+          spenderAddress={getContract(chainId, "CustomSingularRouter")}
         />
       )}
     </>

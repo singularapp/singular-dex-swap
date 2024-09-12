@@ -45,11 +45,16 @@ export type SwapAmounts = {
   swapPathStats: SwapPathStats | undefined;
   minOutputAmount: bigint;
   uiFeeUsd?: bigint;
+  singularFeeAmount: bigint,
+  singularFeeUsd: bigint,
 };
 
 export type IncreasePositionAmounts = {
   initialCollateralAmount: bigint;
   initialCollateralUsd: bigint;
+
+  singularFeeAmount: bigint;
+  singularFeeUsd: bigint;
 
   collateralDeltaAmount: bigint;
   collateralDeltaUsd: bigint;
@@ -119,6 +124,9 @@ export type DecreasePositionAmounts = {
   triggerOrderType?: OrderType.LimitDecrease | OrderType.StopLossDecrease;
   triggerThresholdType?: TriggerThresholdType;
   decreaseSwapType: DecreasePositionSwapType;
+
+  singularFeeAmount: bigint;
+  singularFeeUsd: bigint;
 };
 
 export type DepositAmounts = {

@@ -1,3 +1,4 @@
+import React from "react";
 import { dynamicActivate, isTestLanguage, locales } from "lib/i18n";
 import { importImage } from "lib/legacy";
 import cx from "classnames";

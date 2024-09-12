@@ -10,6 +10,11 @@ export const PRECISION = expandDecimals(1, 30);
 const MAX_EXCEEDING_THRESHOLD = "1000000000";
 const MIN_EXCEEDING_THRESHOLD = "0.01";
 
+// For testing purpose
+// Should fetch from router contract
+export const TRADE_FEE = 50;
+export const FEE_DENOMINATOR = 10000;
+
 export const BN_ZERO = 0n;
 export const BN_ONE = 1n;
 export const BN_NEGATIVE_ONE = -1n;

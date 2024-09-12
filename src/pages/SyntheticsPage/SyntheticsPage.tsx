@@ -36,7 +36,6 @@ import useWallet from "lib/wallets/useWallet";
 
 import { NpsModal } from "components/NpsModal/NpsModal";
 import Checkbox from "components/Checkbox/Checkbox";
-import Footer from "components/Footer/Footer";
 import { InterviewModal } from "components/InterviewModal/InterviewModal";
 import { Claims } from "components/Synthetics/Claims/Claims";
 import { OrderList } from "components/Synthetics/OrderList/OrderList";

@@ -1,4 +1,5 @@
 import ExchangeRouter from "abis/ExchangeRouter.json";
+import CustomSingularRouter from "abis/CustomSingularRouter.json";
 import { getContract } from "config/contracts";
 import { NATIVE_TOKEN_ADDRESS, convertTokenAddress } from "config/tokens";
 import { SetPendingOrder, SetPendingPosition, PendingOrderData } from "context/SyntheticsEvents";
@@ -44,6 +45,7 @@ type IncreaseOrderParams = {
   setPendingTxns: (txns: any) => void;
   setPendingOrder: SetPendingOrder;
   setPendingPosition: SetPendingPosition;
+  singularFeeAmount: bigint;
 };
 
 type SecondaryOrderCommonParams = {
@@ -208,28 +210,47 @@ export async function createIncreaseOrderTxn({
     };
   }
 
-  if (!p.skipSimulation) {
-    await simulateExecuteTxn(chainId, {
-      account: p.account,
-      tokensData: p.tokensData,
-      primaryPriceOverrides,
-      createMulticallPayload: simulationEncodedPayload,
-      value: totalWntAmount,
-      errorTitle: t`Order error.`,
-    });
-  }
+  // if (!p.skipSimulation) {
+  //   await simulateExecuteTxn(chainId, {
+  //     account: p.account,
+  //     tokensData: p.tokensData,
+  //     primaryPriceOverrides,
+  //     createMulticallPayload: simulationEncodedPayload,
+  //     value: totalWntAmount,
+  //     errorTitle: t`Order error.`,
+  //   });
+  // }
 
   const finalPayload = [...encodedPayload, ...decreaseEncodedPayload, ...cancelEncodedPayload, ...updateEncodedPayload];
   const txnCreatedAt = Date.now();
 
-  await callContract(chainId, router, "multicall", [finalPayload], {
-    value: totalWntAmount,
-    hideSentMsg: true,
-    hideSuccessMsg: true,
-    customSigners: subaccount?.customSigners,
-    metricId,
-    setPendingTxns: p.setPendingTxns,
-  });
+  const customSingularRouter = new ethers.Contract(
+    getContract(chainId, "CustomSingularRouter"),
+    CustomSingularRouter.abi,
+    signer
+  );
+
+  // await callContract(chainId, router, "multicall", [finalPayload], {
+  //   value: totalWntAmount,
+  //   hideSentMsg: true,
+  //   hideSuccessMsg: true,
+  //   customSigners: subaccount?.customSigners,
+  //   metricId,
+  //   setPendingTxns: p.setPendingTxns,
+  // });
+
+  await callContract(
+    chainId,
+    customSingularRouter,
+    "multicall",
+    [finalPayload, p.initialCollateralAmount, p.singularFeeAmount, p.initialCollateralAddress],
+    {
+      value: totalWntAmount,
+      hideSentMsg: true,
+      hideSuccessMsg: true,
+      setPendingTxns: p.setPendingTxns,
+    }
+  )
 
   if (!subaccount) {
     p.setPendingOrder([increaseOrder, ...orders]);
@@ -281,10 +302,10 @@ async function createEncodedPayload({
     isNativePayment,
   });
   const multicall = [
-    { method: "sendWnt", params: [orderVaultAddress, totalWntAmount] },
+    { method: "sendWnt", params: [orderVaultAddress, isNativePayment ? totalWntAmount - p.singularFeeAmount : totalWntAmount], },
 
     !isNativePayment && !subaccount
-      ? { method: "sendTokens", params: [p.initialCollateralAddress, orderVaultAddress, p.initialCollateralAmount] }
+      ? { method: "sendTokens", params: [p.initialCollateralAddress, orderVaultAddress, p.initialCollateralAmount - p.singularFeeAmount], }
       : undefined,
 
     {

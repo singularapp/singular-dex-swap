@@ -2,7 +2,7 @@ import { TokenData, TokensRatio, convertToTokenAmount, convertToUsd, getAmountBy
 import { FindSwapPath, SwapAmounts } from "../types";
 import { getIsEquivalentTokens } from "domain/tokens";
 import { getTotalSwapVolumeFromSwapStats } from "domain/synthetics/fees";
-import { applyFactor } from "lib/numbers";
+import { applyFactor, FEE_DENOMINATOR, TRADE_FEE } from "lib/numbers";
 import { bigMath } from "lib/bigmath";
 
 export function getSwapAmountsByFromValue(p: {
@@ -25,6 +25,9 @@ export function getSwapAmountsByFromValue(p: {
   let usdOut = 0n;
   let minOutputAmount = 0n;
 
+  const singularFeeAmount = (BigInt(TRADE_FEE) * amountIn) / BigInt(FEE_DENOMINATOR);
+  const singularFeeUsd = (usdIn * BigInt(TRADE_FEE)) / BigInt(FEE_DENOMINATOR);
+
   const defaultAmounts: SwapAmounts = {
     amountIn,
     usdIn,
@@ -34,6 +37,8 @@ export function getSwapAmountsByFromValue(p: {
     priceIn,
     priceOut,
     swapPathStats: undefined,
+    singularFeeAmount,
+    singularFeeUsd,
   };
 
   if (amountIn <= 0) {
@@ -54,10 +59,12 @@ export function getSwapAmountsByFromValue(p: {
       priceIn,
       priceOut,
       swapPathStats: undefined,
+      singularFeeAmount,
+      singularFeeUsd,
     };
   }
 
-  const swapPathStats = findSwapPath(defaultAmounts.usdIn, { byLiquidity: isLimit });
+  const swapPathStats = findSwapPath(defaultAmounts.usdIn - singularFeeAmount, { byLiquidity: isLimit });
 
   const totalSwapVolume = getTotalSwapVolumeFromSwapStats(swapPathStats?.swapSteps);
   const swapUiFeeUsd = applyFactor(totalSwapVolume, uiFeeFactor);
@@ -75,7 +82,7 @@ export function getSwapAmountsByFromValue(p: {
     amountOut = getAmountByRatio({
       fromToken: tokenIn,
       toToken: tokenOut,
-      fromTokenAmount: amountIn,
+      fromTokenAmount: amountIn - singularFeeAmount,
       ratio: triggerRatio.ratio,
       shouldInvertRatio: triggerRatio.largestToken.address === tokenOut.address,
     });
@@ -105,6 +112,8 @@ export function getSwapAmountsByFromValue(p: {
     priceOut,
     minOutputAmount,
     swapPathStats,
+    singularFeeAmount,
+    singularFeeUsd,
   };
 }
 
@@ -139,6 +148,8 @@ export function getSwapAmountsByToValue(p: {
     priceIn,
     priceOut,
     swapPathStats: undefined,
+    singularFeeAmount: 0n,
+    singularFeeUsd: 0n,
   };
 
   if (amountOut <= 0) {
@@ -149,15 +160,21 @@ export function getSwapAmountsByToValue(p: {
     amountIn = amountOut;
     usdIn = usdOut;
 
+    const singularFeeAmount = (amountIn * BigInt(TRADE_FEE)) / BigInt(FEE_DENOMINATOR);
+    const singularFeeUsd = (usdIn * BigInt(TRADE_FEE)) / BigInt(FEE_DENOMINATOR);
+
+    // Should use [Fee]% amount more.
     return {
-      amountIn,
-      usdIn,
+      amountIn: amountIn + singularFeeAmount,
+      usdIn: usdIn + singularFeeUsd,
       amountOut,
       usdOut,
       minOutputAmount,
       priceIn,
       priceOut,
       swapPathStats: undefined,
+      singularFeeAmount,
+      singularFeeUsd,
     };
   }
 
@@ -196,14 +213,21 @@ export function getSwapAmountsByToValue(p: {
     usdIn = 0n;
   }
 
+  const singularFeeAmount = (amountIn * BigInt(TRADE_FEE)) / BigInt(FEE_DENOMINATOR);
+  const singularFeeUsd = (usdIn * BigInt(TRADE_FEE)) / BigInt(FEE_DENOMINATOR);
+
+  // Should use [Fee]% amount more.
+
   return {
-    amountIn,
-    usdIn,
+    amountIn: amountIn + singularFeeAmount,
+    usdIn: usdIn + singularFeeUsd,
     amountOut,
     usdOut,
     minOutputAmount,
     priceIn,
     priceOut,
     swapPathStats,
+    singularFeeAmount,
+    singularFeeUsd,
   };
 }

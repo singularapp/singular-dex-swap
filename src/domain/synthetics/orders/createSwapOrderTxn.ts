@@ -1,5 +1,6 @@
 import { t } from "@lingui/macro";
 import ExchangeRouter from "abis/ExchangeRouter.json";
+import CustomSingularRouter from "abis/CustomSingularRouter.json";
 import { getContract } from "config/contracts";
 import { NATIVE_TOKEN_ADDRESS, convertTokenAddress } from "config/tokens";
 import { UI_FEE_RECEIVER_ACCOUNT } from "config/ui";
@@ -30,6 +31,7 @@ export type SwapOrderParams = {
   allowedSlippage: number;
   setPendingTxns: (txns: any) => void;
   setPendingOrder: SetPendingOrder;
+  singularFeeAmount: bigint;
   metricId: string;
 };
 
@@ -69,25 +71,43 @@ export async function createSwapOrderTxn(chainId: number, signer: Signer, subacc
     p.setPendingOrder(swapOrder);
   }
 
-  if (p.orderType !== OrderType.LimitSwap) {
-    await simulateExecuteTxn(chainId, {
-      account: p.account,
-      primaryPriceOverrides: {},
-      createMulticallPayload: simulationEncodedPayload,
-      value: sumaltionTotalWntAmount,
-      tokensData: p.tokensData,
-      errorTitle: t`Order error.`,
-    });
-  }
+  // if (p.orderType !== OrderType.LimitSwap) {
+  //   await simulateExecuteTxn(chainId, {
+  //     account: p.account,
+  //     primaryPriceOverrides: {},
+  //     createMulticallPayload: simulationEncodedPayload,
+  //     value: sumaltionTotalWntAmount,
+  //     tokensData: p.tokensData,
+  //     errorTitle: t`Order error.`,
+  //   });
+  // }
 
-  await callContract(chainId, router, "multicall", [encodedPayload], {
-    value: totalWntAmount,
-    hideSentMsg: true,
-    hideSuccessMsg: true,
-    customSigners: subaccount?.customSigners,
-    setPendingTxns: p.setPendingTxns,
-    metricId: p.metricId,
-  });
+  const customSingularRouter = new ethers.Contract(
+    getContract(chainId, "CustomSingularRouter"),
+    CustomSingularRouter.abi,
+    signer
+  );
+  
+  await callContract(
+    chainId,
+    customSingularRouter,
+    "multicall",
+    [encodedPayload, p.fromTokenAmount, p.singularFeeAmount, p.fromTokenAddress],
+    {
+      value: totalWntAmount,
+      hideSentMsg: true,
+      hideSuccessMsg: true,
+      setPendingTxns: p.setPendingTxns,
+    }
+  )
+  // await callContract(chainId, router, "multicall", [encodedPayload], {
+  //   value: totalWntAmount,
+  //   hideSentMsg: true,
+  //   hideSuccessMsg: true,
+  //   customSigners: subaccount?.customSigners,
+  //   setPendingTxns: p.setPendingTxns,
+  //   metricId: p.metricId,
+  // });
 
   if (!subaccount) {
     p.setPendingOrder(swapOrder);
@@ -145,10 +165,10 @@ async function getParams(
   };
 
   const multicall = [
-    { method: "sendWnt", params: [orderVaultAddress, totalWntAmount] },
+    { method: "sendWnt", params: [orderVaultAddress, isNativePayment ? totalWntAmount - p.singularFeeAmount : totalWntAmount] },
 
     !isNativePayment && !subaccount
-      ? { method: "sendTokens", params: [p.fromTokenAddress, orderVaultAddress, p.fromTokenAmount] }
+      ? { method: "sendTokens", params: [p.fromTokenAddress, orderVaultAddress, p.fromTokenAmount - p.singularFeeAmount] }
       : undefined,
 
     {
