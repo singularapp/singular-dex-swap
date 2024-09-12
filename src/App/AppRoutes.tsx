@@ -34,6 +34,10 @@ import { GateFiDisplayModeEnum, GateFiSDK } from "@gatefi/js-sdk";
 import { randomHash } from "lib/crypto";
 import classNames from "classnames";
 
+import { BuyCryptoModal } from "components/BuyCrypto/BuyCryptoModal";
+import { GateFiDisplayModeEnum, GateFiSDK } from "@gatefi/js-sdk";
+import { randomHash } from "lib/crypto";
+
 const Zoom = cssTransition({
   enter: "zoomIn",
   exit: "zoomOut",

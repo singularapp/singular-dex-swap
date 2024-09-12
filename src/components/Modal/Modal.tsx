@@ -50,6 +50,7 @@ export default function Modal({
   onAfterOpen,
   setIsVisible,
   qa,
+  hideDivider,
 }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
   const modalBodyRef = useRef<HTMLDivElement>(null);
