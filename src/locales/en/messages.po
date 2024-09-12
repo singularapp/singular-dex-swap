@@ -1,11 +1,17 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2024-09-12 17:38-0400\n"
+"POT-Creation-Date: 2022-09-21 18:47+0530\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
 #: src/pages/AccountDashboard/generalPerformanceDetailsDebug.tsx
 msgid "Unrealized Base PnL"
@@ -31,10 +37,6 @@ msgstr "Decentralized Trading Protocol"
 #: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
 msgid "Claim submitted!"
 msgstr "Claim submitted!"
-
-#: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
-msgid "Vest with SLP on Avalanche"
-msgstr "Vest with SLP on Avalanche"
 
 #: src/components/AddressDropdown/AddressDropdown.tsx
 msgid "Disconnect"
@@ -92,10 +94,6 @@ msgstr "Receiver has not staked SD tokens before"
 msgid "Subaccount generation failed"
 msgstr "Subaccount generation failed"
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SD staking calculator and guide"
-msgstr "SD staking calculator and guide"
-
 #: src/components/Exchange/ConfirmationBox.jsx
 msgid "{existingTriggerOrderLength, plural, one {You have an active trigger order that might execute immediately after you open this position. Please cancel the order or accept the confirmation to continue.} other {You have # active trigger orders that might execute immediately after you open this position. Please cancel the orders or accept the confirmation to continue.}}"
 msgstr "{existingTriggerOrderLength, plural, one {You have an active trigger order that might execute immediately after you open this position. Please cancel the order or accept the confirmation to continue.} other {You have # active trigger orders that might execute immediately after you open this position. Please cancel the orders or accept the confirmation to continue.}}"
@@ -111,10 +109,6 @@ msgstr "Could not decrease {tokenSymbol} {longOrShortText} within the allowed sl
 #: src/components/ModalViews/RedirectModal.tsx
 msgid "Agree"
 msgstr "Agree"
-
-#: src/pages/BeginAccountTransfer/BeginAccountTransfer.tsx
-msgid "Sender has withdrawn all tokens from SD Vesting Vault"
-msgstr "Sender has withdrawn all tokens from SD Vesting Vault"
 
 #: src/pages/AccountDashboard/DailyAndCumulativePnL.tsx
 msgid "Daily Loss"
@@ -135,10 +129,6 @@ msgstr "Max Pool Capacity"
 #: src/components/Synthetics/TradeHistory/keys.ts
 msgid "Failed Take-Profit Order"
 msgstr "Failed Take-Profit Order"
-
-#: src/pages/Stake/StakeV2.tsx
-msgid "Withdraw from SD Vault"
-msgstr "Withdraw from SD Vault"
 
 #: src/pages/Ecosystem/Ecosystem.jsx
 msgid "Yield Optimizer on Avalanche"
@@ -167,11 +157,6 @@ msgstr "Type"
 #: src/components/Synthetics/OrderItem/OrderItem.tsx
 msgid "Close order"
 msgstr "Close order"
-
-#: src/pages/ComingSoon/ComingSoon.tsx
-#: src/pages/PageNotFound/PageNotFound.tsx
-msgid "<0>Return to </0><1>Homepage</1> <2>or </2> <3>Perpetuals</3>"
-msgstr "<0>Return to </0><1>Homepage</1> <2>or </2> <3>Perpetuals</3>"
 
 #: src/components/Exchange/PositionSeller.jsx
 msgid "Order submitted!"
@@ -257,10 +242,6 @@ msgstr "{seconds}s"
 #: src/components/Exchange/NoLiquidityErrorModal.tsx
 msgid "{0} Required"
 msgstr "{0} Required"
-
-#: src/components/Glp/GlpSwap.jsx
-msgid "{0} SLP (${1})"
-msgstr "{0} SLP (${1})"
 
 #: src/components/Synthetics/UserIncentiveDistributionList/UserIncentiveDistributionList.tsx
 msgid "No incentives distribution history yet."
@@ -376,14 +357,6 @@ msgstr "Cancel Stop-Loss Order"
 msgid "Max pool USD exceeded"
 msgstr "Max pool USD exceeded"
 
-#: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
-msgid "Claim esSD"
-msgstr "Claim esSD"
-
-#: src/pages/BuyGMX/BuyGMX.tsx
-msgid "Buy SD from Uniswap or directly on GMX (make sure to select Arbitrum):"
-msgstr "Buy SD from Uniswap or directly on GMX (make sure to select Arbitrum):"
-
 #: src/pages/AccountDashboard/HistoricalLists.tsx
 #: src/pages/Exchange/Exchange.tsx
 msgid "Positions"
@@ -428,10 +401,6 @@ msgstr "SELLABLE"
 #: src/pages/Dashboard/StatsCard.tsx
 msgid "Treasury"
 msgstr "Treasury"
-
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "esSD OTC Market"
-msgstr "esSD OTC Market"
 
 #: src/components/Synthetics/StatusNotification/SubaccountNotification.tsx
 msgid "View status"
@@ -492,10 +461,6 @@ msgstr "Funding Fee"
 msgid "Insufficient liquidity in the {0} market pool. Select a different pool for this market. Choosing a different pool would open a new position different from the existing one.<0><1>Switch to {1} market pool</1>.</0>"
 msgstr "Insufficient liquidity in the {0} market pool. Select a different pool for this market. Choosing a different pool would open a new position different from the existing one.<0><1>Switch to {1} market pool</1>.</0>"
 
-#: src/components/Glp/GlpSwap.jsx
-msgid "{0} SLP sold for {1} {2}!"
-msgstr "{0} SLP sold for {1} {2}!"
-
 #: src/components/Exchange/ConfirmationBox.jsx
 msgid "Confirm Limit Order"
 msgstr "Confirm Limit Order"
@@ -518,10 +483,6 @@ msgstr "You can transfer ETH from other networks to Arbitrum using any of the be
 #: src/components/Synthetics/StatusNotification/SubaccountNotification.tsx
 msgid "Subaccount deactivated"
 msgstr "Subaccount deactivated"
-
-#: src/components/SettingsModal/SettingsModal.tsx
-msgid "The Max Network Fee is set to a higher value to handle potential increases in gas price during order execution. Any excess network fee will be refunded to your account when the order is executed. Only applicable to SD."
-msgstr "The Max Network Fee is set to a higher value to handle potential increases in gas price during order execution. Any excess network fee will be refunded to your account when the order is executed. Only applicable to SD."
 
 #: src/components/Exchange/SwapBox.jsx
 msgid "Created limit order for {0} {1}: {2} USD!"
@@ -639,14 +600,6 @@ msgstr "Insufficient staked tokens"
 msgid "Select a Pool"
 msgstr "Select a Pool"
 
-#: src/components/BuyCrypto/BuyCryptoModal.tsx
-msgid "Buy Bitcoin, Ethereum and USDT via our partner Transak & Unlimit."
-msgstr "Buy Bitcoin, Ethereum and USDT via our partner Transak & Unlimit."
-
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "Yield simulator for SD"
-msgstr "Yield simulator for SD"
-
 #: src/lib/wallets/connecters/binanceW3W/binanceWallet.ts
 msgid "Tap [Create Wallet] to start using your Web3 Wallet."
 msgstr "Tap [Create Wallet] to start using your Web3 Wallet."
@@ -690,10 +643,6 @@ msgstr "Max network fee buffer precision is 0.01%"
 msgid "Max. Leverage Exceeded"
 msgstr "Max. Leverage Exceeded"
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "Telegram bot for Open Interest on SD"
-msgstr "Telegram bot for Open Interest on SD"
-
 #: src/components/SearchInput/SearchInput.tsx
 msgid "Search Token"
 msgstr "Search Token"
@@ -707,6 +656,12 @@ msgstr "Search Token"
 #: src/pages/Stake/StakeV2.tsx
 #~ msgid "{0} tokens have been converted to GMX from the {1} esGMX deposited for vesting."
 #~ msgstr "{0} tokens have been converted to GMX from the {1} esGMX deposited for vesting."
+
+#: src/pages/Stake/StakeV2.tsx
+#: src/pages/Stake/StakeV2.tsx
+#: src/pages/Stake/StakeV2.tsx
+msgid "{0} tokens have been converted to GMX from the {1} esGMX deposited for vesting."
+msgstr "{0} tokens have been converted to GMX from the {1} esGMX deposited for vesting."
 
 #: src/pages/LeaderboardPage/components/LeaderboardAccountsTable.tsx
 #: src/pages/LeaderboardPage/components/LeaderboardPositionsTable.tsx
@@ -777,14 +732,6 @@ msgstr "You can check your claim history <0>here</0>."
 msgid "Maximum allowed actions is required"
 msgstr "Maximum allowed actions is required"
 
-#: src/pages/Stake/StakeV2.tsx
-msgid "Convert esSD tokens to SD tokens.<0/>Please read the <1>vesting details</1> before using the vaults."
-msgstr "Convert esSD tokens to SD tokens.<0/>Please read the <1>vesting details</1> before using the vaults."
-
-#: src/pages/BeginAccountTransfer/BeginAccountTransfer.tsx
-msgid "Receiver has staked SD/SLP before"
-msgstr "Receiver has staked SD/SLP before"
-
 #: src/components/Synthetics/TradeHistory/TradeHistoryRow/utils/position.ts
 #: src/components/Synthetics/TradeHistory/TradeHistoryRow/utils/position.ts
 #: src/components/Synthetics/TradeHistory/TradeHistoryRow/utils/position.ts
@@ -824,10 +771,6 @@ msgstr "{0} price"
 #: src/domain/synthetics/trade/utils/validation.ts
 msgid "Max {0} buyable amount exceeded"
 msgstr "Max {0} buyable amount exceeded"
-
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SD Perpetuals Data"
-msgstr "SD Perpetuals Data"
 
 #: src/components/Glp/GlpSwap.jsx
 msgid "Sell submitted!"
@@ -918,10 +861,6 @@ msgstr "Stop-Loss"
 msgid "Positions ({positionsCount})"
 msgstr "Positions ({positionsCount})"
 
-#: src/pages/BuyGMX/BuyGMX.tsx
-msgid "Buy SD from centralized exchanges:"
-msgstr "Buy SD from centralized exchanges:"
-
 #: src/components/Synthetics/OrderEditor/OrderEditor.tsx
 msgid "As network fees have increased, an additional network fee is needed."
 msgstr "As network fees have increased, an additional network fee is needed."
@@ -971,10 +910,6 @@ msgstr "Swap on 1inch"
 msgid "Open {0} in Coingecko"
 msgstr "Open {0} in Coingecko"
 
-#: src/components/Referrals/AffiliatesStats.tsx
-msgid "V1 esSD"
-msgstr "V1 esSD"
-
 #: src/components/Migration/Migration.jsx
 msgid "Total Assets Migrated"
 msgstr "Total Assets Migrated"
@@ -1020,10 +955,6 @@ msgstr "Average leverage used."
 #: src/components/Exchange/SwapBox.jsx
 msgid "Insufficient Liquidity"
 msgstr "Insufficient Liquidity"
-
-#: src/pages/LaunchPad/LaunchPad.tsx
-msgid "Singular DEX launchpad unlocks unparalleled opportunities for global investors and institutions."
-msgstr "Singular DEX launchpad unlocks unparalleled opportunities for global investors and institutions."
 
 #: src/components/Synthetics/NetworkFeeRow/NetworkFeeRow.tsx
 msgid "The max network fee is overestimated, including by the buffer set under settings. Upon execution, any excess network fee is sent back to your account."
@@ -1106,10 +1037,6 @@ msgstr "Allow all my tokens to be transferred to a new account"
 msgid "Avalanche Max. APY: {0}"
 msgstr "Avalanche Max. APY: {0}"
 
-#: src/pages/LaunchPad/LaunchPad.tsx
-msgid "Most Liquid DEX Launchpad"
-msgstr "Most Liquid DEX Launchpad"
-
 #: src/components/Exchange/ConfirmationBox.jsx
 #: src/components/Exchange/OrdersList.jsx
 #: src/components/Exchange/OrdersList.jsx
@@ -1127,10 +1054,6 @@ msgstr "Collateral"
 #: src/components/AprInfo/AprInfo.tsx
 msgid "Base APY"
 msgstr "Base APY"
-
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SD Pages"
-msgstr "SD Pages"
 
 #: src/components/Exchange/PositionsList.jsx
 #: src/components/Exchange/PositionsList.jsx
@@ -1158,11 +1081,6 @@ msgstr "Since your position's collateral is in {symbol}, with an initial value h
 msgid "Short Liq."
 msgstr "Short Liq."
 
-#: src/components/Glp/GlpSwap.jsx
-#: src/components/Glp/GlpSwap.jsx
-msgid "Available amount to deposit into SLP."
-msgstr "Available amount to deposit into SLP."
-
 #: src/components/Synthetics/MarketStats/components/MarketDescription.tsx
 msgid "This token automatically accrues fees from leverage trading and swaps for the {0} market. It is also exposed to {composition} as per the composition displayed."
 msgstr "This token automatically accrues fees from leverage trading and swaps for the {0} market. It is also exposed to {composition} as per the composition displayed."
@@ -1182,10 +1100,6 @@ msgstr "Request Withdraw"
 #: src/components/Synthetics/PositionItem/PositionItem.tsx
 msgid "Click on the Position to select its market, then use the trade box to increase your Position Size, or to set Take-Profit / Stop-Loss Orders."
 msgstr "Click on the Position to select its market, then use the trade box to increase your Position Size, or to set Take-Profit / Stop-Loss Orders."
-
-#: src/components/Guide/PerpectualGuide.tsx
-msgid "Skip"
-msgstr "Skip"
 
 #: src/components/ToastifyDebug/ToastifyDebug.tsx
 msgid "Copied"
@@ -1224,10 +1138,6 @@ msgstr "The total realized and unrealized profit and loss for the period, consid
 #: src/components/Referrals/AffiliatesStats.tsx
 msgid "Volume on V2"
 msgstr "Volume on V2"
-
-#: src/components/Glp/GlpSwap.jsx
-msgid "Max pool capacity reached for {0}. Please mint SLP using another token"
-msgstr "Max pool capacity reached for {0}. Please mint SLP using another token"
 
 #: src/pages/Stake/StakeV2.tsx
 msgid "Vest"
@@ -1351,13 +1261,10 @@ msgstr "The owner of this Referral Code has set a custom discount of {currentTie
 msgid "Leftover position below 10 USD"
 msgstr "Leftover position below 10 USD"
 
+#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Dashboard/DashboardV2.tsx
 msgid "Dashboard"
 msgstr "Dashboard"
-
-#: src/pages/BuyGMX/BuyGMX.tsx
-msgid "Buy SD from centralized services"
-msgstr "Buy SD from centralized services"
 
 #: src/components/Synthetics/TradeFeesRow/TradeFeesRow.tsx
 msgid "Swap Price Impact"
@@ -1408,14 +1315,14 @@ msgstr "Withdraw {0} USD from {1}{longOrShortText}"
 msgid "{orderTypeLabel} {positionText}, -{0}"
 msgstr "{orderTypeLabel} {positionText}, -{0}"
 
-#: src/pages/PageNotFound/PageNotFound.tsx
-#: src/pages/PageNotFound/PageNotFound.tsx
+#: src/pages/PageNotFound/PageNotFound.jsx
+#: src/pages/PageNotFound/PageNotFound.jsx
 msgid "Page not found"
 msgstr "Page not found"
 
-#: src/pages/BeginAccountTransfer/BeginAccountTransfer.tsx
-msgid "Vested SLP not withdrawn"
-msgstr "Vested SLP not withdrawn"
+#: src/pages/Ecosystem/Ecosystem.jsx
+msgid "Telegram bot for GMX position updates"
+msgstr "Telegram bot for GMX position updates"
 
 #: src/pages/Ecosystem/Ecosystem.jsx
 #~ msgid "Telegram bot for GMX position updates"
@@ -1511,11 +1418,6 @@ msgstr "Claim failed"
 msgid "Update Limit Swap"
 msgstr "Update Limit Swap"
 
-#: src/pages/Stake/StakeV2.tsx
-#: src/pages/Stake/StakeV2.tsx
-msgid "Claim SD Rewards"
-msgstr "Claim SD Rewards"
-
 #: src/pages/PositionsOverview/PositionsOverview.jsx
 msgid "fee"
 msgstr "fee"
@@ -1539,10 +1441,6 @@ msgstr "Order executed"
 msgid "Select Positions"
 msgstr "Select Positions"
 
-#: src/pages/Actions/ActionsV1/ActionsV1.tsx
-msgid "SD V1 {networkName} actions for all accounts."
-msgstr "SD V1 {networkName} actions for all accounts."
-
 #: src/components/Synthetics/TradeBox/hooks/useCollateralInTooltipContent.tsx
 msgid "You will be long {indexSymbol} from your long position, while being long {collateralSymbol} from your {collateralSymbol} collateral. The liquidation price will vary based on the price of {collateralSymbol}."
 msgstr "You will be long {indexSymbol} from your long position, while being long {collateralSymbol} from your {collateralSymbol} collateral. The liquidation price will vary based on the price of {collateralSymbol}."
@@ -1553,10 +1451,6 @@ msgstr "You will be long {indexSymbol} from your long position, while being long
 #: src/components/Referrals/TradersStats.tsx
 msgid "V2 Avalanche"
 msgstr "V2 Avalanche"
-
-#: src/components/Glp/GlpSwap.jsx
-msgid "SLP sell disabled, pending {0} upgrade"
-msgstr "SLP sell disabled, pending {0} upgrade"
 
 #: src/components/Synthetics/MarketCard/MarketCard.tsx
 msgid "Short Open Interest"
@@ -1581,10 +1475,6 @@ msgstr "NFT Wallet"
 #: src/components/Synthetics/GmSwap/GmFees/GmFees.tsx
 msgid "Fees and Price Impact"
 msgstr "Fees and Price Impact"
-
-#: src/components/Guide/PerpectualGuide.tsx
-msgid "Swap: Exchange one cryptocurrency for another directly on SingularDEX. Use this feature to adjust your portfolio quickly in response to market changes or to prepare for a trading strategy."
-msgstr "Swap: Exchange one cryptocurrency for another directly on SingularDEX. Use this feature to adjust your portfolio quickly in response to market changes or to prepare for a trading strategy."
 
 #: src/pages/BuyGMX/BuyGMX.tsx
 msgid "You can buy ETH directly on <0>Arbitrum</0> using these options:"
@@ -1710,10 +1600,6 @@ msgstr "Price above Mark Price."
 msgid "Withdrew {0} from {positionText}"
 msgstr "Withdrew {0} from {positionText}"
 
-#: src/components/ModalViews/RedirectModal.tsx
-msgid "You are leaving dapp.singulardex.com and will be redirected to a third party, independent website."
-msgstr "You are leaving dapp.singulardex.com and will be redirected to a third party, independent website."
-
 #: src/components/Exchange/ConfirmationBox.jsx
 #: src/components/Exchange/PositionSeller.jsx
 msgid "Create Order"
@@ -1746,10 +1632,6 @@ msgstr "Max {0} long capacity"
 #: src/domain/synthetics/trade/utils/validation.ts
 msgid "Enter a  price"
 msgstr "Enter a  price"
-
-#: src/pages/Stake/StakeV2.tsx
-msgid "Earn prizes by participating in SD Trading Competitions."
-msgstr "Earn prizes by participating in SD Trading Competitions."
 
 #: src/pages/OrdersOverview/OrdersOverview.jsx
 msgid "Account"
@@ -1897,10 +1779,6 @@ msgstr "USD Value may not be accurate since the data does not contain prices for
 msgid "SD dashboards and analytics."
 msgstr "SD dashboards and analytics."
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SD dashboards and analytics."
-msgstr "SD dashboards and analytics."
-
 #: src/components/Synthetics/TradeboxPoolWarnings/TradeboxPoolWarnings.tsx
 msgid "and zero price impact"
 msgstr "and zero price impact"
@@ -1979,10 +1857,6 @@ msgstr "Max"
 msgid "Checking code..."
 msgstr "Checking code..."
 
-#: src/pages/Stake/StakeV2.tsx
-msgid "Unstake esSD"
-msgstr "Unstake esSD"
-
 #: src/components/Synthetics/MarketsList/MarketsList.tsx
 #: src/pages/Dashboard/OverviewCard.tsx
 msgid "GM Pools"
@@ -2021,6 +1895,10 @@ msgstr "Buying {symbol}..."
 msgid "Could not increase {0} {longOrShortText}, +{1} USD, Acceptable Price: {2}  USD"
 msgstr "Could not increase {0} {longOrShortText}, +{1} USD, Acceptable Price: {2}  USD"
 
+#: src/pages/BuyGMX/BuyGMX.tsx
+msgid "Buy GMX on {chainName}"
+msgstr "Buy GMX on {chainName}"
+
 #: src/components/Exchange/PositionEditor.jsx
 #: src/components/Exchange/PositionSeller.jsx
 #: src/components/Exchange/PositionsList.jsx
@@ -2044,10 +1922,6 @@ msgstr "Size"
 #: src/components/InterviewToast/InterviewToast.tsx
 msgid "We value your experience and insights and invite you to participate in an anonymous one-on-one chat."
 msgstr "We value your experience and insights and invite you to participate in an anonymous one-on-one chat."
-
-#: src/pages/Jobs/Jobs.jsx
-msgid "Job openings at SD."
-msgstr "Job openings at SD."
 
 #: src/components/Exchange/SwapBox.jsx
 #: src/components/Glp/GlpSwap.jsx
@@ -2158,10 +2032,6 @@ msgstr "Positive funding fees can be claimed under the claims tab."
 #: src/components/Glp/GlpSwap.jsx
 msgid "{nativeTokenSymbol} ({wrappedTokenSymbol}) APR"
 msgstr "{nativeTokenSymbol} ({wrappedTokenSymbol}) APR"
-
-#: src/pages/Stake/StakeV2.tsx
-msgid "APRs are updated weekly on Wednesday and will depend on the fees collected for the week. <0/><1/>Historical SLP APRs can be checked in this <2>community dashboard</2>."
-msgstr "APRs are updated weekly on Wednesday and will depend on the fees collected for the week. <0/><1/>Historical SLP APRs can be checked in this <2>community dashboard</2>."
 
 #: src/components/Synthetics/Claims/ClaimHistoryRow/ClaimCollateralHistoryRow.tsx
 #: src/components/Synthetics/Claims/filters/ActionFilter.tsx
@@ -2400,9 +2270,10 @@ msgstr "TVL"
 msgid "Shift Fee"
 msgstr "Shift Fee"
 
-#: src/pages/Stake/StakeV2.tsx
-msgid "You have no SD tokens to claim."
-msgstr "You have no SD tokens to claim."
+#: src/pages/Dashboard/DashboardV2.tsx
+#: src/pages/Dashboard/DashboardV2.tsx
+msgid "GLP Pool"
+msgstr "GLP Pool"
 
 #: src/pages/Dashboard/GlpCard.tsx
 #: src/pages/Dashboard/OverviewCard.tsx
@@ -2448,6 +2319,8 @@ msgstr "The address of the esSD (IOU) token is {esGmxIouAddress}."
 msgid "Borrow Fee Rate"
 msgstr "Borrow Fee Rate"
 
+#: src/components/Header/AppHeaderUser.tsx
+#: src/components/Header/AppHeaderUser.tsx
 #: src/components/ModalViews/RedirectModal.tsx
 #: src/pages/Home/Home.tsx
 msgid "Launch App"
@@ -2464,10 +2337,6 @@ msgstr "Deposited {0} USD into {tokenSymbol} {longOrShortText}"
 #: src/components/Synthetics/StatusNotification/GmStatusNotification.tsx
 msgid "Fulfilling sell request"
 msgstr "Fulfilling sell request"
-
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "Projects developed by the SD community. <0/>Please exercise caution when interacting with any app, apps are fully maintained by community developers."
-msgstr "Projects developed by the SD community. <0/>Please exercise caution when interacting with any app, apps are fully maintained by community developers."
 
 #: src/components/Exchange/TradeHistory.jsx
 msgid "{actionDisplay} Order"
@@ -2514,10 +2383,6 @@ msgstr "SD staking calculator"
 msgid "Fees generated by SD"
 msgstr "Fees generated by SD"
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "Fees generated by SD"
-msgstr "Fees generated by SD"
-
 #: src/components/Exchange/TradeHistory.jsx
 msgid "Request decrease {0} {longOrShortText}, -{1} USD, Acceptable Price: {2} {3} USD"
 msgstr "Request decrease {0} {longOrShortText}, -{1} USD, Acceptable Price: {2} {3} USD"
@@ -2551,10 +2416,6 @@ msgstr "Amount to claim"
 #: src/components/Synthetics/OrderEditor/OrderEditor.tsx
 msgid "Enter a new ratio"
 msgstr "Enter a new ratio"
-
-#: src/components/BuyCrypto/BuyCryptoModal.tsx
-msgid "Buy Crypto is a service provided and hosted by our third-party provider Transak and Unlimit Crypto. Singular accepts no liability for any services provided by third parties, including any financial loss or damage caused due to the use of services available on or through any third-party provider. For any support required relating to Transak or Unlimit Crypto, please contact Transak or Unlimit Crypto directly."
-msgstr "Buy Crypto is a service provided and hosted by our third-party provider Transak and Unlimit Crypto. Singular accepts no liability for any services provided by third parties, including any financial loss or damage caused due to the use of services available on or through any third-party provider. For any support required relating to Transak or Unlimit Crypto, please contact Transak or Unlimit Crypto directly."
 
 #: src/components/Exchange/OrderEditor.jsx
 #: src/components/Exchange/SwapBox.jsx
@@ -2596,14 +2457,6 @@ msgstr "Price above Liq. Price"
 #: src/domain/synthetics/orders/utils.tsx
 msgid "There may not be sufficient liquidity to execute the pay token to collateral token swap when the price conditions are met."
 msgstr "There may not be sufficient liquidity to execute the pay token to collateral token swap when the price conditions are met."
-
-#: src/pages/Stake/StakeV2.tsx
-msgid "<0>This will claim {0} SD.<1/><2/>After claiming, you can stake these SD tokens by using the \"Stake\" button in the SD section of this Earn page.<3/><4/></0>"
-msgstr "<0>This will claim {0} SD.<1/><2/>After claiming, you can stake these SD tokens by using the \"Stake\" button in the SD section of this Earn page.<3/><4/></0>"
-
-#: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
-msgid "No esSD to claim"
-msgstr "No esSD to claim"
 
 #: src/components/Glp/GlpSwap.jsx
 msgid "{0} pool exceeded, try different token"
@@ -2676,10 +2529,6 @@ msgstr "Enter up to 10 coins"
 msgid "Creating..."
 msgstr "Creating..."
 
-#: src/pages/BeginAccountTransfer/BeginAccountTransfer.tsx
-msgid "Please only use this for full account transfers.<0/>This will transfer all your SD, esSD, SLP, Multiplier Points and voting power to your new account.<1/>Transfers are only supported if the receiving account has not staked SD or SLP tokens before.<2/>Transfers are one-way, you will not be able to transfer staked tokens back to the sending account."
-msgstr "Please only use this for full account transfers.<0/>This will transfer all your SD, esSD, SLP, Multiplier Points and voting power to your new account.<1/>Transfers are only supported if the receiving account has not staked SD or SLP tokens before.<2/>Transfers are one-way, you will not be able to transfer staked tokens back to the sending account."
-
 #: src/components/Synthetics/SubaccountModal/SubaccountModal.tsx
 #: src/components/Synthetics/SubaccountModal/SubaccountModal.tsx
 msgid "Withdrawing from Subaccount"
@@ -2693,9 +2542,10 @@ msgstr "Settling Position Fees"
 msgid "Minimum received"
 msgstr "Minimum received"
 
-#: src/pages/BuyGMX/BuyGMX.tsx
-msgid "Buy SD from Traderjoe:"
-msgstr "Buy SD from Traderjoe:"
+#: src/components/Glp/GlpSwap.jsx
+#: src/components/Glp/GlpSwap.jsx
+msgid "Available amount to withdraw from GLP. Funds not utilized by current open positions."
+msgstr "Available amount to withdraw from GLP. Funds not utilized by current open positions."
 
 #: src/components/Glp/GlpSwap.jsx
 #: src/components/Glp/GlpSwap.jsx
@@ -2810,17 +2660,9 @@ msgstr "Increase Size (Limit)"
 msgid "SINGULAR Market Tokens"
 msgstr "SINGULAR Market Tokens"
 
-#: src/components/Synthetics/MarketTokenSelector/MarketTokenSelector.tsx
-msgid "SINGULAR Market Tokens"
-msgstr "SINGULAR Market Tokens"
-
 #: src/domain/synthetics/orders/utils.tsx
 msgid "The order may not execute at the desired {priceText} as its acceptable price impact is set to {formattedOrderAcceptablePriceImpact}, which is lower than the current market price impact of {formattedCurrentAcceptablePriceImpact}. It can be edited using the \"Edit\" button."
 msgstr "The order may not execute at the desired {priceText} as its acceptable price impact is set to {formattedOrderAcceptablePriceImpact}, which is lower than the current market price impact of {formattedCurrentAcceptablePriceImpact}. It can be edited using the \"Edit\" button."
-
-#: src/pages/Stake/StakeV2.tsx
-msgid "<0>Delegate your undelegated {0} SD DAO</0><1> voting power.</1>"
-msgstr "<0>Delegate your undelegated {0} SD DAO</0><1> voting power.</1>"
 
 #: src/components/Exchange/TradeHistory.jsx
 msgid "Liquidation Fee"
@@ -2850,14 +2692,6 @@ msgstr "Select Market"
 #: src/pages/PositionsOverview/PositionsOverview.jsx
 msgid "Open positions: {0}<0/>Under risk: {1}"
 msgstr "Open positions: {0}<0/>Under risk: {1}"
-
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SD Stats Page"
-msgstr "SD Stats Page"
-
-#: src/components/ModalViews/RedirectModal.tsx
-msgid "The website is a community deployed and maintained instance of the open source <0>SINGULAR front end</0>, hosted and served on the distributed, peer-to-peer <1>IPFS network</1>."
-msgstr "The website is a community deployed and maintained instance of the open source <0>SINGULAR front end</0>, hosted and served on the distributed, peer-to-peer <1>IPFS network</1>."
 
 #: src/components/Exchange/UsefulLinks.tsx
 msgid "Speed up page loading"
@@ -2891,11 +2725,6 @@ msgstr "Note that orders are not guaranteed to be executed.<0/><1/>This can occu
 msgid "Open Positions with Orders"
 msgstr "Open Positions with Orders"
 
-#: src/pages/BeginAccountTransfer/BeginAccountTransfer.tsx
-#: src/pages/BeginAccountTransfer/BeginAccountTransfer.tsx
-msgid "Vested SD not withdrawn"
-msgstr "Vested SD not withdrawn"
-
 #: src/components/Exchange/PositionSeller.jsx
 msgid "{nativeTokenSymbol} can not be sent to smart contract addresses. Select another token."
 msgstr "{nativeTokenSymbol} can not be sent to smart contract addresses. Select another token."
@@ -2907,10 +2736,6 @@ msgstr "Fetching token info..."
 #: src/components/Synthetics/TradeFeesRow/TradeFeesRow.tsx
 msgid "This swap is routed through several GM pools for the lowest possible fees and price impact."
 msgstr "This swap is routed through several GM pools for the lowest possible fees and price impact."
-
-#: src/components/TokenCard/TokenCard.tsx
-msgid "SD is the liquidity provider token for SD markets. Accrues 63% of the V2 markets generated fees."
-msgstr "SD is the liquidity provider token for SD markets. Accrues 63% of the V2 markets generated fees."
 
 #: src/components/Synthetics/TradeHistory/TradeHistoryRow/utils/shared.ts
 msgid "Not enough Available Liquidity to fill the Order. The Order will get filled when the condition is met and there is enough Available Liquidity."
@@ -3057,10 +2882,6 @@ msgstr "Execute Order: Swap {fromAmountDisplay} {0} for {toAmountDisplay} {1}"
 #: src/components/Exchange/NoLiquidityErrorModal.tsx
 msgid "Buy {swapTokenSymbol} on 1inch"
 msgstr "Buy {swapTokenSymbol} on 1inch"
-
-#: src/pages/Stake/StakeV2.tsx
-msgid "You need a total of at least {0} {stakeTokenLabel} to vest {1} esSD."
-msgstr "You need a total of at least {0} {stakeTokenLabel} to vest {1} esSD."
 
 #: src/pages/AccountDashboard/GeneralPerformanceDetails.tsx
 #: src/pages/LeaderboardPage/components/LeaderboardAccountsTable.tsx
@@ -3229,10 +3050,6 @@ msgstr "High Slippage, Swap Anyway"
 msgid "<0>{0}</0> <1><2>{indexName}</2><3>[{poolName}]</3></1>"
 msgstr "<0>{0}</0> <1><2>{indexName}</2><3>[{poolName}]</3></1>"
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SD fundamentals"
-msgstr "SD fundamentals"
-
 #: src/components/Synthetics/TradeFeesRow/TradeFeesRow.tsx
 msgid "Swap {0} to {1}"
 msgstr "Swap {0} to {1}"
@@ -3276,10 +3093,6 @@ msgstr "Unknown Error"
 msgid "Buying..."
 msgstr "Buying..."
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SD staking rewards updates and insights"
-msgstr "SD staking rewards updates and insights"
-
 #: src/components/Synthetics/TradeFeesRow/TradeFeesRow.tsx
 msgid "Swap UI Fee"
 msgstr "Swap UI Fee"
@@ -3307,17 +3120,11 @@ msgstr "Sender has withdrawn all tokens from Affiliate Vesting Vault"
 msgid "Liquidated"
 msgstr "Liquidated"
 
-#: src/pages/Stake/StakeV2.tsx
-msgid "<0>This will withdraw all esSD tokens as well as pause vesting.<1/><2/>esSD tokens that have been converted to SD will be claimed and remain as SD tokens.<3/><4/>To claim SD tokens without withdrawing, use the \"Claim\" button.<5/><6/></0>"
-msgstr "<0>This will withdraw all esSD tokens as well as pause vesting.<1/><2/>esSD tokens that have been converted to SD will be claimed and remain as SD tokens.<3/><4/>To claim SD tokens without withdrawing, use the \"Claim\" button.<5/><6/></0>"
-
 #: src/components/Synthetics/MarketCard/MarketCard.tsx
 #: src/components/Synthetics/MarketCard/MarketCard.tsx
 msgid "The ask price is used for opening longs and closing shorts."
 msgstr "The ask price is used for opening longs and closing shorts."
 
-#: src/components/LanguageDropdown/LanguageDropdown.tsx
-#: src/components/LanguageDropdown/LanguagePopupHome.tsx
 #: src/components/NetworkDropdown/LanguagePopupHome.tsx
 #: src/components/NetworkDropdown/NetworkDropdown.tsx
 msgid "Select Language"
@@ -3414,10 +3221,6 @@ msgstr "Start Unrealized PnL"
 msgid "AMOUNT"
 msgstr "AMOUNT"
 
-#: src/pages/Actions/SyntheticsActions.tsx
-msgid "SD {networkName} actions for all accounts."
-msgstr "SD {networkName} actions for all accounts."
-
 #: src/components/Synthetics/StatusNotification/FeesSettlementStatusNotification.tsx
 msgid "Sending settle request"
 msgstr "Sending settle request"
@@ -3489,10 +3292,6 @@ msgstr "You are earning rewards with {0} tokens.<0/>Tokens: {amountStr}."
 msgid "Deposit failed."
 msgstr "Deposit failed."
 
-#: src/components/Header/AppHeaderLinks.tsx
-msgid "SLP"
-msgstr "SLP"
-
 #: src/components/Synthetics/Claims/ClaimableCard.tsx
 msgid "Claimable Price Impact Rebates.<0/><1/><2>Read more</2>."
 msgstr "Claimable Price Impact Rebates.<0/><1/><2>Read more</2>."
@@ -3557,10 +3356,6 @@ msgstr "Order update failed."
 msgid "Waiting for Approval"
 msgstr "Waiting for Approval"
 
-#: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
-msgid "Vest with SD on Avalanche"
-msgstr "Vest with SD on Avalanche"
-
 #: src/components/Synthetics/MarketNetFee/MarketNetFee.tsx
 msgid "{longOrShort} positions {fundingAction} a funding fee of {fundingRate} per hour and do not pay a borrow fee."
 msgstr "{longOrShort} positions {fundingAction} a funding fee of {fundingRate} per hour and do not pay a borrow fee."
@@ -3607,10 +3402,6 @@ msgstr "Failed Deposit"
 #: src/components/Synthetics/TradeHistory/keys.ts
 msgid "Request Market Swap"
 msgstr "Request Market Swap"
-
-#: src/pages/BeginAccountTransfer/BeginAccountTransfer.tsx
-msgid "Receiver has not staked SLP tokens before"
-msgstr "Receiver has not staked SLP tokens before"
 
 #: src/pages/Actions/ActionsV1/ActionsV1.tsx
 msgid "Loss"
@@ -3719,10 +3510,6 @@ msgstr "No claims yet"
 msgid "Withdraw"
 msgstr "Withdraw"
 
-#: src/pages/BuyGlp/BuyGlp.jsx
-msgid "Purchase <0>SLP tokens</0> to earn ETH fees from swaps and leverage trading."
-msgstr "Purchase <0>SLP tokens</0> to earn ETH fees from swaps and leverage trading."
-
 #: src/pages/BuyGMX/BuyGMX.tsx
 msgid "Buy {nativeTokenSymbol}"
 msgstr "Buy {nativeTokenSymbol}"
@@ -3754,9 +3541,9 @@ msgstr "Shift request sent"
 msgid "SLP buy disabled, pending {0} upgrade"
 msgstr "SLP buy disabled, pending {0} upgrade"
 
-#: src/pages/Stake/StakeV2.tsx
-msgid "Stake <0>SD</0> and buy <1>SD</1> or <2>SLP</2> to earn rewards."
-msgstr "Stake <0>SD</0> and buy <1>SD</1> or <2>SLP</2> to earn rewards."
+#: src/pages/AccountDashboard/AccountDashboard.tsx
+msgid "GMX V2 Account"
+msgstr "GMX V2 Account"
 
 #: src/pages/AccountDashboard/AccountDashboard.tsx
 #~ msgid "GMX V2 Account"
@@ -3918,10 +3705,6 @@ msgstr "Updating order"
 msgid "Buy GLV"
 msgstr "Buy GLV"
 
-#: src/components/Glp/SwapErrorModal.tsx
-msgid "<0>The pool's capacity has been reached for {0}. Please use another token to buy SLP.</0><1>Check the \"Save on Fees\" section for tokens with the lowest fees.</1>"
-msgstr "<0>The pool's capacity has been reached for {0}. Please use another token to buy SLP.</0><1>Check the \"Save on Fees\" section for tokens with the lowest fees.</1>"
-
 #: src/pages/Ecosystem/Ecosystem.jsx
 msgid "Financial reports and protocol analytics"
 msgstr "Financial reports and protocol analytics"
@@ -3930,14 +3713,11 @@ msgstr "Financial reports and protocol analytics"
 msgid "Request increase {0} {longOrShortText}, +{1} USD, Acceptable Price: {2} {3} USD"
 msgstr "Request increase {0} {longOrShortText}, +{1} USD, Acceptable Price: {2} {3} USD"
 
+#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Stake/StakeV2.tsx
 #: src/pages/Stake/StakeV2.tsx
 msgid "Earn"
 msgstr "Earn"
-
-#: src/components/Glp/GlpSwap.jsx
-msgid "Max pool capacity reached for {0}<0/><1/>Please mint SLP using another token"
-msgstr "Max pool capacity reached for {0}<0/><1/>Please mint SLP using another token"
 
 #: src/components/Exchange/SwapBox.jsx
 #: src/components/Exchange/SwapBox.jsx
@@ -3957,9 +3737,9 @@ msgstr "GM Markets"
 msgid "Your opinions and experiences matter to us. Your feedback helps us understand what we are doing well and where we can make enhancements."
 msgstr "Your opinions and experiences matter to us. Your feedback helps us understand what we are doing well and where we can make enhancements."
 
-#: src/pages/ComingSoon/ComingSoon.tsx
-msgid "COMING SOON!"
-msgstr "COMING SOON!"
+#: src/pages/Stake/StakeV2.tsx
+msgid "Stake <0>GMX</0> and buy <1>GM</1> or <2>GLP</2> to earn rewards."
+msgstr "Stake <0>GMX</0> and buy <1>GM</1> or <2>GLP</2> to earn rewards."
 
 #: src/pages/Stake/StakeV2.tsx
 #~ msgid "Stake <0>GMX</0> and buy <1>GM</1> or <2>GLP</2> to earn rewards."
@@ -3995,10 +3775,6 @@ msgstr "SLP is the liquidity provider token for SD V1 markets. Accrues 70% of th
 #: src/pages/Dashboard/WeightText.tsx
 msgid "Read more"
 msgstr "Read more"
-
-#: src/pages/Stake/StakeV2.tsx
-msgid "Earn {incentivesToken} token incentives by purchasing SD tokens or trading in SD."
-msgstr "Earn {incentivesToken} token incentives by purchasing SD tokens or trading in SD."
 
 #: src/pages/AccountDashboard/GeneralPerformanceDetails.tsx
 msgid "This Year"
@@ -4214,6 +3990,10 @@ msgstr "<0>{0}</0> <1><2>{indexName}</2><3>[{poolName}]</3></1> <4>market select
 msgid "You will receive at least {0} {1} if this order is executed. The exact execution price may vary depending on fees at the time the order is executed."
 msgstr "You will receive at least {0} {1} if this order is executed. The exact execution price may vary depending on fees at the time the order is executed."
 
+#: src/components/Common/SEO.tsx
+msgid "GMX | Decentralized Perpetual Exchange"
+msgstr "GMX | Decentralized Perpetual Exchange"
+
 #: src/pages/OrdersOverview/OrdersOverview.jsx
 msgid "No position"
 msgstr "No position"
@@ -4229,17 +4009,13 @@ msgstr "No position"
 msgid "Cancel failed"
 msgstr "Cancel failed"
 
-#: src/components/Guide/PerpectualGuide.tsx
-msgid "Last"
-msgstr "Last"
-
 #: src/components/Synthetics/StatusNotification/OrderStatusNotification.tsx
 msgid "Fulfilling order request"
 msgstr "Fulfilling order request"
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SD ecosystem pages."
-msgstr "SD ecosystem pages."
+#: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
+msgid "You can currently vest a maximum of {0} esGMX tokens at a ratio of {1} {stakingToken} to 1 esGMX."
+msgstr "You can currently vest a maximum of {0} esGMX tokens at a ratio of {1} {stakingToken} to 1 esGMX."
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
 #~ msgid "You can currently vest a maximum of {0} esGMX tokens at a ratio of {1} {stakingToken} to 1 esGMX."
@@ -4384,14 +4160,6 @@ msgstr "UI Fee"
 msgid "Execute order simulation failed."
 msgstr "Execute order simulation failed."
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "Projects integrated with SD."
-msgstr "Projects integrated with SD."
-
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "Telegram bot for SD Swaps monitoring"
-msgstr "Telegram bot for SD Swaps monitoring"
-
 #: src/pages/CompleteAccountTransfer/CompleteAccountTransfer.jsx
 msgid "Invalid Transfer Addresses: Please check the url."
 msgstr "Invalid Transfer Addresses: Please check the url."
@@ -4404,15 +4172,6 @@ msgstr "GLP Index Composition"
 #: src/domain/synthetics/positions/utils.ts
 msgid "TP"
 msgstr "TP"
-
-#: src/pages/Stake/StakeV2.tsx
-msgid "SD Vault"
-msgstr "SD Vault"
-
-#: src/pages/Actions/ActionsRouter.tsx
-#: src/pages/Actions/ActionsV1/ActionsV1.tsx
-msgid "SD V1 Actions"
-msgstr "SD V1 Actions"
 
 #: src/components/Synthetics/ClaimModal/ClaimModal.tsx
 msgid "<0>Claimable Funding Fee.</0>"
@@ -4433,6 +4192,7 @@ msgstr "Claimable"
 msgid "Additionally, trigger orders are market orders and are not guaranteed to settle at the trigger price."
 msgstr "Additionally, trigger orders are market orders and are not guaranteed to settle at the trigger price."
 
+#: src/components/Header/AppHeaderLinks.tsx
 #: src/components/Header/HomeHeaderLinks.tsx
 msgid "Docs"
 msgstr "Docs"
@@ -4570,10 +4330,6 @@ msgstr "Stake failed"
 msgid "WALLET"
 msgstr "WALLET"
 
-#: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
-msgid "You have {0} esSD (IOU) tokens."
-msgstr "You have {0} esSD (IOU) tokens."
-
 #: src/components/Exchange/OrdersList.jsx
 #: src/components/Exchange/OrdersList.jsx
 #: src/components/Synthetics/OrderList/OrderList.tsx
@@ -4612,10 +4368,6 @@ msgstr "Price below Liq. Price"
 msgid "There is not enough {0} in your account on {networkName} to send this transaction.<0/><1/><2>Buy or Transfer {1} to {networkName}</2>"
 msgstr "There is not enough {0} in your account on {networkName} to send this transaction.<0/><1/><2>Buy or Transfer {1} to {networkName}</2>"
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SD explorer for stats and traders"
-msgstr "SD explorer for stats and traders"
-
 #: src/components/Synthetics/UserIncentiveDistributionList/UserIncentiveDistributionList.tsx
 msgid "Airdrop"
 msgstr "Airdrop"
@@ -4627,10 +4379,6 @@ msgstr "Unstake submitted!"
 #: src/pages/LeaderboardPage/components/LeaderboardContainer.tsx
 msgid "This competition is held on the {0} network. <0>Change your network</0> to participate."
 msgstr "This competition is held on the {0} network. <0>Change your network</0> to participate."
-
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SLP autocompounding vaults"
-msgstr "SLP autocompounding vaults"
 
 #: src/pages/LeaderboardPage/components/CompetitionCountdown.tsx
 msgid "This competition has ended."
@@ -4652,18 +4400,6 @@ msgstr "Expected 365d Fees are projected based on past {daysConsidered}d base AP
 #: src/pages/Exchange/Exchange.tsx
 msgid "Withdrew {0} USD from {tokenSymbol} {longOrShortText}."
 msgstr "Withdrew {0} USD from {tokenSymbol} {longOrShortText}."
-
-#: src/components/Header/AppHeaderLinks.tsx
-msgid "Perpetuals"
-msgstr "Perpetuals"
-
-#: src/components/Common/SEO.tsx
-msgid "SingularApp"
-msgstr "SingularApp"
-
-#: src/pages/ComingSoon/ComingSoon.tsx
-msgid "Coming Soon"
-msgstr "Coming Soon"
 
 #: src/components/Synthetics/SettleAccruedFundingFeeModal/SettleAccruedFundingFeeModal.tsx
 msgid "Accrued Funding Fee."
@@ -4752,10 +4488,6 @@ msgstr "Decreased"
 msgid "Decrease"
 msgstr "Decrease"
 
-#: src/components/Glp/GlpSwap.jsx
-msgid "Insufficient SLP balance"
-msgstr "Insufficient SLP balance"
-
 #: src/components/Exchange/PositionSeller.jsx
 msgid "Leftover collateral below 5 USD"
 msgstr "Leftover collateral below 5 USD"
@@ -4841,10 +4573,6 @@ msgstr "REBATE"
 msgid "There may not be sufficient liquidity to execute your order when the Min. Receive are met."
 msgstr "There may not be sufficient liquidity to execute your order when the Min. Receive are met."
 
-#: src/pages/BeginAccountTransfer/BeginAccountTransfer.tsx
-msgid "Sender has withdrawn all tokens from SLP Vesting Vault"
-msgstr "Sender has withdrawn all tokens from SLP Vesting Vault"
-
 #: src/pages/AccountDashboard/GeneralPerformanceDetails.tsx
 #: src/pages/LeaderboardPage/components/LeaderboardAccountsTable.tsx
 msgid "Total Trades"
@@ -4893,10 +4621,6 @@ msgstr "Fulfilling buy request"
 #: src/components/Synthetics/TradeHistory/TradeHistoryRow/utils/shared.ts
 msgid "Reason: {0}"
 msgstr "Reason: {0}"
-
-#: src/components/Guide/PerpectualGuide.tsx
-msgid "Go Long: Open a long position if you predict the price of a cryptocurrency will rise. Choose your leverage, set the position size, and confirm the order. This allows you to potentially profit from price increases."
-msgstr "Go Long: Open a long position if you predict the price of a cryptocurrency will rise. Choose your leverage, set the position size, and confirm the order. This allows you to potentially profit from price increases."
 
 #: src/components/Synthetics/GmList/GmTokensTotalBalanceInfo.tsx
 msgid "Wallet total accrued Fees"
@@ -4952,10 +4676,6 @@ msgstr "Cancel newly created orders"
 #: src/pages/Stake/StakeV2.tsx
 msgid "Delegate"
 msgstr "Delegate"
-
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "Returns calculator for SD and SLP"
-msgstr "Returns calculator for SD and SLP"
 
 #: src/pages/NftWallet/NftWallet.jsx
 msgid "Invalid NFT Address"
@@ -5167,11 +4887,6 @@ msgstr "Execute"
 msgid "Trades"
 msgstr "Trades"
 
-#: src/pages/Stake/StakeV2.tsx
-#: src/pages/Stake/StakeV2.tsx
-msgid "SD transfers not yet enabled"
-msgstr "SD transfers not yet enabled"
-
 #: src/pages/Ecosystem/Ecosystem.jsx
 msgid "Telegram Groups"
 msgstr "Telegram Groups"
@@ -5211,10 +4926,6 @@ msgstr "wstETH APR"
 #: src/pages/Ecosystem/Ecosystem.jsx
 msgid "Telegram Group"
 msgstr "Telegram Group"
-
-#: src/pages/BuyGlp/BuyGlp.jsx
-msgid "Buy / Sell SLP"
-msgstr "Buy / Sell SLP"
 
 #: src/components/Exchange/SwapBox.jsx
 msgid "Open a position"
@@ -5285,10 +4996,6 @@ msgstr "Incorrect Network"
 msgid "Incorrect Account"
 msgstr "Incorrect Account"
 
-#: src/pages/BuyGMX/BuyGMX.tsx
-msgid "Buy SD from decentralized exchanges"
-msgstr "Buy SD from decentralized exchanges"
-
 #: src/components/Exchange/PositionEditor.jsx
 msgid "Min residual collateral: 10 USD"
 msgstr "Min residual collateral: 10 USD"
@@ -5348,10 +5055,6 @@ msgstr "Target Weight"
 msgid "Winners:"
 msgstr "Winners:"
 
-#: src/pages/BuyGMX/BuyGMX.tsx
-msgid "Buy SD using FIAT gateways:"
-msgstr "Buy SD using FIAT gateways:"
-
 #: src/components/Exchange/SwapBox.jsx
 msgid "When closing the position, you can select which token you would like to receive the profits in."
 msgstr "When closing the position, you can select which token you would like to receive the profits in."
@@ -5402,10 +5105,6 @@ msgstr "Transaction"
 msgid "Invalid liq. price"
 msgstr "Invalid liq. price"
 
-#: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
-msgid "The esSD tokens can be staked or vested at any time."
-msgstr "The esSD tokens can be staked or vested at any time."
-
 #: src/pages/AccountDashboard/dailyAndCumulativePnLDebug.tsx
 msgid "Start unrealized pnl"
 msgstr "Start unrealized pnl"
@@ -5449,10 +5148,6 @@ msgstr "Max {0} in"
 msgid "Stop Loss Decrease"
 msgstr "Stop Loss Decrease"
 
-#: src/pages/LaunchPad/LaunchPad.tsx
-msgid "Apply Now"
-msgstr "Apply Now"
-
 #: src/components/SettingsModal/SettingsModal.tsx
 msgid "Allowed Slippage below {0}% may result in failed orders."
 msgstr "Allowed Slippage below {0}% may result in failed orders."
@@ -5491,14 +5186,6 @@ msgstr "LONG LIQ."
 #: src/components/Synthetics/PositionList/PositionList.tsx
 msgid "No open positions"
 msgstr "No open positions"
-
-#: src/components/Glp/GlpSwap.jsx
-msgid "{0} SLP bought with {1} {2}!"
-msgstr "{0} SLP bought with {1} {2}!"
-
-#: src/components/Glp/GlpSwap.jsx
-msgid "Fees may vary depending on which asset you use to buy SLP. <0/>Enter the amount of SLP you want to purchase in the order form, then check here to compare fees."
-msgstr "Fees may vary depending on which asset you use to buy SLP. <0/>Enter the amount of SLP you want to purchase in the order form, then check here to compare fees."
 
 #: src/components/Synthetics/GmSwap/GmSwapBox/GmSwapBox.tsx
 msgid "Sell GLV"
@@ -5654,11 +5341,9 @@ msgstr "Order cancelled."
 msgid "Buy or Transfer AVAX to Avalanche"
 msgstr "Buy or Transfer AVAX to Avalanche"
 
-#: src/pages/Stake/StakeV2.tsx
-#: src/pages/Stake/StakeV2.tsx
-#: src/pages/Stake/StakeV2.tsx
-msgid "{0} tokens have been converted to SD from the {1} esSD deposited for vesting."
-msgstr "{0} tokens have been converted to SD from the {1} esSD deposited for vesting."
+#: src/pages/Ecosystem/Ecosystem.jsx
+msgid "Telegram bot for Open Interest on GMX"
+msgstr "Telegram bot for Open Interest on GMX"
 
 #: src/pages/Ecosystem/Ecosystem.jsx
 #~ msgid "Telegram bot for Open Interest on GMX"
@@ -5718,10 +5403,6 @@ msgstr "Stop-Loss PnL"
 msgid "Wins and losses for fully closed positions."
 msgstr "Wins and losses for fully closed positions."
 
-#: src/components/Exchange/ExchangeBanner.jsx
-msgid "Trade on SD and win <0>$250.000</0> in prizes! Live until November 30th, <1>click here</1> to learn more."
-msgstr "Trade on SD and win <0>$250.000</0> in prizes! Live until November 30th, <1>click here</1> to learn more."
-
 #: src/lib/wallets/connecters/binanceW3W/binanceWallet.ts
 msgid "Open Binance app"
 msgstr "Open Binance app"
@@ -5729,10 +5410,6 @@ msgstr "Open Binance app"
 #: src/components/Glp/GlpSwap.jsx
 msgid "{0} selected in order form"
 msgstr "{0} selected in order form"
-
-#: src/pages/Stake/StakeV2.tsx
-msgid "<0>Delegate your undelegated {0} SD DAO</0><1> voting power before staking.</1>"
-msgstr "<0>Delegate your undelegated {0} SD DAO</0><1> voting power before staking.</1>"
 
 #: src/components/Migration/Migration.jsx
 #: src/pages/Stake/StakeV1.jsx
@@ -5784,18 +5461,14 @@ msgstr "You have a <0>pending transfer</0> to {pendingReceiver}."
 msgid "{0} {1} not supported"
 msgstr "{0} {1} not supported"
 
-#: src/pages/BuyGMX/BuyGMX.tsx
-msgid "Buy SD using Decentralized Exchange Aggregators:"
-msgstr "Buy SD using Decentralized Exchange Aggregators:"
-
 #: src/pages/Buy/Buy.tsx
 #: src/pages/Home/Home.tsx
 msgid "Protocol Tokens"
 msgstr "Protocol Tokens"
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SD Blueberry NFTs"
-msgstr "SD Blueberry NFTs"
+#: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
+msgid "After claiming you will be able to vest a maximum of {0} esGMX at a ratio of {1} {stakingToken} to 1 esGMX."
+msgstr "After claiming you will be able to vest a maximum of {0} esGMX at a ratio of {1} {stakingToken} to 1 esGMX."
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
 #~ msgid "After claiming you will be able to vest a maximum of {0} esGMX at a ratio of {1} {stakingToken} to 1 esGMX."
@@ -5847,10 +5520,6 @@ msgstr "Price above lowest Limit Price."
 msgid "Limit Increase"
 msgstr "Limit Increase"
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SD Announcements and Updates"
-msgstr "SD Announcements and Updates"
-
 #: src/components/Exchange/PositionsList.jsx
 #: src/components/Exchange/PositionsList.jsx
 #: src/components/Synthetics/PositionItem/PositionItem.tsx
@@ -5893,10 +5562,6 @@ msgstr "This order using {collateralSymbol} as collateral will not be valid for 
 msgid "{orderTypeText} {0} {longShortText}: {sign}{1}"
 msgstr "{orderTypeText} {0} {longShortText}: {sign}{1}"
 
-#: src/pages/Actions/SyntheticsActions.tsx
-msgid "<0><1>Check on SD V1 {networkName}</1> or <2>switch network to {0}</2>.</0>"
-msgstr "<0><1>Check on SD V1 {networkName}</1> or <2>switch network to {0}</2>.</0>"
-
 #: src/components/Synthetics/StatusNotification/OrderStatusNotification.tsx
 msgid "Order request sent"
 msgstr "Order request sent"
@@ -5918,6 +5583,10 @@ msgstr "<0>{0} is required for collateral.</0><1>Swap amount from {1} to {2} exc
 #~ msgid "<0>Return to </0><1>Homepage</1> <2>or </2> <3>Trade</3>"
 #~ msgstr "<0>Return to </0><1>Homepage</1> <2>or </2> <3>Trade</3>"
 
+#: src/pages/PageNotFound/PageNotFound.jsx
+msgid "<0>Return to </0><1>Homepage</1> <2>or </2> <3>Trade</3>"
+msgstr "<0>Return to </0><1>Homepage</1> <2>or </2> <3>Trade</3>"
+
 #: src/components/Synthetics/BridgingInfo/BridgingInfo.tsx
 msgid "Bridge {tokenSymbol} to {chainName} with"
 msgstr "Bridge {tokenSymbol} to {chainName} with"
@@ -5927,10 +5596,6 @@ msgstr "Bridge {tokenSymbol} to {chainName} with"
 #: src/components/Exchange/SwapBox.jsx
 msgid "Swapped {0} {1} for {2} {3}!"
 msgstr "Swapped {0} {1} for {2} {3}!"
-
-#: src/pages/Stake/StakeV2.tsx
-msgid "Buy SD"
-msgstr "Buy SD"
 
 #: src/pages/AccountDashboard/dailyAndCumulativePnLDebug.tsx
 #: src/pages/AccountDashboard/generalPerformanceDetailsDebug.tsx
@@ -5955,10 +5620,6 @@ msgstr "Increase Size (Market)"
 #: src/domain/synthetics/trade/utils/validation.ts
 msgid "Couldn't find a swap path with enough liquidity"
 msgstr "Couldn't find a swap path with enough liquidity"
-
-#: src/components/Glp/GlpSwap.jsx
-msgid "Fees may vary depending on which asset you sell SLP for. <0/>Enter the amount of SLP you want to redeem in the order form, then check here to compare fees."
-msgstr "Fees may vary depending on which asset you sell SLP for. <0/>Enter the amount of SLP you want to redeem in the order form, then check here to compare fees."
 
 #: src/pages/Stake/StakeV2.tsx
 #: src/pages/Stake/StakeV2.tsx
@@ -6065,10 +5726,6 @@ msgstr "Buy order executed"
 msgid "The order's acceptable price includes the set acceptable price impact. The execution price must meet this condition for the order to be executed."
 msgstr "The order's acceptable price includes the set acceptable price impact. The execution price must meet this condition for the order to be executed."
 
-#: src/components/Guide/PerpectualGuide.tsx
-msgid "Connect Wallet: Start by connecting your digital wallet to SingularDEX. Click 'Connect Wallet', choose your preferred wallet provider, and authorize the connection to enable transactions and fund management on the platform."
-msgstr "Connect Wallet: Start by connecting your digital wallet to SingularDEX. Click 'Connect Wallet', choose your preferred wallet provider, and authorize the connection to enable transactions and fund management on the platform."
-
 #: src/components/Exchange/SwapBox.jsx
 msgid "Min order: 10 USD"
 msgstr "Min order: 10 USD"
@@ -6111,10 +5768,6 @@ msgstr "No delegate found"
 msgid "Compound failed."
 msgstr "Compound failed."
 
-#: src/pages/Stake/StakeV2.tsx
-msgid "Unstake SD"
-msgstr "Unstake SD"
-
 #: src/pages/Stake/StakeV1.jsx
 msgid "Wallet not yet connected"
 msgstr "Wallet not yet connected"
@@ -6130,10 +5783,6 @@ msgstr "Price above highest Limit Price."
 #: src/components/Glp/GlpSwap.jsx
 msgid "Acknowledge epoch is ending in {minutes} minutes"
 msgstr "Acknowledge epoch is ending in {minutes} minutes"
-
-#: src/pages/Referrals/Referrals.tsx
-msgid "Get fee discounts and earn rebates through the SD referral program.<0/>For more information, please read the <1>referral program details</1>."
-msgstr "Get fee discounts and earn rebates through the SD referral program.<0/>For more information, please read the <1>referral program details</1>."
 
 #: src/components/InterviewModal/InterviewModal.tsx
 msgid "We want your insights to help improve GMX. For security reasons, we won't contact you first. Please send the message \"I have feedback\" to any of our official accounts:"
@@ -6220,6 +5869,10 @@ msgstr "Request withdrawal from {0} {longOrShortText}"
 msgid "Select an option"
 msgstr "Select an option"
 
+#: src/components/Header/AppHeaderLinks.tsx
+msgid "Ecosystem"
+msgstr "Ecosystem"
+
 #: src/components/Exchange/SwapBox.jsx
 msgid "High USDG Slippage, Long Anyway"
 msgstr "High USDG Slippage, Long Anyway"
@@ -6242,7 +5895,6 @@ msgstr "Acceptable price does not apply to stop-loss orders, as they will be exe
 msgid "Deactivation"
 msgstr "Deactivation"
 
-#: src/components/Guide/PerpectualGuide.tsx
 #: src/pages/PriceImpactRebatesStats/PriceImpactRebatesStats.tsx
 msgid "Next"
 msgstr "Next"
@@ -6333,15 +5985,6 @@ msgstr "Withdraw from SLP Vault"
 msgid "Open Cost"
 msgstr "Open Cost"
 
-#: src/components/Guide/PerpectualGuide.tsx
-msgid "Back"
-msgstr "Back"
-
-#: src/components/Header/AppHeaderLinks.tsx
-#: src/pages/LaunchPad/LaunchPad.tsx
-msgid "Launchpad"
-msgstr "Launchpad"
-
 #: src/components/Exchange/ChartTokenSelector.tsx
 msgid "Max Out"
 msgstr "Max Out"
@@ -6422,10 +6065,6 @@ msgstr "Unknown shift GM order"
 msgid "Max leverage of 100x was exceeded, the remaining collateral after deducting losses and fees have been sent back to your account:"
 msgstr "Max leverage of 100x was exceeded, the remaining collateral after deducting losses and fees have been sent back to your account:"
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "Dashboard for SD referral stats"
-msgstr "Dashboard for SD referral stats"
-
 #: src/components/Synthetics/GmSwap/GmSwapBox/GmDepositWithdrawalBox/useSubmitButtonState.tsx
 msgid "Shifting {symbol}..."
 msgstr "Shifting {symbol}..."
@@ -6472,9 +6111,9 @@ msgstr "Save on Fees"
 msgid "Price below Mark Price."
 msgstr "Price below Mark Price."
 
-#: src/components/Referrals/AffiliatesStats.tsx
-msgid "V1 Rebates and V1/V2 esSD are airdropped weekly. V2 Rebates are claimed manually."
-msgstr "V1 Rebates and V1/V2 esSD are airdropped weekly. V2 Rebates are claimed manually."
+#: src/pages/Ecosystem/Ecosystem.jsx
+msgid "GMX staking rewards updates and insights"
+msgstr "GMX staking rewards updates and insights"
 
 #: src/pages/Ecosystem/Ecosystem.jsx
 #~ msgid "GMX staking rewards updates and insights"
@@ -6594,10 +6233,6 @@ msgstr "{0} and {1} can be used to buy GM for this market up to the specified bu
 msgid "One-Click Trading is not available using network's native token {0}. Consider using {1} instead."
 msgstr "One-Click Trading is not available using network's native token {0}. Consider using {1} instead."
 
-#: src/pages/Jobs/Jobs.jsx
-msgid "No open positions at SD currently"
-msgstr "No open positions at SD currently"
-
 #: src/App/App.tsx
 #: src/components/Synthetics/StatusNotification/OrderStatusNotification.tsx
 #: src/lib/contracts/notifications.tsx
@@ -6684,9 +6319,9 @@ msgstr "You"
 msgid "Migration submitted! <0>View status.</0>"
 msgstr "Migration submitted! <0>View status.</0>"
 
-#: src/components/Glp/GlpSwap.jsx
-msgid "Buy GM tokens before the epoch resets in {0} to be eligible for the Bonus Rebate. Alternatively, wait for the epoch to reset to redeem SLP and buy GM within the same epoch."
-msgstr "Buy GM tokens before the epoch resets in {0} to be eligible for the Bonus Rebate. Alternatively, wait for the epoch to reset to redeem SLP and buy GM within the same epoch."
+#: src/pages/Stake/StakeV2.tsx
+msgid "APRs are updated weekly on Wednesday and will depend on the fees collected for the week. <0/><1/>Historical GLP APRs can be checked in this <2>community dashboard</2>."
+msgstr "APRs are updated weekly on Wednesday and will depend on the fees collected for the week. <0/><1/>Historical GLP APRs can be checked in this <2>community dashboard</2>."
 
 #: src/pages/Stake/StakeV2.tsx
 #~ msgid "APRs are updated weekly on Wednesday and will depend on the fees collected for the week. <0/><1/>Historical GLP APRs can be checked in this <2>community dashboard</2>."
@@ -6709,10 +6344,6 @@ msgstr "Could not execute deposit into {0} {longOrShortText}"
 #: src/pages/Stake/StakeV2.tsx
 msgid "Deposit"
 msgstr "Deposit"
-
-#: src/pages/BeginAccountTransfer/BeginAccountTransfer.tsx
-msgid "I do not want to transfer the Affiliate esSD tokens"
-msgstr "I do not want to transfer the Affiliate esSD tokens"
 
 #: src/pages/Stake/StakeV2.tsx
 msgid "{0}<0>You will earn {1}% less {nativeTokenSymbol} rewards with this action.</0>"
@@ -6739,10 +6370,6 @@ msgstr "Enabling Leverage..."
 #: src/domain/synthetics/orders/utils.tsx
 msgid "There may not be sufficient liquidity to execute the swap to the receive token when the price conditions are met."
 msgstr "There may not be sufficient liquidity to execute the swap to the receive token when the price conditions are met."
-
-#: src/pages/BuyGlp/BuyGlp.jsx
-msgid "SLP to GM migration has reduced Fees due to STIP incentives. <0>Read more</0>."
-msgstr "SLP to GM migration has reduced Fees due to STIP incentives. <0>Read more</0>."
 
 #: src/components/NotifyModal/NotifyModal.tsx
 msgid "Trade Errors"
@@ -6911,11 +6538,6 @@ msgstr "Copy error"
 msgid "What areas can we improve to make your experience better?"
 msgstr "What areas can we improve to make your experience better?"
 
-#: src/components/Glp/GlpSwap.jsx
-#: src/components/Glp/GlpSwap.jsx
-msgid "Available amount to withdraw from SLP. Funds not utilized by current open positions."
-msgstr "Available amount to withdraw from SLP. Funds not utilized by current open positions."
-
 #: src/domain/synthetics/trade/utils/validation.ts
 msgid "Select a collateral"
 msgstr "Select a collateral"
@@ -7014,9 +6636,9 @@ msgstr "Date"
 msgid "Price Impact not yet acknowledged"
 msgstr "Price Impact not yet acknowledged"
 
-#: src/components/Common/SEO.tsx
-msgid "Singular"
-msgstr "Singular"
+#: src/pages/BuyGMX/BuyGMX.tsx
+msgid "Buy GMX using FIAT gateways:"
+msgstr "Buy GMX using FIAT gateways:"
 
 #: src/pages/BuyGMX/BuyGMX.tsx
 #~ msgid "Buy GMX using FIAT gateways:"
@@ -7031,11 +6653,6 @@ msgstr "Order error."
 #: src/components/Referrals/AddAffiliateCode.jsx
 msgid "Referral code created!"
 msgstr "Referral code created!"
-
-#: src/pages/Stake/StakeV2.tsx
-#: src/pages/Stake/StakeV2.tsx
-msgid "Claim esSD Rewards"
-msgstr "Claim esSD Rewards"
 
 #: src/components/Exchange/OrderEditor.jsx
 #: src/components/Exchange/SwapBox.jsx
@@ -7188,9 +6805,9 @@ msgstr "Page outdated, please refresh"
 msgid "BUY…"
 msgstr "BUY…"
 
-#: src/pages/Stake/StakeV2.tsx
-msgid "Stake SD Rewards"
-msgstr "Stake SD Rewards"
+#: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
+msgid "Vest with GLP on Arbitrum"
+msgstr "Vest with GLP on Arbitrum"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
 #~ msgid "Vest with GLP on Arbitrum"
@@ -7554,10 +7171,6 @@ msgstr "Failed Limit Order"
 msgid "{increaseOrDecreaseText} {tokenText} by {sizeText}"
 msgstr "{increaseOrDecreaseText} {tokenText} by {sizeText}"
 
-#: src/pages/Actions/SyntheticsActions.tsx
-msgid "SD Actions"
-msgstr "SD Actions"
-
 #: src/components/Exchange/ConfirmationBox.jsx
 #: src/components/Exchange/ConfirmationBox.jsx
 #: src/components/Exchange/OrdersList.jsx
@@ -7640,14 +7253,6 @@ msgstr "<0>Your wallet is not connected to {0}.</0><1/><2>Switch to {1}</2>"
 msgid "Transaction was cancelled."
 msgstr "Transaction was cancelled."
 
-#: src/components/Glp/GlpSwap.jsx
-#: src/components/Glp/GlpSwap.jsx
-#: src/components/Glp/GlpSwap.jsx
-#: src/components/Glp/GlpSwap.jsx
-#: src/pages/Stake/StakeV2.tsx
-msgid "Sell SLP"
-msgstr "Sell SLP"
-
 #: src/components/Exchange/ConfirmationBox.jsx
 #: src/components/Synthetics/TradeBox/hooks/useTradeButtonState.tsx
 msgid "Accept confirmation of trigger orders"
@@ -7678,9 +7283,14 @@ msgstr "Try increasing the \"Allowed Slippage\", under the Settings menu on the 
 msgid "Order size is bigger than position, will only be executable if position increases"
 msgstr "Order size is bigger than position, will only be executable if position increases"
 
+#: src/components/Header/AppHeaderLinks.tsx
 #: src/components/Synthetics/GmList/GmList.tsx
 msgid "Buy"
 msgstr "Buy"
+
+#: src/config/events.tsx
+msgid "Incentives are live for <0>Arbitrum</0> and <1>Avalanche</1> GM pools and V2 trading."
+msgstr "Incentives are live for <0>Arbitrum</0> and <1>Avalanche</1> GM pools and V2 trading."
 
 #: src/pages/Stake/StakeV2.tsx
 msgid "Total Rewards"
@@ -7694,6 +7304,10 @@ msgstr "NFT ID"
 #: src/domain/synthetics/referrals/claimAffiliateRewardsTxn.ts
 msgid "Success claimings"
 msgstr "Success claimings"
+
+#: src/lib/legacy.ts
+msgid "Decentralized Perpetual Exchange | GMX"
+msgstr "Decentralized Perpetual Exchange | GMX"
 
 #: src/components/Exchange/PositionEditor.jsx
 msgid "The pending borrow fee will be charged on this transaction."
@@ -7737,10 +7351,6 @@ msgstr "Shifting from GLV to another pool is not possible, as GLV can only be so
 msgid "Target Min Amount"
 msgstr "Target Min Amount"
 
-#: src/pages/BuyGMX/BuyGMX.tsx
-msgid "To purchase SD on the {0} blockchain, please <0>change your network</0>."
-msgstr "To purchase SD on the {0} blockchain, please <0>change your network</0>."
-
 #: src/domain/synthetics/trade/utils/validation.ts
 #: src/domain/synthetics/trade/utils/validation.ts
 #: src/domain/synthetics/trade/utils/validation.ts
@@ -7764,10 +7374,6 @@ msgstr "Only letters, numbers and underscores are allowed."
 #: src/components/Synthetics/StatusNotification/GmStatusNotification.tsx
 msgid "Fulfilling shift request"
 msgstr "Fulfilling shift request"
-
-#: src/components/TokenCard/TokenCard.tsx
-msgid "{avalancheLink} SD Pools are <0>incentivized{sparkle}.</0>"
-msgstr "{avalancheLink} SD Pools are <0>incentivized{sparkle}.</0>"
 
 #: src/pages/Referrals/Referrals.tsx
 msgid "Referral code submitted!"
@@ -7876,8 +7482,13 @@ msgid "Job Openings"
 msgstr "Job Openings"
 
 #: src/pages/Ecosystem/Ecosystem.jsx
-msgid "Telegram bot for SD position updates"
-msgstr "Telegram bot for SD position updates"
+msgid "Projects integrated with GMX."
+msgstr "Projects integrated with GMX."
+
+#: src/components/Glp/GlpSwap.jsx
+#: src/components/Stake/GMXAprTooltip.tsx
+msgid "Escrowed GMX APR"
+msgstr "Escrowed GMX APR"
 
 #: src/pages/Ecosystem/Ecosystem.jsx
 #~ msgid "Projects integrated with GMX."
@@ -7947,10 +7558,6 @@ msgstr "Enter a trigger price"
 msgid "Entry Price"
 msgstr "Entry Price"
 
-#: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
-msgid "After claiming, the esSD tokens will be airdropped to your account on the selected network within 7 days."
-msgstr "After claiming, the esSD tokens will be airdropped to your account on the selected network within 7 days."
-
 #: src/pages/LeaderboardPage/components/LeaderboardPositionsTable.tsx
 msgid "Price change to Liq."
 msgstr "Price change to Liq."
@@ -8003,6 +7610,7 @@ msgid "Settling..."
 msgstr "Settling..."
 
 #: src/components/Exchange/UsefulLinks.tsx
+#: src/components/Header/AppHeaderLinks.tsx
 msgid "Leaderboard"
 msgstr "Leaderboard"
 
@@ -8090,10 +7698,6 @@ msgstr "Transaction failed"
 msgid "COLLATERAL"
 msgstr "COLLATERAL"
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SD Governance Page"
-msgstr "SD Governance Page"
-
 #: src/components/Exchange/PositionEditor.jsx
 #: src/pages/Stake/StakeV2.tsx
 msgid "Depositing..."
@@ -8131,10 +7735,6 @@ msgstr "Ask Price (Exit)"
 msgid "Shift is only applicable to GM pools when there are other pools with the same backing tokens, allowing liquidity to be moved without incurring buy or sell fees."
 msgstr "Shift is only applicable to GM pools when there are other pools with the same backing tokens, allowing liquidity to be moved without incurring buy or sell fees."
 
-#: src/pages/Ecosystem/Ecosystem.jsx
-msgid "SD Weekly Updates"
-msgstr "SD Weekly Updates"
-
 #: src/components/Synthetics/SubaccountModal/SubaccountStatus.tsx
 msgid "Not enough {0} on your Main Account. Use the \"<0>Convert {1} to {2}</0>\" field to increase the Main Account {3} balance."
 msgstr "Not enough {0} on your Main Account. Use the \"<0>Convert {1} to {2}</0>\" field to increase the Main Account {3} balance."
@@ -8171,10 +7771,6 @@ msgstr "Subaccount {0} Balance is used to pay for the Network Fees. Use the \"To
 #: src/components/Exchange/OrdersList.jsx
 msgid "The price that the order can be executed at may differ slightly from the chart price as market orders can change the price while limit / trigger orders cannot."
 msgstr "The price that the order can be executed at may differ slightly from the chart price as market orders can change the price while limit / trigger orders cannot."
-
-#: src/components/Guide/PerpectualGuide.tsx
-msgid "Fund Your Account: Ensure your wallet is sufficiently funded to cover initial margins and potential price movements. Proper funding is critical, especially when using leverage in trading."
-msgstr "Fund Your Account: Ensure your wallet is sufficiently funded to cover initial margins and potential price movements. Proper funding is critical, especially when using leverage in trading."
 
 #: src/components/Synthetics/Claims/ClaimsHistory.tsx
 msgid "Claims History"
@@ -8216,7 +7812,6 @@ msgstr "Activate Subaccount"
 #: src/components/Exchange/SwapBox.jsx
 #: src/components/Exchange/SwapBox.jsx
 #: src/components/Exchange/SwapBox.jsx
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/components/Synthetics/OrderList/filters/OrderTypeFilter.tsx
 #: src/components/Synthetics/StatusNotification/OrderStatusNotification.tsx
 #: src/components/Synthetics/SwapCard/SwapCard.tsx
@@ -8238,14 +7833,6 @@ msgstr "24h High"
 msgid "This code is not yet registered on {nonTakenNetworkNames}, you will not receive rebates there.<0/><1/>Switch your network to create this code on {nonTakenNetworkNames}."
 msgstr "This code is not yet registered on {nonTakenNetworkNames}, you will not receive rebates there.<0/><1/>Switch your network to create this code on {nonTakenNetworkNames}."
 
-#: src/pages/Stake/StakeV2.tsx
-msgid "<0>This will withdraw and unreserve all tokens as well as pause vesting.<1/><2/>esSD tokens that have been converted to SD will be claimed and remain as SD tokens.<3/><4/>To claim SD tokens without withdrawing, use the \"Claim\" button under the Total Rewards section.<5/><6/></0>"
-msgstr "<0>This will withdraw and unreserve all tokens as well as pause vesting.<1/><2/>esSD tokens that have been converted to SD will be claimed and remain as SD tokens.<3/><4/>To claim SD tokens without withdrawing, use the \"Claim\" button under the Total Rewards section.<5/><6/></0>"
-
-#: src/domain/synthetics/common/incentivesAirdropMessages.ts
-msgid "SLP to SD Airdrop"
-msgstr "SLP to SD Airdrop"
-
 #: src/components/Exchange/TradeHistory.jsx
 msgid "Deposit {0} USD into {1} {longOrShortText}"
 msgstr "Deposit {0} USD into {1} {longOrShortText}"
@@ -8258,9 +7845,9 @@ msgstr "Distribution"
 msgid "A Size percentage is required."
 msgstr "A Size percentage is required."
 
-#: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
-msgid "You can currently vest a maximum of {0} esSD tokens at a ratio of {1} {stakingToken} to 1 esSD."
-msgstr "You can currently vest a maximum of {0} esSD tokens at a ratio of {1} {stakingToken} to 1 esSD."
+#: src/components/NetworkDropdown/NetworkDropdown.tsx
+msgid "Language"
+msgstr "Language"
 
 #: src/components/NetworkDropdown/NetworkDropdown.tsx
 #~ msgid "Language"
@@ -8361,8 +7948,9 @@ msgid "Trade BTC, ETH, AVAX and other top cryptocurrencies with up to 100x lever
 msgstr "Trade BTC, ETH, AVAX and other top cryptocurrencies with up to 100x leverage directly from your wallet"
 
 #: src/pages/Stake/StakeV2.tsx
-msgid "Pending SD approval"
-msgstr "Pending SD approval"
+#: src/pages/Stake/StakeV2.tsx
+msgid "Claim GMX Rewards"
+msgstr "Claim GMX Rewards"
 
 #: src/pages/Stake/StakeV2.tsx
 #: src/pages/Stake/StakeV2.tsx
@@ -8433,10 +8021,6 @@ msgstr "Total Stats"
 #: src/components/Synthetics/OrderItem/OrderItem.tsx
 msgid "<0>{fromTokenText} </0>{fromTokenIcon}<1> to </1><2>{toTokenText} </2>{toTokenIcon}"
 msgstr "<0>{fromTokenText} </0>{fromTokenIcon}<1> to </1><2>{toTokenText} </2>{toTokenIcon}"
-
-#: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
-msgid "Vest with SLP on Arbitrum"
-msgstr "Vest with SLP on Arbitrum"
 
 #: src/components/Exchange/PositionEditor.jsx
 msgid "Enable deposit sent."
@@ -8610,10 +8194,6 @@ msgstr "Migrate"
 msgid "Cancelling {ordersText}"
 msgstr "Cancelling {ordersText}"
 
-#: src/pages/ClaimEsGmx/ClaimEsGmx.jsx
-msgid "Vest with SD on Arbitrum"
-msgstr "Vest with SD on Arbitrum"
-
 #: src/pages/Ecosystem/Ecosystem.jsx
 msgid "Ecosystem Projects"
 msgstr "Ecosystem Projects"
@@ -8629,13 +8209,6 @@ msgstr "Consider selecting and using the \"Pair\" option to reduce the Price Imp
 #: src/components/InterviewModal/InterviewModal.tsx
 msgid "Anonymous chat with GMX"
 msgstr "Anonymous chat with GMX"
-
-#: src/components/Glp/GlpSwap.jsx
-#: src/components/Glp/GlpSwap.jsx
-#: src/components/Glp/GlpSwap.jsx
-#: src/pages/Stake/StakeV2.tsx
-msgid "Buy SLP"
-msgstr "Buy SLP"
 
 #: src/components/Exchange/OrdersList.jsx
 #: src/components/Exchange/OrdersList.jsx
@@ -8678,10 +8251,6 @@ msgstr "Selling..."
 #: src/domain/synthetics/orders/utils.tsx
 msgid "The order may not execute as the max. allowed leverage is exceeded. Consider decreasing the order's leverage by editing and decreasing its size. <0>Read more</0>."
 msgstr "The order may not execute as the max. allowed leverage is exceeded. Consider decreasing the order's leverage by editing and decreasing its size. <0>Read more</0>."
-
-#: src/pages/BeginAccountTransfer/BeginAccountTransfer.tsx
-msgid "You have esSD tokens in the Affiliate Vault, you need to withdraw these tokens if you want to transfer them to the new account"
-msgstr "You have esSD tokens in the Affiliate Vault, you need to withdraw these tokens if you want to transfer them to the new account"
 
 #: src/components/Exchange/PositionSeller.jsx
 #: src/components/Exchange/PositionSeller.jsx
