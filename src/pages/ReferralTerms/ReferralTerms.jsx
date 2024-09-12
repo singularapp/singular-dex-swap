@@ -5,6 +5,7 @@ import { getPageTitle } from "lib/legacy";
 import "./ReferralTerms.css";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import { t } from "@lingui/macro";
+import { DOCUMENT_LINKS } from "config/links";
 
 export default function ReferralTerms() {
   return (
@@ -90,9 +91,7 @@ export default function ReferralTerms() {
               <p className="body-text">
                 The Rebates and Discounts percentages for the default tier Tier 1, and instructions to upgrade to Tier 2
                 and Tier 3, are contained in{" "}
-                <ExternalLink href="https://docs.gmx.io/docs/referrals">
-                  https://docs.gmx.io/docs/referrals.
-                </ExternalLink>
+                <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>{DOCUMENT_LINKS.PerpetualsTrading}</ExternalLink>
               </p>
             </div>
             <div className="section">

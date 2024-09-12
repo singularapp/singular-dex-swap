@@ -40,6 +40,7 @@ import { useMarketMintableTokens } from "./hooks/useMarketMintableTokens";
 import { useMarketSellableToken } from "./hooks/useMarketSellableToken";
 
 import "./MarketStats.scss";
+import { DOCUMENT_LINKS } from "config/links";
 
 type Props = {
   marketsInfoData?: GlvAndGmMarketsInfoData;
@@ -396,7 +397,7 @@ export function MarketStatsWithComposition(p: Props) {
                         borrowing fees. It excludes funding fees, which are exchanged between traders.
                         <br />
                         <br />
-                        <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2/#token-pricing">
+                        <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>
                           Read more about GM token pricing
                         </ExternalLink>
                         .

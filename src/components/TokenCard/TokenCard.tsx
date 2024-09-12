@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import { ARBITRUM, AVALANCHE } from "config/chains";
 import { getIcon } from "config/icons";
-import { getIncentivesV2Url } from "config/links";
+import { DOCUMENT_LINKS, getIncentivesV2Url } from "config/links";
 import { getMarketListingDate } from "config/markets";
 import useIncentiveStats from "domain/synthetics/common/useIncentiveStats";
 import { getIsBaseApyReadyToBeShown } from "domain/synthetics/markets/getIsBaseApyReadyToBeShown";
@@ -274,7 +274,7 @@ export default function TokenCard({ showRedirectModal }: Props) {
             className="!py-11 tracking-normal"
             newTab
             variant="primary"
-            to="https://docs.gmx.io/docs/category/tokenomics"
+            to={DOCUMENT_LINKS.PerpetualsTrading}
           >
             <Trans>Read more</Trans>
           </Button>
@@ -387,7 +387,7 @@ export default function TokenCard({ showRedirectModal }: Props) {
             </BuyLink>
           </div>
           <a
-            href="https://docs.gmx.io/docs/providing-liquidity/v2"
+            href={DOCUMENT_LINKS.PerpetualsTrading}
             target="_blank"
             rel="noreferrer"
             className="default-btn read-more"
@@ -444,7 +444,7 @@ export default function TokenCard({ showRedirectModal }: Props) {
             </BuyLink>
           </div>
           <a
-            href="https://docs.gmx.io/docs/providing-liquidity/v1"
+            href={DOCUMENT_LINKS.PerpetualsTrading}
             target="_blank"
             rel="noreferrer"
             className="default-btn read-more"

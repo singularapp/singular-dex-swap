@@ -50,7 +50,7 @@ import TooltipWithPortal from "components/Tooltip/TooltipWithPortal";
 import { getServerUrl } from "config/backend";
 import { getIsSyntheticsSupported } from "config/features";
 import { getIcons } from "config/icons";
-import { getIncentivesV2Url } from "config/links";
+import { DOCUMENT_LINKS, getIncentivesV2Url } from "config/links";
 import { NATIVE_TOKEN_ADDRESS } from "config/tokens";
 import { GLP_PRICE_DECIMALS, MAX_METAMASK_MOBILE_DECIMALS } from "config/ui";
 import useIncentiveStats from "domain/synthetics/common/useIncentiveStats";
@@ -1819,8 +1819,8 @@ export default function StakeV2() {
           <div>
             <Trans>
               Stake <ExternalLink href="https://docs.gmx.io/docs/tokenomics/gmx-token">GMX</ExternalLink> and buy{" "}
-              <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2">GM</ExternalLink> or{" "}
-              <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v1">GLP</ExternalLink> to earn rewards.
+              <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>GM</ExternalLink> or{" "}
+              <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>GLP</ExternalLink> to earn rewards.
             </Trans>
             {earnMsg && <div className="Page-description">{earnMsg}</div>}
             {incentivesMessage}
@@ -2412,7 +2412,7 @@ export default function StakeV2() {
               Convert esGMX tokens to GMX tokens.
               <br />
               Please read the{" "}
-              <ExternalLink href="https://docs.gmx.io/docs/tokenomics/rewards#vesting">
+              <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>
                 vesting details
               </ExternalLink>{" "}
               before using the vaults.

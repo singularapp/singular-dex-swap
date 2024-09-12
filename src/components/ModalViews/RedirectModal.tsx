@@ -5,6 +5,7 @@ import { t, Trans } from "@lingui/macro";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import Button from "components/Button/Button";
 import { useRedirectPopupTimestamp } from "lib/useRedirectPopupTimestamp";
+import { DOCUMENT_LINKS } from "config/links";
 
 export function RedirectPopupModal({
   redirectModalVisible,
@@ -39,7 +40,7 @@ export function RedirectPopupModal({
       <br />
       <Trans>
         Alternative links can be found in the{" "}
-        <ExternalLink href="https://docs.gmx.io/docs/community/frontends">docs</ExternalLink>.
+        <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>docs</ExternalLink>.
         <br />
         <br />
         By clicking Agree you accept the <ExternalLink href="https://gmx.io/#/terms-and-conditions">

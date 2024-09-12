@@ -5,7 +5,7 @@ import { type JSX } from "react";
 import { Link } from "react-router-dom";
 
 import { ARBITRUM, AVALANCHE } from "./chains";
-import { getIncentivesV2Url } from "./links";
+import { DOCUMENT_LINKS, getIncentivesV2Url } from "./links";
 import { getNormalizedTokenSymbol } from "./tokens";
 
 import ExternalLink from "components/ExternalLink/ExternalLink";
@@ -116,7 +116,7 @@ export const appEventsData: EventData[] = [
     ),
     link: {
       text: "Read more",
-      href: "https://docs.gmx.io/docs/providing-liquidity/v2/#glv-pools",
+      href: DOCUMENT_LINKS.PerpetualsTrading,
       newTab: true,
     },
   },

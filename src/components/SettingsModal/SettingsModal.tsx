@@ -161,7 +161,7 @@ export function SettingsModal({
                   </Trans>
                   <br />
                   <br />
-                  <ExternalLink href="https://docs.gmx.io/docs/trading/v2#execution-fee">Read more</ExternalLink>
+                  <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>Read more</ExternalLink>
                 </div>
               )}
             />
