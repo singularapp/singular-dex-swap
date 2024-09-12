@@ -1,17 +1,11 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2022-10-05 15:32+0530\n"
+"POT-Creation-Date: 2024-09-12 17:38-0400\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: pseudo\n"
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Plural-Forms: \n"
 
 #: src/pages/AccountDashboard/generalPerformanceDetailsDebug.tsx
 msgid "Unrealized Base PnL"
@@ -76,7 +70,7 @@ msgstr ""
 
 #: src/domain/synthetics/userFeedback/utils.ts
 msgid "What would have made your rating a 9 or 10?"
-msgstr "<<<<<<< HEAD======="
+msgstr ""
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.tsx
 msgid "Receiver has not staked SD tokens before"
@@ -498,7 +492,7 @@ msgstr ""
 
 #: src/components/Exchange/SwapBox.jsx
 msgid "Created limit order for {0} {1}: {2} USD!"
-msgstr "<<<<<<< HEAD======="
+msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.jsx
 msgid "Leaderboard for SD traders"
@@ -602,6 +596,10 @@ msgstr ""
 
 #: src/pages/MarketPoolsPage/MarketPoolsPage.tsx
 msgid "Select a Pool"
+msgstr ""
+
+#: src/components/BuyCrypto/BuyCryptoModal.tsx
+msgid "Buy Bitcoin, Ethereum and USDT via our partner Transak & Unlimit."
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.jsx
@@ -961,6 +959,10 @@ msgstr ""
 msgid "Insufficient Liquidity"
 msgstr ""
 
+#: src/pages/LaunchPad/LaunchPad.tsx
+msgid "Singular DEX launchpad unlocks unparalleled opportunities for global investors and institutions."
+msgstr ""
+
 #: src/components/Synthetics/NetworkFeeRow/NetworkFeeRow.tsx
 msgid "The max network fee is overestimated, including by the buffer set under settings. Upon execution, any excess network fee is sent back to your account."
 msgstr ""
@@ -1034,6 +1036,10 @@ msgstr ""
 msgid "Avalanche Max. APY: {0}"
 msgstr ""
 
+#: src/pages/LaunchPad/LaunchPad.tsx
+msgid "Most Liquid DEX Launchpad"
+msgstr ""
+
 #: src/components/Exchange/ConfirmationBox.jsx
 #: src/components/Exchange/OrdersList.jsx
 #: src/components/Exchange/OrdersList.jsx
@@ -1097,6 +1103,10 @@ msgstr ""
 
 #: src/components/Synthetics/PositionItem/PositionItem.tsx
 msgid "Click on the Position to select its market, then use the trade box to increase your Position Size, or to set Take-Profit / Stop-Loss Orders."
+msgstr ""
+
+#: src/components/Guide/PerpectualGuide.tsx
+msgid "Skip"
 msgstr ""
 
 #: src/components/ToastifyDebug/ToastifyDebug.tsx
@@ -1473,6 +1483,10 @@ msgstr ""
 
 #: src/components/Synthetics/GmSwap/GmFees/GmFees.tsx
 msgid "Fees and Price Impact"
+msgstr ""
+
+#: src/components/Guide/PerpectualGuide.tsx
+msgid "Swap: Exchange one cryptocurrency for another directly on SingularDEX. Use this feature to adjust your portfolio quickly in response to market changes or to prepare for a trading strategy."
 msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.tsx
@@ -2345,6 +2359,10 @@ msgstr ""
 msgid "Enter a new ratio"
 msgstr ""
 
+#: src/components/BuyCrypto/BuyCryptoModal.tsx
+msgid "Buy Crypto is a service provided and hosted by our third-party provider Transak and Unlimit Crypto. Singular accepts no liability for any services provided by third parties, including any financial loss or damage caused due to the use of services available on or through any third-party provider. For any support required relating to Transak or Unlimit Crypto, please contact Transak or Unlimit Crypto directly."
+msgstr ""
+
 #: src/components/Exchange/OrderEditor.jsx
 #: src/components/Exchange/SwapBox.jsx
 #: src/components/Exchange/SwapBox.jsx
@@ -2424,7 +2442,7 @@ msgstr ""
 
 #: src/pages/LeaderboardPage/components/LeaderboardContainer.tsx
 msgid "Leaderboard for traders on SD."
-msgstr ">>>>>>> ee6cd5177 (remove GMX, GM text)"
+msgstr ""
 
 #: src/components/Exchange/ConfirmationBox.jsx
 msgid "Confirm Long"
@@ -2881,6 +2899,10 @@ msgstr ""
 
 #: src/components/Synthetics/MarketStats/components/MarketDescription.tsx
 msgid "This token is a vault of automatically rebalanced GM tokens that accrue fees from leverage trading and swaps from the included markets."
+msgstr ""
+
+#: src/components/BuyCrypto/BuyCryptoModal.tsx
+msgid "Buy Crypto In An Instant"
 msgstr ""
 
 #: src/pages/Stake/StakeV2.tsx
@@ -3891,6 +3913,10 @@ msgstr ""
 msgid "Cancel failed"
 msgstr ""
 
+#: src/components/Guide/PerpectualGuide.tsx
+msgid "Last"
+msgstr ""
+
 #: src/components/Synthetics/StatusNotification/OrderStatusNotification.tsx
 msgid "Fulfilling order request"
 msgstr ""
@@ -4010,7 +4036,7 @@ msgstr ""
 
 #: src/domain/synthetics/trade/utils/validation.ts
 msgid "Select a token"
-msgstr "<<<<<<< HEAD======="
+msgstr ""
 
 #: src/components/Glp/GlpSwap.jsx
 #: src/components/Stake/GMXAprTooltip.tsx
@@ -4106,11 +4132,11 @@ msgstr ""
 #: src/components/AddressDropdown/AddressDropdown.tsx
 #: src/components/Synthetics/SubaccountModal/SubaccountModal.tsx
 msgid "Address copied to your clipboard"
-msgstr "<<<<<<< HEAD======="
+msgstr ""
 
 #: src/pages/Actions/ActionsV1/ActionsV1.tsx
 msgid "<0><1>Check on SD {networkName}</1> or <2>switch network to {0}</2>.</0>"
-msgstr ">>>>>>> ee6cd5177 (remove GMX, GM text)"
+msgstr ""
 
 #: src/components/Header/AppHeaderLinks.tsx
 #: src/components/NetworkDropdown/NetworkDropdown.tsx
@@ -4515,6 +4541,10 @@ msgstr ""
 msgid "Reason: {0}"
 msgstr ""
 
+#: src/components/Guide/PerpectualGuide.tsx
+msgid "Go Long: Open a long position if you predict the price of a cryptocurrency will rise. Choose your leverage, set the position size, and confirm the order. This allows you to potentially profit from price increases."
+msgstr ""
+
 #: src/components/Synthetics/GmList/GmTokensTotalBalanceInfo.tsx
 msgid "Wallet total accrued Fees"
 msgstr ""
@@ -4657,6 +4687,7 @@ msgstr ""
 msgid "GMX Announcements"
 msgstr ""
 
+#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Referrals/Referrals.tsx
 #: src/pages/Referrals/Referrals.tsx
 msgid "Referrals"
@@ -5017,6 +5048,10 @@ msgstr ""
 
 #: src/domain/synthetics/orders/utils.tsx
 msgid "Stop Loss Decrease"
+msgstr ""
+
+#: src/pages/LaunchPad/LaunchPad.tsx
+msgid "Apply Now"
 msgstr ""
 
 #: src/components/SettingsModal/SettingsModal.tsx
@@ -5592,6 +5627,10 @@ msgstr ""
 msgid "The order's acceptable price includes the set acceptable price impact. The execution price must meet this condition for the order to be executed."
 msgstr ""
 
+#: src/components/Guide/PerpectualGuide.tsx
+msgid "Connect Wallet: Start by connecting your digital wallet to SingularDEX. Click 'Connect Wallet', choose your preferred wallet provider, and authorize the connection to enable transactions and fund management on the platform."
+msgstr ""
+
 #: src/components/Exchange/SwapBox.jsx
 msgid "Min order: 10 USD"
 msgstr ""
@@ -5749,6 +5788,7 @@ msgstr ""
 msgid "Deactivation"
 msgstr ""
 
+#: src/components/Guide/PerpectualGuide.tsx
 #: src/pages/PriceImpactRebatesStats/PriceImpactRebatesStats.tsx
 msgid "Next"
 msgstr ""
@@ -5833,6 +5873,15 @@ msgstr ""
 #: src/components/Synthetics/PoolSelector2/PoolSelector2.tsx
 #: src/components/Synthetics/PoolSelector2/PoolSelector2.tsx
 msgid "Open Cost"
+msgstr ""
+
+#: src/components/Guide/PerpectualGuide.tsx
+msgid "Back"
+msgstr ""
+
+#: src/components/Header/AppHeaderLinks.tsx
+#: src/pages/LaunchPad/LaunchPad.tsx
+msgid "Launchpad"
 msgstr ""
 
 #: src/components/Exchange/ChartTokenSelector.tsx
@@ -7490,6 +7539,10 @@ msgstr ""
 
 #: src/components/Exchange/OrdersList.jsx
 msgid "The price that the order can be executed at may differ slightly from the chart price as market orders can change the price while limit / trigger orders cannot."
+msgstr ""
+
+#: src/components/Guide/PerpectualGuide.tsx
+msgid "Fund Your Account: Ensure your wallet is sufficiently funded to cover initial margins and potential price movements. Proper funding is critical, especially when using leverage in trading."
 msgstr ""
 
 #: src/components/Synthetics/Claims/ClaimsHistory.tsx
