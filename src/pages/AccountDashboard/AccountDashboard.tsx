@@ -32,7 +32,7 @@ export function AccountDashboard() {
   if (!isAddress(account)) {
     return (
       <div className="default-container page-layout">
-        <PageTitle title={t`GMX V2 Account`} />
+        <PageTitle title={t`SD Account`} />
         <div className="text-center text-red-500">
           <Trans>Invalid address. Please make sure you have entered a valid Ethereum address</Trans>
         </div>

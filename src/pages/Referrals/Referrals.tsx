@@ -129,7 +129,7 @@ function Referrals() {
           title={t`Referrals`}
           subtitle={
             <Trans>
-              Get fee discounts and earn rebates through the GMX referral program.
+              Get fee discounts and earn rebates through the SD referral program.
               <br />
               For more information, please read the{" "}
               <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>referral program details</ExternalLink>.

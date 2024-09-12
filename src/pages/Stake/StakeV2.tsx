@@ -215,7 +215,7 @@ function StakeModal(props: {
           <AlertInfo type="warning" className={cx("DelegateGMXAlertInfo")} textColor="text-yellow-500">
             <Trans>
               <ExternalLink href={GMX_DAO_LINKS.VOTING_POWER} className="display-inline">
-                Delegate your undelegated {formatAmount(govTokenAmount, 18, 2, true)} GMX DAO
+                Delegate your undelegated {formatAmount(govTokenAmount, 18, 2, true)} SD DAO
               </ExternalLink>
               <span>&nbsp;voting power before staking.</span>
             </Trans>
@@ -567,7 +567,7 @@ function VesterDepositModal(props: {
               <div className="Exchange-info-label">
                 <Trans>Wallet</Trans>
               </div>
-              <div className="align-right">{formatAmount(balance, 18, 2, true)} esGMX</div>
+              <div className="align-right">{formatAmount(balance, 18, 2, true)} esSD</div>
             </div>
             <div className="Exchange-info-row">
               <div className="Exchange-info-label">
@@ -592,12 +592,12 @@ function VesterDepositModal(props: {
                         <StatsTooltipRow
                           showDollar={false}
                           label={t`Deposited`}
-                          value={`${formatAmount(vestedAmount, 18, 2, true)} esGMX`}
+                          value={`${formatAmount(vestedAmount, 18, 2, true)} esSD`}
                         />
                         <StatsTooltipRow
                           showDollar={false}
                           label={t`Max Capacity`}
-                          value={`${formatAmount(maxVestableAmount, 18, 2, true)} esGMX`}
+                          value={`${formatAmount(maxVestableAmount, 18, 2, true)} esSD`}
                         />
                       </div>
                     );
@@ -640,7 +640,7 @@ function VesterDepositModal(props: {
                                 <br />
                                 <Trans>
                                   You need a total of at least {formatAmount(nextReserveAmount, 18, 2, true)}{" "}
-                                  {stakeTokenLabel} to vest {formatAmount(amount, 18, 2, true)} esGMX.
+                                  {stakeTokenLabel} to vest {formatAmount(amount, 18, 2, true)} esSD.
                                 </Trans>
                               </>
                             )}
@@ -701,10 +701,10 @@ function VesterWithdrawModal(props: {
             This will withdraw and unreserve all tokens as well as pause vesting.
             <br />
             <br />
-            esGMX tokens that have been converted to GMX will be claimed and remain as GMX tokens.
+            esSD tokens that have been converted to SD will be claimed and remain as SD tokens.
             <br />
             <br />
-            To claim GMX tokens without withdrawing, use the "Claim" button under the Total Rewards section.
+            To claim SD tokens without withdrawing, use the "Claim" button under the Total Rewards section.
             <br />
             <br />
           </div>
@@ -749,13 +749,13 @@ function AffiliateVesterWithdrawModal(props) {
       <Modal isVisible={isVisible} setIsVisible={setIsVisible} label={t`Withdraw from Affiliate Vault`}>
         <Trans>
           <div>
-            This will withdraw all esGMX tokens as well as pause vesting.
+            This will withdraw all esSD tokens as well as pause vesting.
             <br />
             <br />
-            esGMX tokens that have been converted to GMX will be claimed and remain as GMX tokens.
+            esSD tokens that have been converted to SD will be claimed and remain as SD tokens.
             <br />
             <br />
-            To claim GMX tokens without withdrawing, use the "Claim" button.
+            To claim SD tokens without withdrawing, use the "Claim" button.
             <br />
             <br />
           </div>
@@ -848,7 +848,7 @@ function CompoundModal(props: {
 
   const getPrimaryText = () => {
     if (needApproval || isApproving) {
-      return t`Pending GMX approval`;
+      return t`Pending SD approval`;
     }
 
     if (isCompounding) {
@@ -928,7 +928,7 @@ function CompoundModal(props: {
           <AlertInfo type="warning" className={cx("DelegateGMXAlertInfo")} textColor="text-yellow-500">
             <Trans>
               <ExternalLink href={GMX_DAO_LINKS.VOTING_POWER} className="display-inline">
-                Delegate your undelegated {formatAmount(govTokenAmount, 18, 2, true)} GMX DAO
+                Delegate your undelegated {formatAmount(govTokenAmount, 18, 2, true)} SD DAO
               </ExternalLink>
               <span>&nbsp;voting power before compounding.</span>
             </Trans>
@@ -937,22 +937,22 @@ function CompoundModal(props: {
         <div className="CompoundModal-menu">
           <div>
             <Checkbox isChecked={shouldClaimGmx} setIsChecked={setShouldClaimGmx} disabled={shouldStakeGmx}>
-              <Trans>Claim GMX Rewards</Trans>
+              <Trans>Claim SD Rewards</Trans>
             </Checkbox>
           </div>
           <div>
             <Checkbox isChecked={shouldStakeGmx} setIsChecked={toggleShouldStakeGmx}>
-              <Trans>Stake GMX Rewards</Trans>
+              <Trans>Stake SD Rewards</Trans>
             </Checkbox>
           </div>
           <div>
             <Checkbox isChecked={shouldClaimEsGmx} setIsChecked={setShouldClaimEsGmx} disabled={shouldStakeEsGmx}>
-              <Trans>Claim esGMX Rewards</Trans>
+              <Trans>Claim esSD Rewards</Trans>
             </Checkbox>
           </div>
           <div>
             <Checkbox isChecked={shouldStakeEsGmx} setIsChecked={toggleShouldStakeEsGmx}>
-              <Trans>Stake esGMX Rewards</Trans>
+              <Trans>Stake esSD Rewards</Trans>
             </Checkbox>
           </div>
           <div>
@@ -1088,7 +1088,7 @@ function ClaimModal(props: {
           <AlertInfo type="warning" className={cx("DelegateGMXAlertInfo")} textColor="text-yellow-500">
             <Trans>
               <ExternalLink href={GMX_DAO_LINKS.VOTING_POWER} className="display-inline">
-                Delegate your undelegated {formatAmount(govTokenAmount, 18, 2, true)} GMX DAO
+                Delegate your undelegated {formatAmount(govTokenAmount, 18, 2, true)} SD DAO
               </ExternalLink>
               <span>&nbsp;voting power before compounding.</span>
             </Trans>
@@ -1097,12 +1097,12 @@ function ClaimModal(props: {
         <div className="CompoundModal-menu">
           <div>
             <Checkbox isChecked={shouldClaimGmx} setIsChecked={setShouldClaimGmx}>
-              <Trans>Claim GMX Rewards</Trans>
+              <Trans>Claim SD Rewards</Trans>
             </Checkbox>
           </div>
           <div>
             <Checkbox isChecked={shouldClaimEsGmx} setIsChecked={setShouldClaimEsGmx}>
-              <Trans>Claim esGMX Rewards</Trans>
+              <Trans>Claim esSD Rewards</Trans>
             </Checkbox>
           </div>
           <div>
@@ -1179,10 +1179,10 @@ function AffiliateClaimModal(props: {
       <Modal isVisible={isVisible} setIsVisible={setIsVisible} label={t`Claim Affiliate Vault Rewards`}>
         <Trans>
           <div>
-            This will claim {formatAmount(totalVesterRewards, 18, 4, true)} GMX.
+            This will claim {formatAmount(totalVesterRewards, 18, 4, true)} SD.
             <br />
             <br />
-            After claiming, you can stake these GMX tokens by using the "Stake" button in the GMX section of this Earn
+            After claiming, you can stake these SD tokens by using the "Stake" button in the SD section of this Earn
             page.
             <br />
             <br />
@@ -1494,15 +1494,15 @@ export default function StakeV2() {
 
   const showStakeGmxModal = () => {
     if (!isGmxTransferEnabled) {
-      helperToast.error(t`GMX transfers not yet enabled`);
+      helperToast.error(t`SD transfers not yet enabled`);
       return;
     }
 
     setIsStakeModalVisible(true);
-    setStakeModalTitle(t`Stake GMX`);
+    setStakeModalTitle(t`Stake SD`);
     setStakeModalMaxAmount(processedData?.gmxBalance);
     setStakeValue("");
-    setStakingTokenSymbol("GMX");
+    setStakingTokenSymbol("SD");
     setStakingTokenAddress(gmxAddress);
     setStakingFarmAddress(stakedGmxTrackerAddress);
     setStakeMethodName("stakeGmx");
@@ -1510,10 +1510,10 @@ export default function StakeV2() {
 
   const showStakeEsGmxModal = () => {
     setIsStakeModalVisible(true);
-    setStakeModalTitle(t`Stake esGMX`);
+    setStakeModalTitle(t`Stake esSD`);
     setStakeModalMaxAmount(processedData?.esGmxBalance);
     setStakeValue("");
-    setStakingTokenSymbol("esGMX");
+    setStakingTokenSymbol("esSD");
     setStakingTokenAddress(esGmxAddress);
     setStakingFarmAddress(ZeroAddress);
     setStakeMethodName("stakeEsGmx");
@@ -1528,8 +1528,8 @@ export default function StakeV2() {
     }
 
     setIsVesterDepositModalVisible(true);
-    setVesterDepositTitle(t`GMX Vault`);
-    setVesterDepositStakeTokenLabel("staked GMX + esGMX");
+    setVesterDepositTitle(t`SD Vault`);
+    setVesterDepositStakeTokenLabel("staked SD + esSD");
     setVesterDepositMaxAmount(remainingVestableAmount);
     setVesterDepositBalance(processedData?.esGmxBalance);
     setVesterDepositVestedAmount(vestingData.gmxVester.vestedAmount);
@@ -1550,8 +1550,8 @@ export default function StakeV2() {
     }
 
     setIsVesterDepositModalVisible(true);
-    setVesterDepositTitle(t`GLP Vault`);
-    setVesterDepositStakeTokenLabel("staked GLP");
+    setVesterDepositTitle(t`SLP Vault`);
+    setVesterDepositStakeTokenLabel("staked SLP");
     setVesterDepositMaxAmount(remainingVestableAmount);
     setVesterDepositBalance(processedData?.esGmxBalance);
     setVesterDepositVestedAmount(vestingData.glpVester.vestedAmount);
@@ -1570,7 +1570,7 @@ export default function StakeV2() {
     }
 
     setIsVesterWithdrawModalVisible(true);
-    setVesterWithdrawTitle(t`Withdraw from GMX Vault`);
+    setVesterWithdrawTitle(t`Withdraw from SD Vault`);
     setVesterWithdrawAddress(gmxVesterAddress);
   };
 
@@ -1581,17 +1581,17 @@ export default function StakeV2() {
     }
 
     setIsVesterWithdrawModalVisible(true);
-    setVesterWithdrawTitle(t`Withdraw from GLP Vault`);
+    setVesterWithdrawTitle(t`Withdraw from SLP Vault`);
     setVesterWithdrawAddress(glpVesterAddress);
   };
 
   const showUnstakeGmxModal = () => {
     if (!isGmxTransferEnabled) {
-      helperToast.error(t`GMX transfers not yet enabled`);
+      helperToast.error(t`SD transfers not yet enabled`);
       return;
     }
     setIsUnstakeModalVisible(true);
-    setUnstakeModalTitle(t`Unstake GMX`);
+    setUnstakeModalTitle(t`Unstake SD`);
     let maxAmount = processedData?.gmxInStakedGmx;
 
     if (maxAmount !== undefined) {
@@ -1600,13 +1600,13 @@ export default function StakeV2() {
 
     setUnstakeModalMaxAmount(maxAmount);
     setUnstakeValue("");
-    setUnstakingTokenSymbol("GMX");
+    setUnstakingTokenSymbol("SD");
     setUnstakeMethodName("unstakeGmx");
   };
 
   const showUnstakeEsGmxModal = () => {
     setIsUnstakeModalVisible(true);
-    setUnstakeModalTitle(t`Unstake esGMX`);
+    setUnstakeModalTitle(t`Unstake esSD`);
     let maxAmount = processedData?.esGmxInStakedGmx;
 
     if (maxAmount !== undefined) {
@@ -1615,7 +1615,7 @@ export default function StakeV2() {
 
     setUnstakeModalMaxAmount(maxAmount);
     setUnstakeValue("");
-    setUnstakingTokenSymbol("esGMX");
+    setUnstakingTokenSymbol("esSD");
     setUnstakeMethodName("unstakeEsGmx");
   };
 
@@ -1657,7 +1657,7 @@ export default function StakeV2() {
 
   function showAffiliateVesterClaimModal() {
     if (vestingData?.affiliateVesterClaimable === undefined || vestingData?.affiliateVesterClaimable <= 0) {
-      helperToast.error(t`You have no GMX tokens to claim.`);
+      helperToast.error(t`You have no SD tokens to claim.`);
       return;
     }
     setIsAffiliateClaimModalVisible(true);
@@ -1671,19 +1671,19 @@ export default function StakeV2() {
   if (totalRewardAndLpTokens && totalRewardAndLpTokens > 0) {
     let gmxAmountStr;
     if (processedData?.gmxInStakedGmx && processedData.gmxInStakedGmx > 0) {
-      gmxAmountStr = formatAmount(processedData.gmxInStakedGmx, 18, 2, true) + " GMX";
+      gmxAmountStr = formatAmount(processedData.gmxInStakedGmx, 18, 2, true) + " SD";
     }
     let esGmxAmountStr;
     if (processedData?.esGmxInStakedGmx && processedData.esGmxInStakedGmx > 0) {
-      esGmxAmountStr = formatAmount(processedData.esGmxInStakedGmx, 18, 2, true) + " esGMX";
+      esGmxAmountStr = formatAmount(processedData.esGmxInStakedGmx, 18, 2, true) + " esSD";
     }
     let glpStr;
     if (processedData?.glpBalance && processedData.glpBalance > 0) {
-      glpStr = formatAmount(processedData.glpBalance, 18, 2, true) + " GLP";
+      glpStr = formatAmount(processedData.glpBalance, 18, 2, true) + " SLP";
     }
     let gmStr;
     if (userTotalGmInfo?.balance && userTotalGmInfo.balance > 0) {
-      gmStr = formatAmount(userTotalGmInfo.balance, 18, 2, true) + " GM";
+      gmStr = formatAmount(userTotalGmInfo.balance, 18, 2, true) + " SD";
     }
     const amountStr = [gmxAmountStr, esGmxAmountStr, gmStr, glpStr].filter((s) => s).join(", ");
     earnMsg = (
@@ -1818,9 +1818,9 @@ export default function StakeV2() {
         subtitle={
           <div>
             <Trans>
-              Stake <ExternalLink href="https://docs.gmx.io/docs/tokenomics/gmx-token">GMX</ExternalLink> and buy{" "}
-              <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>GM</ExternalLink> or{" "}
-              <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>GLP</ExternalLink> to earn rewards.
+              Stake <ExternalLink href="https://docs.gmx.io/docs/tokenomics/gmx-token">SD</ExternalLink> and buy{" "}
+              <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>SD</ExternalLink> or{" "}
+              <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>SLP</ExternalLink> to earn rewards.
             </Trans>
             {earnMsg && <div className="Page-description">{earnMsg}</div>}
             {incentivesMessage}
@@ -1870,7 +1870,7 @@ export default function StakeV2() {
                   <Trans>Wallet</Trans>
                 </div>
                 <div>
-                  {formatKeyAmount(processedData, "gmxBalance", 18, 2, true)} GMX ($
+                  {formatKeyAmount(processedData, "gmxBalance", 18, 2, true)} SD ($
                   {formatKeyAmount(processedData, "gmxBalanceUsd", USD_DECIMALS, 2, true)})
                 </div>
               </div>
@@ -1879,7 +1879,7 @@ export default function StakeV2() {
                   <Trans>Staked</Trans>
                 </div>
                 <div>
-                  {formatKeyAmount(processedData, "gmxInStakedGmx", 18, 2, true)} GMX ($
+                  {formatKeyAmount(processedData, "gmxInStakedGmx", 18, 2, true)} SD ($
                   {formatKeyAmount(processedData, "gmxInStakedGmxUsd", USD_DECIMALS, 2, true)})
                 </div>
               </div>
@@ -1893,7 +1893,7 @@ export default function StakeV2() {
                       <Tooltip
                         position="bottom-end"
                         className="nowrap"
-                        handle={`${formatAmount(govTokenAmount, 18, 2, true)} GMX DAO`}
+                        handle={`${formatAmount(govTokenAmount, 18, 2, true)} SD DAO`}
                         renderContent={() => (
                           <>
                             {govTokenDelegatesAddress === NATIVE_TOKEN_ADDRESS && govTokenAmount > 0 ? (
@@ -1904,7 +1904,7 @@ export default function StakeV2() {
                               >
                                 <Trans>
                                   <ExternalLink href={GMX_DAO_LINKS.VOTING_POWER} className="display-inline">
-                                    Delegate your undelegated {formatAmount(govTokenAmount, 18, 2, true)} GMX DAO
+                                    Delegate your undelegated {formatAmount(govTokenAmount, 18, 2, true)} SD DAO
                                   </ExternalLink>
                                   <span>&nbsp;voting power.</span>
                                 </Trans>
@@ -1975,7 +1975,7 @@ export default function StakeV2() {
                             showDollar={false}
                           />
                           <StatsTooltipRow
-                            label="Escrowed GMX"
+                            label="Escrowed SD"
                             value={`${formatKeyAmount(
                               processedData,
                               "stakedGmxTrackerRewards",
@@ -2009,14 +2009,14 @@ export default function StakeV2() {
                       className="whitespace-nowrap"
                       handle={
                         formatAmount(totalGmxStaked, 18, 0, true) +
-                        " GMX" +
+                        " SD" +
                         ` ($${formatAmount(stakedGmxSupplyUsd, USD_DECIMALS, 0, true)})`
                       }
                       renderContent={() => (
                         <ChainsStatsTooltipRow
                           showDollar={false}
                           decimalsForConversion={18}
-                          symbol="GMX"
+                          symbol="SD"
                           entries={stakedEntries}
                         />
                       )}
@@ -2032,7 +2032,7 @@ export default function StakeV2() {
                 {totalGmxSupply === undefined && "..."}
                 {(totalGmxSupply !== undefined && (
                   <div>
-                    {formatAmount(totalGmxSupply, 18, 0, true)} GMX ($
+                    {formatAmount(totalGmxSupply, 18, 0, true)} SD ($
                     {formatAmount(totalSupplyUsd, USD_DECIMALS, 0, true)})
                   </div>
                 )) ||
@@ -2041,7 +2041,7 @@ export default function StakeV2() {
               <div className="App-card-divider" />
               <div className="App-card-buttons m-0">
                 <Button variant="secondary" to="/buy_gmx">
-                  <Trans>Buy GMX</Trans>
+                  <Trans>Buy SD</Trans>
                 </Button>
                 {active && (
                   <Button variant="secondary" onClick={() => showStakeGmxModal()}>
@@ -2082,7 +2082,7 @@ export default function StakeV2() {
                 </div>
               </div>
               <div className="App-card-row">
-                <div className="label">GMX</div>
+                <div className="label">SD</div>
                 <div>
                   {formatKeyAmount(processedData, "totalVesterRewards", 18, 4, true)} ($
                   {formatKeyAmount(processedData, "totalVesterRewardsUsd", USD_DECIMALS, 2, true)})
@@ -2090,7 +2090,7 @@ export default function StakeV2() {
               </div>
               <div className="App-card-row">
                 <div className="label">
-                  <Trans>Escrowed GMX</Trans>
+                  <Trans>Escrowed SD</Trans>
                 </div>
                 <div>
                   {formatKeyAmount(processedData, "totalEsGmxRewards", 18, 4, true)} ($
@@ -2146,7 +2146,7 @@ export default function StakeV2() {
                     <Trans>Wallet</Trans>
                   </div>
                   <div>
-                    {formatKeyAmount(processedData, "glpBalance", GLP_DECIMALS, 2, true)} GLP ($
+                    {formatKeyAmount(processedData, "glpBalance", GLP_DECIMALS, 2, true)} SLP ($
                     {formatKeyAmount(processedData, "glpBalanceUsd", USD_DECIMALS, 2, true)})
                   </div>
                 </div>
@@ -2155,7 +2155,7 @@ export default function StakeV2() {
                     <Trans>Staked</Trans>
                   </div>
                   <div>
-                    {formatKeyAmount(processedData, "glpBalance", GLP_DECIMALS, 2, true)} GLP ($
+                    {formatKeyAmount(processedData, "glpBalance", GLP_DECIMALS, 2, true)} SLP ($
                     {formatKeyAmount(processedData, "glpBalanceUsd", USD_DECIMALS, 2, true)})
                   </div>
                 </div>
@@ -2179,7 +2179,7 @@ export default function StakeV2() {
 
                             {processedData?.glpAprForEsGmx && processedData.glpAprForEsGmx > 0 && (
                               <StatsTooltipRow
-                                label="Escrowed GMX APR"
+                                label="Escrowed SD APR"
                                 value={`${formatKeyAmount(processedData, "glpAprForEsGmx", 2, 2, true)}%`}
                                 showDollar={false}
                               />
@@ -2191,7 +2191,7 @@ export default function StakeV2() {
                               APRs are updated weekly on Wednesday and will depend on the fees collected for the week.{" "}
                               <br />
                               <br />
-                              Historical GLP APRs can be checked in this{" "}
+                              Historical SLP APRs can be checked in this{" "}
                               <ExternalLink href="https://dune.com/saulius/gmx-analytics">
                                 community dashboard
                               </ExternalLink>
@@ -2231,7 +2231,7 @@ export default function StakeV2() {
                               showDollar={false}
                             />
                             <StatsTooltipRow
-                              label="Escrowed GMX"
+                              label="Escrowed SD"
                               value={`${formatKeyAmount(
                                 processedData,
                                 "stakedGlpTrackerRewards",
@@ -2258,7 +2258,7 @@ export default function StakeV2() {
                     <Trans>Total Staked</Trans>
                   </div>
                   <div>
-                    {formatKeyAmount(processedData, "glpSupply", 18, 2, true)} GLP ($
+                    {formatKeyAmount(processedData, "glpSupply", 18, 2, true)} SLP ($
                     {formatKeyAmount(processedData, "glpSupplyUsd", USD_DECIMALS, 2, true)})
                   </div>
                 </div>
@@ -2267,7 +2267,7 @@ export default function StakeV2() {
                     <Trans>Total Supply</Trans>
                   </div>
                   <div>
-                    {formatKeyAmount(processedData, "glpSupply", 18, 2, true)} GLP ($
+                    {formatKeyAmount(processedData, "glpSupply", 18, 2, true)} SLP ($
                     {formatKeyAmount(processedData, "glpSupplyUsd", USD_DECIMALS, 2, true)})
                   </div>
                 </div>
@@ -2279,10 +2279,10 @@ export default function StakeV2() {
               <div className="App-card-divider" />
               <div className="App-card-buttons glp-buttons m-0">
                 <Button variant="secondary" to="/buy_glp">
-                  <Trans>Buy GLP</Trans>
+                  <Trans>Buy SLP</Trans>
                 </Button>
                 <Button variant="secondary" to="/buy_glp#redeem">
-                  <Trans>Sell GLP</Trans>
+                  <Trans>Sell SLP</Trans>
                 </Button>
                 {hasInsurance && (
                   <Button
@@ -2300,7 +2300,7 @@ export default function StakeV2() {
               <div className="inline-flex items-center">
                 <img className="mr-5 h-20" alt="GLP" src={icons?.esgmx} height={20} />
                 <span>
-                  <Trans>Escrowed GMX</Trans>
+                  <Trans>Escrowed SD</Trans>
                 </span>
               </div>
             </div>
@@ -2317,7 +2317,7 @@ export default function StakeV2() {
                   <Trans>Wallet</Trans>
                 </div>
                 <div>
-                  {formatKeyAmount(processedData, "esGmxBalance", 18, 2, true)} esGMX ($
+                  {formatKeyAmount(processedData, "esGmxBalance", 18, 2, true)} esSD ($
                   {formatKeyAmount(processedData, "esGmxBalanceUsd", USD_DECIMALS, 2, true)})
                 </div>
               </div>
@@ -2326,7 +2326,7 @@ export default function StakeV2() {
                   <Trans>Staked</Trans>
                 </div>
                 <div>
-                  {formatKeyAmount(processedData, "esGmxInStakedGmx", 18, 2, true)} esGMX ($
+                  {formatKeyAmount(processedData, "esGmxInStakedGmx", 18, 2, true)} esSD ($
                   {formatKeyAmount(processedData, "esGmxInStakedGmxUsd", USD_DECIMALS, 2, true)})
                 </div>
               </div>
@@ -2351,7 +2351,7 @@ export default function StakeV2() {
                   <Trans>Total Staked</Trans>
                 </div>
                 <div>
-                  {formatKeyAmount(processedData, "stakedEsGmxSupply", 18, 0, true)} esGMX ($
+                  {formatKeyAmount(processedData, "stakedEsGmxSupply", 18, 0, true)} esSD ($
                   {formatKeyAmount(processedData, "stakedEsGmxSupplyUsd", USD_DECIMALS, 0, true)})
                 </div>
               </div>
@@ -2360,7 +2360,7 @@ export default function StakeV2() {
                   <Trans>Total Supply</Trans>
                 </div>
                 <div>
-                  {formatAmount(esGmxSupply, 18, 0, true)} esGMX (${formatAmount(esGmxSupplyUsd, USD_DECIMALS, 0, true)}
+                  {formatAmount(esGmxSupply, 18, 0, true)} esSD (${formatAmount(esGmxSupplyUsd, USD_DECIMALS, 0, true)}
                   )
                 </div>
               </div>
@@ -2409,7 +2409,7 @@ export default function StakeV2() {
           title={t`Vest`}
           subtitle={
             <Trans>
-              Convert esGMX tokens to GMX tokens.
+              Convert esSD tokens to SD tokens.
               <br />
               Please read the{" "}
               <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>
@@ -2443,13 +2443,13 @@ export default function StakeV2() {
                           <>
                             <StatsTooltipRow
                               showDollar={false}
-                              label="GMX"
+                              label="SD"
                               value={formatAmount(processedData?.gmxInStakedGmx, 18, 2, true)}
                             />
 
                             <StatsTooltipRow
                               showDollar={false}
-                              label="esGMX"
+                              label="esSD"
                               value={formatAmount(processedData?.esGmxInStakedGmx, 18, 2, true)}
                             />
                           </>
@@ -2485,8 +2485,8 @@ export default function StakeV2() {
                           <div>
                             <Trans>
                               {formatKeyAmount(vestingData, "gmxVesterClaimSum", 18, 4, true)} tokens have been
-                              converted to GMX from the{" "}
-                              {formatKeyAmount(vestingData, "gmxVesterVestedAmount", 18, 4, true)} esGMX deposited for
+                              converted to SD from the{" "}
+                              {formatKeyAmount(vestingData, "gmxVesterVestedAmount", 18, 4, true)} esSD deposited for
                               vesting.
                             </Trans>
                           </div>
@@ -2501,11 +2501,11 @@ export default function StakeV2() {
                   </div>
                   <div>
                     <Tooltip
-                      handle={`${formatKeyAmount(vestingData, "gmxVesterClaimable", 18, 4, true)} GMX`}
+                      handle={`${formatKeyAmount(vestingData, "gmxVesterClaimable", 18, 4, true)} SD`}
                       position="bottom-end"
                       renderContent={() => (
                         <Trans>
-                          {formatKeyAmount(vestingData, "gmxVesterClaimable", 18, 4, true)} GMX tokens can be claimed,
+                          {formatKeyAmount(vestingData, "gmxVesterClaimable", 18, 4, true)} SD tokens can be claimed,
                           use the options under the Total Rewards section to claim them.
                         </Trans>
                       )}
@@ -2545,7 +2545,7 @@ export default function StakeV2() {
                   <div className="label">
                     <Trans>Staked Tokens</Trans>
                   </div>
-                  <div>{formatAmount(processedData?.glpBalance, 18, 2, true)} GLP</div>
+                  <div>{formatAmount(processedData?.glpBalance, 18, 2, true)} SLP</div>
                 </div>
                 <div className="App-card-row">
                   <div className="label">
@@ -2575,8 +2575,8 @@ export default function StakeV2() {
                           <div>
                             <Trans>
                               {formatKeyAmount(vestingData, "glpVesterClaimSum", 18, 4, true)} tokens have been
-                              converted to GMX from the{" "}
-                              {formatKeyAmount(vestingData, "glpVesterVestedAmount", 18, 4, true)} esGMX deposited for
+                              converted to SD from the{" "}
+                              {formatKeyAmount(vestingData, "glpVesterVestedAmount", 18, 4, true)} esSD deposited for
                               vesting.
                             </Trans>
                           </div>
@@ -2591,11 +2591,11 @@ export default function StakeV2() {
                   </div>
                   <div>
                     <Tooltip
-                      handle={`${formatKeyAmount(vestingData, "glpVesterClaimable", 18, 4, true)} GMX`}
+                      handle={`${formatKeyAmount(vestingData, "glpVesterClaimable", 18, 4, true)} SD`}
                       position="bottom-end"
                       renderContent={() => (
                         <Trans>
-                          {formatKeyAmount(vestingData, "glpVesterClaimable", 18, 4, true)} GMX tokens can be claimed,
+                          {formatKeyAmount(vestingData, "glpVesterClaimable", 18, 4, true)} SD tokens can be claimed,
                           use the options under the Total Rewards section to claim them.
                         </Trans>
                       )}
@@ -2651,8 +2651,8 @@ export default function StakeV2() {
                             <div>
                               <Trans>
                                 {formatKeyAmount(vestingData, "affiliateVesterClaimSum", 18, 4, true)} tokens have been
-                                converted to GMX from the{" "}
-                                {formatKeyAmount(vestingData, "affiliateVesterVestedAmount", 18, 4, true)} esGMX
+                                converted to SD from the{" "}
+                                {formatKeyAmount(vestingData, "affiliateVesterVestedAmount", 18, 4, true)} esSD
                                 deposited for vesting.
                               </Trans>
                             </div>
@@ -2665,7 +2665,7 @@ export default function StakeV2() {
                     <div className="label">
                       <Trans>Claimable</Trans>
                     </div>
-                    <div>{formatKeyAmount(vestingData, "affiliateVesterClaimable", 18, 4, true)} GMX</div>
+                    <div>{formatKeyAmount(vestingData, "affiliateVesterClaimable", 18, 4, true)} SD</div>
                   </div>
                   <div className="App-card-divider" />
                   <div className="App-card-buttons m-0">
@@ -2702,9 +2702,9 @@ export default function StakeV2() {
           title={t`Incentives & Prizes`}
           subtitle={
             incentiveStats?.lp?.isActive || incentiveStats?.trading?.isActive ? (
-              <Trans>Earn {incentivesToken} token incentives by purchasing GM tokens or trading in GMX V2.</Trans>
+              <Trans>Earn {incentivesToken} token incentives by purchasing SD tokens or trading in SD.</Trans>
             ) : (
-              <Trans>Earn prizes by participating in GMX Trading Competitions.</Trans>
+              <Trans>Earn prizes by participating in SD Trading Competitions.</Trans>
             )
           }
         />

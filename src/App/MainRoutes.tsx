@@ -91,7 +91,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
       <Route exact path="/">
         <Redirect to="/perpetuals" />
       </Route>
-      <Route exact path="/price_impact_rebates_stats">
+      {/* <Route exact path="/price_impact_rebates_stats">
         <PriceImpactRebatesStatsPage />
       </Route>
       <Route exact path="/v1/:tradeType?">
@@ -127,7 +127,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
         ) : (
           <SyntheticsFallbackPage />
         )}
-      </Route>
+      </Route> */}
 
       <Route exact path="/perpetuals/:tradeType?">
         {getIsSyntheticsSupported(chainId) ? (
@@ -142,7 +142,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
       <Route exact path="/slp">
         <BuyGlp />
       </Route>
-      <Route exact path="/jobs">
+      {/* <Route exact path="/jobs">
         <Jobs />
       </Route>
       <Route exact path="/buy_gmx">
@@ -177,14 +177,14 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
         ) : (
           <SyntheticsFallbackPage />
         )}
-      </Route>
+      </Route> */}
       <Route exact path="/referrals">
         <Referrals />
       </Route>
       <Route exact path="/referrals/:account">
         <Referrals />
       </Route>
-      <Route exact path="/nft_wallet">
+      {/* <Route exact path="/nft_wallet">
         <NftWallet />
       </Route>
       <Route exact path="/claim_es_gmx">
@@ -232,7 +232,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
         <Route exact path="/ui">
           <UiPage />
         </Route>
-      )}
+      )} */}
 
       <Route path="*">
         <PageNotFound />

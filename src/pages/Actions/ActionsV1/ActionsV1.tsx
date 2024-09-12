@@ -114,15 +114,15 @@ function ActionsV1({
         <div className="Actions-title">
           <PageTitle
             isTop
-            title={t`GMX V1 Actions`}
+            title={t`SD V1 Actions`}
             subtitle={
               <>
-                <Trans>GMX V1 {networkName} actions for all accounts.</Trans>
+                <Trans>SD V1 {networkName} actions for all accounts.</Trans>
                 {getIsSyntheticsSupported(chainId) && (
                   <Trans>
                     <div>
                       <ExternalLink newTab={false} href="/#/accounts">
-                        Check on GMX V2 {networkName}
+                        Check on SD {networkName}
                       </ExternalLink>{" "}
                       or{" "}
                       <span

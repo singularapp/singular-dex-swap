@@ -122,7 +122,7 @@ export default function MarketTokenSelector(props: Props) {
           )}
         </div>
       }
-      modalLabel={t`GMX Market Tokens`}
+      modalLabel={t`SINGULAR Market Tokens`}
       mobileModalContentPadding={false}
     >
       <MarketTokenSelectorInternal

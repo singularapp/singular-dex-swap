@@ -30,16 +30,16 @@ export default function SyntheticsActions() {
         <div className="Actions-title">
           <PageTitle
             isTop
-            title={t`GMX V2 Actions`}
+            title={t`SD Actions`}
             subtitle={
               <>
-                <Trans>GMX V2 {networkName} actions for all accounts.</Trans>
+                <Trans>SD {networkName} actions for all accounts.</Trans>
 
                 {getIsV1Supported(chainId) && (
                   <Trans>
                     <div>
                       <ExternalLink newTab={false} href="/#/actions/v1">
-                        Check on GMX V1 {networkName}
+                        Check on SD V1 {networkName}
                       </ExternalLink>{" "}
                       or{" "}
                       <span className="cursor-pointer underline" onClick={toggleNetwork}>

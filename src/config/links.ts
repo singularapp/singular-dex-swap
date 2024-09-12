@@ -70,3 +70,7 @@ export function getIncentivesV2Url(chainId: number): string {
 
   // return ARBITRUM_INCENTIVES_V2_URL;
 }
+
+export enum STATIC_LINKS {
+  PrivacyPolicy = "https://singulardex.com/privacy-policy.html",
+}

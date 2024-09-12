@@ -25,7 +25,7 @@ export function AccountsRouter() {
 
     return (
       <div className="default-container page-layout">
-        <PageTitle isTop title={t`GMX V1 Actions`} />
+        <PageTitle isTop title={t`SD V1 Actions`} />
         <div className="text-center text-yellow-500">
           <Trans>V1 is not supported on {chainName}. Please switch to Arbitrum to use V1.</Trans>
         </div>
