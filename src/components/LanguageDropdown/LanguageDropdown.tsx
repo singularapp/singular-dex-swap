@@ -11,6 +11,8 @@ import checkedIcon from "img/ic_checked.svg";
 
 export default function LanguageDropdown(props) {
   const currentLanguage = useRef(localStorage.getItem(LANGUAGE_LOCALSTORAGE_KEY) || defaultLocale);
+  const [selectedLanguage, setSelectedLanguage] = useState(currentLanguage);
+
   const [showLanguageModal, setShowLanguageModal] = useState(false);
 
   return (
@@ -22,7 +24,15 @@ export default function LanguageDropdown(props) {
           </div>
         </div>
       ) : (
-        <DesktopDropdown currentLanguage={currentLanguage} {...props} />
+        <DesktopDropdown
+          currentLanguage={selectedLanguage}
+          onChangeLanguage={(lang) => {
+            setSelectedLanguage({
+              current: lang,
+            });
+          }}
+          {...props}
+        />
       )}
       <ModalWithPortal
         className="language-popup"
@@ -46,7 +56,7 @@ function NavIcons({ currentLanguage }) {
   );
 }
 
-function DesktopDropdown({ currentLanguage }) {
+function DesktopDropdown({ currentLanguage, onChangeLanguage }) {
   return (
     <div className="App-header-language">
       <Menu>
@@ -55,7 +65,7 @@ function DesktopDropdown({ currentLanguage }) {
         </Menu.Button>
         <Menu.Items as="div" className="menu-items language-dropdown-items">
           <div className="language-dropdown-list">
-            <LanguageMenuItems currentLanguage={currentLanguage} />
+            <LanguageMenuItems currentLanguage={currentLanguage} onChangeLanguage={onChangeLanguage} />
           </div>
         </Menu.Items>
       </Menu>
@@ -63,7 +73,7 @@ function DesktopDropdown({ currentLanguage }) {
   );
 }
 
-function LanguageMenuItems({ currentLanguage }) {
+function LanguageMenuItems({ currentLanguage, onChangeLanguage }) {
   return (
     <>
       {Object.keys(locales).map((item) => {
@@ -77,6 +87,7 @@ function LanguageMenuItems({ currentLanguage }) {
               onClick={() => {
                 localStorage.setItem(LANGUAGE_LOCALSTORAGE_KEY, item);
                 dynamicActivate(item);
+                onChangeLanguage(item);
               }}
             >
               <div className="menu-item-group">

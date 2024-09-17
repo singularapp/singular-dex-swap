@@ -6125,16 +6125,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uidotdev/usehooks@npm:2.4.1":
-  version: 2.4.1
-  resolution: "@uidotdev/usehooks@npm:2.4.1"
-  peerDependencies:
-    react: ">=18.0.0"
-    react-dom: ">=18.0.0"
-  checksum: d381ce7d4853abe53127b70b0734935d1cfba97bfd2314e67aa42d4f35cd5b955712c6e968f435d8818bd51bea9cf7688b60eeb0db19bae2a6666a37ceee8b5f
-  languageName: node
-  linkType: hard
-
 "@uniswap/lib@npm:^4.0.1-alpha":
   version: 4.0.1-alpha
   resolution: "@uniswap/lib@npm:4.0.1-alpha"
@@ -10842,7 +10832,6 @@ __metadata:
     "@types/react-router-dom": 5.3.3
     "@typescript-eslint/eslint-plugin": 6.5.0
     "@typescript-eslint/parser": 6.5.0
-    "@uidotdev/usehooks": 2.4.1
     "@uniswap/sdk-core": 3.0.1
     "@uniswap/v3-sdk": 3.9.0
     "@vitejs/plugin-react": 4.3.1
@@ -10892,7 +10881,7 @@ __metadata:
     react-hot-toast: 2.2.0
     react-icons: 4.3.1
     react-jazzicon: 1.0.4
-    react-joyride: 2.9.2
+    react-joyride: 2.8.1
     react-loading-skeleton: 3.3.1
     react-remove-scroll: 2.5.5
     react-router-dom: 5.3.4
@@ -14465,9 +14454,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-joyride@npm:2.9.2":
-  version: 2.9.2
-  resolution: "react-joyride@npm:2.9.2"
+"react-joyride@npm:2.8.1":
+  version: 2.8.1
+  resolution: "react-joyride@npm:2.8.1"
   dependencies:
     "@gilbarbara/deep-equal": ^0.3.1
     deep-diff: ^1.0.2
@@ -14479,11 +14468,11 @@ __metadata:
     scroll: ^3.0.1
     scrollparent: ^2.1.0
     tree-changes: ^0.11.2
-    type-fest: ^4.26.1
+    type-fest: ^4.15.0
   peerDependencies:
     react: 15 - 18
     react-dom: 15 - 18
-  checksum: 14541acb3f2a4cf4ed3900c011e48d2d7a1eb76e960fe436986951025e52d36f8cd360b139949800ac1a379c664d6a46502aeb408ab77a1ff59a73348dfa68ba
+  checksum: 555394e3f9f2cd91602a8f639c28a9f881d2c8ea82ad93054fb9548cf407da3e17c23e4fc44bca04b4d0acd9955cb3886a61c5f4ebdcee6c512737272a27b38e
   languageName: node
   linkType: hard
 
@@ -16581,7 +16570,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^4.26.1":
+"type-fest@npm:^4.15.0":
   version: 4.26.1
   resolution: "type-fest@npm:4.26.1"
   checksum: 7188db3bca82afa62c69a8043fb7c5eb74e63c45e7e28efb986da1629d844286f7181bc5a8185f38989fffff0d6c96be66fd13529b01932d1b6ebe725181d31a

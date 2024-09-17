@@ -79,7 +79,7 @@ export const PerpectualGuide = () => {
 
   return (
     <ReactJoyride
-      run={true}
+      run={tourRun}
       steps={steps}
       continuous
       showProgress

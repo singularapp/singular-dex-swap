@@ -239,7 +239,7 @@ export function SyntheticsPage(p: Props) {
          `}
         </style>
       </Helmet>
-      {/* <PerpectualGuide /> */}
+      <PerpectualGuide />
       <div className="Exchange-content">
         <div className="Exchange-left">
           <TVChart />
