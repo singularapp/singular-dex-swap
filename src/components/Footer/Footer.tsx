@@ -19,6 +19,15 @@ export default function Footer({ showRedirectModal, redirectPopupTimestamp }: Pr
   const isHome = isHomeSite();
   const [isUserFeedbackModalVisible, setIsUserFeedbackModalVisible] = useState(false);
 
+  const handleLeaveFeedback = () => {
+    const iframe = document.getElementById("meta-crm-widget");
+
+    if (iframe) {
+      const button = iframe["contentWindow"].document.querySelector(".frame-content button");
+      button.click();
+    }
+  };
+
   return (
     <>
       <div className={cx("Footer-wrapper", { home: isHome })}>
@@ -70,7 +79,7 @@ export default function Footer({ showRedirectModal, redirectPopupTimestamp }: Pr
             );
           })}
           {!isHome && (
-            <div className="Footer-link" onClick={() => setIsUserFeedbackModalVisible(true)}>
+            <div className="Footer-link" onClick={handleLeaveFeedback}>
               <Trans>Leave feedback</Trans>
             </div>
           )}
