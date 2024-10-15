@@ -1,6 +1,13 @@
 // date format: d MMM yyyy, H:mm, time should be specifed based on UTC time
 
+import { TokenSymbolWithIcon } from "components/TokenSymbolWithIcon/TokenSymbolWithIcon";
 import { type JSX } from "react";
+import { Link } from "react-router-dom";
+import { DOCUMENT_LINKS, getIncentivesV2Url } from "./links";
+import { Trans } from "@lingui/macro";
+import ExternalLink from "components/ExternalLink/ExternalLink";
+import { ARBITRUM, AVALANCHE } from "./chains";
+import { getNormalizedTokenSymbol } from "./tokens";
 
 export type EventData = {
   id: string;

@@ -51,6 +51,7 @@ import { useInterviewNotification } from "domain/synthetics/userFeedback/useInte
 import { useMedia } from "react-use";
 import { MissedCoinsModal } from "components/MissedCoinsModal/MissedCoinsModal";
 import { useMeasureComponentMountTime } from "lib/metrics";
+import { PerpectualGuide } from "components/Guide/PerpectualGuide";
 
 export type Props = {
   openSettings: () => void;
