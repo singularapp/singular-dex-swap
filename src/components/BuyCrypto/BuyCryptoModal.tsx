@@ -17,7 +17,7 @@ interface BuyCryptoModalProps {
 
 export const BuyCryptoModal = ({ show, setShow, onLaunchUnlimitCryptoOverlay }: BuyCryptoModalProps) => {
   return (
-    <Modal className="App-settings" isVisible={show} setIsVisible={setShow} hideDivider={true}>
+    <Modal className="App-settings" isVisible={show} setIsVisible={setShow} noDivider={true}>
       <div className="App-settings-row">
         <h2 className="center">
           <Trans>Buy Crypto In An Instant</Trans>

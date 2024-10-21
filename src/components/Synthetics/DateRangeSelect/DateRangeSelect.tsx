@@ -31,13 +31,8 @@ import "./DateRangeSelect.scss";
 
 export const LOCALE_DATE_LOCALE_MAP: Record<keyof typeof locales, DateLocale> = {
   en: dateEn,
-  es: dateEs,
   zh: dateZh,
-  ko: dateKo,
-  ru: dateRu,
   ja: dateJa,
-  fr: dateFr,
-  de: dateDe,
   pseudo: dateEn,
 };
 

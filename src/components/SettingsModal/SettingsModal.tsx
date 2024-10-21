@@ -20,6 +20,7 @@ import { useKey } from "react-use";
 
 import "./SettingsModal.scss";
 import { AbFlagSettings } from "components/AbFlagsSettings/AbFlagsSettings";
+import { DOCUMENT_LINKS } from "config/links";
 
 export function SettingsModal({
   isSettingsVisible,
