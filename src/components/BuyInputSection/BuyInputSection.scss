@@ -44,6 +44,8 @@
       color: var(--color-white);
       font-size: var(--font-sm);
       border-radius: 99px;
+      min-width: 60px;
+      width: fit-content;
     }
 
     .TokenSelector-caret {
