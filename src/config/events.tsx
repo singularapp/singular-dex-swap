@@ -38,11 +38,11 @@ export const appEventsData: EventData[] = [
     endDate: "31 Oct 2024, 00:00",
     bodyText: (
       <>
-        <Link to="/trade">Trade</Link> <TokenSymbolWithIcon symbol="POL" />
+        <Link to="/perpetuals">Trade</Link> <TokenSymbolWithIcon symbol="POL" />
         /USD, <TokenSymbolWithIcon symbol="AAVE" />
         /USD, <TokenSymbolWithIcon symbol="PEPE" />
         /USD and <TokenSymbolWithIcon symbol="UNI" />
-        /USD, or <Link to="/pools">provide liquidity</Link> to these pools using <TokenSymbolWithIcon symbol="ETH" /> or{" "}
+        /USD, or <Link to="/perpetuals">provide liquidity</Link> to these pools using <TokenSymbolWithIcon symbol="ETH" /> or{" "}
         <TokenSymbolWithIcon symbol="USDC" />.
       </>
     ),
@@ -55,9 +55,9 @@ export const appEventsData: EventData[] = [
     endDate: "24 Oct 2024, 00:00",
     bodyText: (
       <>
-        <Link to="/trade">Trade</Link> <TokenSymbolWithIcon symbol="EIGEN" />
+        <Link to="/perpetuals">Trade</Link> <TokenSymbolWithIcon symbol="EIGEN" />
         /USD and <TokenSymbolWithIcon symbol="SATS" />
-        /USD, or <Link to="/pools">provide liquidity</Link> to these pools by using{" "}
+        /USD, or <Link to="/perpetuals">provide liquidity</Link> to these pools by using{" "}
         <TokenSymbolWithIcon symbol="WETH" />, <TokenSymbolWithIcon symbol="WBTC" /> or{" "}
         <TokenSymbolWithIcon symbol="USDC" />.
       </>
@@ -71,7 +71,7 @@ export const appEventsData: EventData[] = [
     endDate: "15 Oct 2024, 00:00",
     bodyText: (
       <>
-        <Link to="/pools/?market=0x901eE57f7118A7be56ac079cbCDa7F22663A3874&operation=buy&scroll=1">Buy</Link> the first
+        <Link to="/perpetuals/?market=0x901eE57f7118A7be56ac079cbCDa7F22663A3874&operation=buy&scroll=1">Buy</Link> the first
         automatically rebalanced vault on Avalanche combining multiple GM tokens with WAVAX, USDC, or eligible GM
         tokens.
       </>
@@ -90,9 +90,9 @@ export const appEventsData: EventData[] = [
     endDate: "25 Sep 2024, 00:00",
     bodyText: (
       <>
-        <Link to="/trade">Trade</Link> <TokenSymbolWithIcon symbol="BTC" />
+        <Link to="/perpetuals">Trade</Link> <TokenSymbolWithIcon symbol="BTC" />
         /USD, or{" "}
-        <Link to="/pools/?market=0xd62068697bCc92AF253225676D618B0C9f17C663&operation=buy&scroll=1">
+        <Link to="/perpetuals/?market=0xd62068697bCc92AF253225676D618B0C9f17C663&operation=buy&scroll=1">
           provide liquidity
         </Link>{" "}
         to this pool by using <TokenSymbolWithIcon symbol="tBTC" />.
@@ -107,7 +107,7 @@ export const appEventsData: EventData[] = [
     endDate: "24 Sep 2024, 00:00",
     bodyText: (
       <>
-        <Link to="/pools/?market=0xdF03EEd325b82bC1d4Db8b49c30ecc9E05104b96&operation=buy&scroll=1">Buy</Link> the
+        <Link to="/perpetuals/?market=0xdF03EEd325b82bC1d4Db8b49c30ecc9E05104b96&operation=buy&scroll=1">Buy</Link> the
         second automatically rebalanced vault combining multiple GM tokens with BTC, USDC, or eligible GM tokens on
         Arbitrum.
       </>
@@ -126,7 +126,7 @@ export const appEventsData: EventData[] = [
     endDate: "30 Sep 2024, 00:00",
     bodyText: (
       <>
-        <Link to="/trade">Trade</Link> with no price impact on <TokenSymbolWithIcon symbol="BTC" />
+        <Link to="/perpetuals">Trade</Link> with no price impact on <TokenSymbolWithIcon symbol="BTC" />
         /USD [BTC] and <TokenSymbolWithIcon symbol="ETH" />
         /USD [WETH] markets on Arbitrum.
       </>
@@ -140,7 +140,7 @@ export const appEventsData: EventData[] = [
     endDate: "28 Aug 2024, 00:00",
     bodyText: (
       <>
-        <Link to="/trade">Trade</Link> ORDI/USD and STX/USD, or <Link to="/pools">provide liquidity</Link> to these
+        <Link to="/perpetuals">Trade</Link> ORDI/USD and STX/USD, or <Link to="/perpetuals">provide liquidity</Link> to these
         pools by using <TokenSymbolWithIcon symbol="wBTC" /> or <TokenSymbolWithIcon symbol="USDC" />.
       </>
     ),
@@ -221,7 +221,7 @@ export const appEventsData: EventData[] = [
     ],
     link: {
       text: "View GM pools",
-      href: "/#/pools",
+      href: "/#/perpetuals",
     },
   },
   {
