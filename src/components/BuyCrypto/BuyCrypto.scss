@@ -22,3 +22,9 @@
   font-size: 1.25rem;
   cursor: pointer;
 }
+
+@media (max-width: 450px) {
+  .App-header-buy-crypto {
+    margin-right: 0.3rem;
+  }
+}

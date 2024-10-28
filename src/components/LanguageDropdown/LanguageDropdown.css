@@ -136,7 +136,7 @@
 .language-popup .Modal-body {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
 }
 
 .language-modal-item {
@@ -211,10 +211,21 @@
 @media (max-width: 450px) {
   .App-header-language {
     margin-left: 0.6rem;
+    margin-right: 0.3rem;
   }
   .App-header-language {
     margin-left: 0;
   }
+
+  .language-dropdown {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .language-dropdown-label {
+    display: none;
+  }
+
   .language-dropdown > button {
     padding: 0 0.5rem;
   }

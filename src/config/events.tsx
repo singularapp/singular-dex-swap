@@ -64,25 +64,6 @@ export const appEventsData: EventData[] = [
     ),
   },
   {
-    id: "glv-wavax",
-    title: "GLV [WAVAX-USDC] is live",
-    isActive: true,
-    startDate: "01 Oct 2024, 00:00",
-    endDate: "15 Oct 2024, 00:00",
-    bodyText: (
-      <>
-        <Link to="/perpetuals/?market=0x901eE57f7118A7be56ac079cbCDa7F22663A3874&operation=buy&scroll=1">Buy</Link> the first
-        automatically rebalanced vault on Avalanche combining multiple GM tokens with WAVAX, USDC, or eligible GM
-        tokens.
-      </>
-    ),
-    link: {
-      text: "Read more",
-      href: "https://docs.gmx.io/docs/providing-liquidity/v2/#glv-pools",
-      newTab: true,
-    },
-  },
-  {
     id: "tbtc-market-arbitrum",
     title: "BTC/USD [tBTC] market added on Arbitrum",
     isActive: true,
@@ -108,7 +89,7 @@ export const appEventsData: EventData[] = [
     bodyText: (
       <>
         <Link to="/perpetuals/?market=0xdF03EEd325b82bC1d4Db8b49c30ecc9E05104b96&operation=buy&scroll=1">Buy</Link> the
-        second automatically rebalanced vault combining multiple GM tokens with BTC, USDC, or eligible GM tokens on
+        second automatically rebalanced vault combining multiple SD tokens with BTC, USDC, or eligible SD tokens on
         Arbitrum.
       </>
     ),
@@ -183,7 +164,7 @@ export const appEventsData: EventData[] = [
     bodyText: (
       <Trans>
         Incentives are live for <ExternalLink href={getIncentivesV2Url(ARBITRUM)}>Arbitrum</ExternalLink> and{" "}
-        <ExternalLink href={getIncentivesV2Url(AVALANCHE)}>Avalanche</ExternalLink> GM pools and V2 trading.
+        <ExternalLink href={getIncentivesV2Url(AVALANCHE)}>Avalanche</ExternalLink> SD pools and V2 trading.
       </Trans>
     ),
   },
@@ -192,7 +173,7 @@ export const appEventsData: EventData[] = [
     title: "Arbitrum Incentives are Live",
     isActive: true,
     endDate: "03 Jul 2024, 00:00",
-    bodyText: "Incentives are live for Arbitrum GM pools and V2 trading.",
+    bodyText: "Incentives are live for Arbitrum SD pools and V2 trading.",
     link: {
       text: "Read more",
       href: getIncentivesV2Url(ARBITRUM),
@@ -200,42 +181,17 @@ export const appEventsData: EventData[] = [
     },
   },
   {
-    id: "binance-wallet-campaign",
-    title: "Binance Web3 Wallet Trading Campaign is Live",
-    isActive: true,
-    endDate: "09 Apr 2024, 23:59",
-    bodyText: ["Complete any or all of the six GMX campaign tasks and qualify for rewards!"],
-    link: {
-      text: "Check your tasks and their completion status",
-      href: "https://www.binance.com/en/activity/mission/gmx-airdrop",
-      newTab: true,
-    },
-  },
-  {
     id: "btc-eth-single-token-markets",
-    title: "New BTC/USD and ETH/USD single token GM pools",
+    title: "New BTC/USD and ETH/USD single token SD pools",
     isActive: true,
     endDate: "2 May 2024, 23:59",
     bodyText: [
-      "Use only BTC or ETH to provide liquidity to BTC/USD or ETH/USD. Now, you can buy GM without being exposed to stablecoins.",
+      "Use only BTC or ETH to provide liquidity to BTC/USD or ETH/USD. Now, you can buy SD without being exposed to stablecoins.",
     ],
     link: {
-      text: "View GM pools",
+      text: "View SD pools",
       href: "/#/perpetuals",
     },
-  },
-  {
-    id: "delegate-voting-power",
-    title: "Delegate your GMX Voting Power",
-    isActive: false,
-    endDate: "6 Jun 2024, 23:59",
-    bodyText: (
-      <>
-        <ExternalLink href="https://www.tally.xyz/gov/gmx">The GMX DAO is now live on Tally</ExternalLink>. Please{" "}
-        <ExternalLink href="https://www.tally.xyz/gov/gmx/my-voting-power">delegate your voting power</ExternalLink>{" "}
-        before staking or claiming GMX rewards.
-      </>
-    ),
   },
   {
     id: "max-leverage-doge",
@@ -260,18 +216,6 @@ export const appEventsData: EventData[] = [
     ),
   },
   {
-    id: "gmxusdc-market",
-    title: "GMX/USD market added on Arbitrum",
-    isActive: true,
-    endDate: "14 Jun 2024, 0:00",
-    bodyText: "Trade GMX/USD, or provide liquidity using GMX or USDC.",
-    link: {
-      text: "Read more",
-      href: "https://snapshot.org/#/gmx.eth/proposal/0x5fc32bea68c7e2ee237c86bae73859f742304c130df9a44495b816cc62b4f30f",
-      newTab: true,
-    },
-  },
-  {
     id: "account-dashboard-feature",
     title: "New PnL Analysis Dashboard",
     isActive: true,
@@ -281,14 +225,14 @@ export const appEventsData: EventData[] = [
   },
   {
     id: "avalanche-single-side-btc-eth-avax-markets",
-    title: "New BTC/USD, ETH/USD, and AVAX/USD single token GM pools on Avalanche",
+    title: "New BTC/USD, ETH/USD, and AVAX/USD single token SD pools on Avalanche",
     isActive: true,
     bodyText: (
       <>
         Use only <TokenSymbolWithIcon symbol={getNormalizedTokenSymbol("BTC")} />,{" "}
         <TokenSymbolWithIcon symbol={getNormalizedTokenSymbol("ETH")} />, or{" "}
         <TokenSymbolWithIcon symbol={getNormalizedTokenSymbol("AVAX")} /> to provide liquidity to BTC/USD, ETH/USD, or
-        AVAX/USD. Buy GM without being exposed to stablecoins.
+        AVAX/USD. Buy SD without being exposed to stablecoins.
       </>
     ),
     endDate: "14 Jul 2024, 23:59",

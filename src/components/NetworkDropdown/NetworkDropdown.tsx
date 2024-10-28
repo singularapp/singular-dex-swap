@@ -98,10 +98,12 @@ function NavIcons({ selectorLabel }) {
 
   return (
     <>
-      <button className="transparent">
-        <img className="network-dropdown-icon" src={icon} alt={selectorLabel} />
-      </button>
-      <div className="network-dropdown-seperator" />
+      <div className="network-dropdown-icons">
+        <button className="transparent">
+          <img className="network-dropdown-icon" src={icon} alt={selectorLabel} />
+        </button>
+        <div className="network-dropdown-seperator" />
+      </div>
       <button className="transparent">
         <HiDotsVertical color="white" size={20} />
       </button>
