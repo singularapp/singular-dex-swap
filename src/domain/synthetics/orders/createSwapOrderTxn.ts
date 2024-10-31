@@ -14,6 +14,7 @@ import { applySlippageToMinOut } from "../trade";
 import { simulateExecuteTxn } from "./simulateExecuteTxn";
 import { DecreasePositionSwapType, OrderType } from "./types";
 import { isMarketOrderType } from "./utils";
+import { FEE_DENOMINATOR, TRADE_FEE } from "lib/numbers";
 
 const { ZeroAddress } = ethers;
 
@@ -109,9 +110,9 @@ export async function createSwapOrderTxn(chainId: number, signer: Signer, subacc
   //   metricId: p.metricId,
   // });
 
-  if (!subaccount) {
-    p.setPendingOrder(swapOrder);
-  }
+  // if (!subaccount) {
+  //   p.setPendingOrder(swapOrder);
+  // }
 }
 
 async function getParams(
@@ -131,10 +132,12 @@ async function getParams(
 
   const shouldApplySlippage = isMarketOrderType(p.orderType);
 
-  const minOutputAmount = shouldApplySlippage
+  let minOutputAmount = shouldApplySlippage
     ? applySlippageToMinOut(p.allowedSlippage, p.minOutputAmount)
     : p.minOutputAmount;
-
+  
+  minOutputAmount = minOutputAmount - (minOutputAmount * BigInt(TRADE_FEE)) / BigInt(FEE_DENOMINATOR);
+  
   const initialCollateralDeltaAmount = subaccount ? p.fromTokenAmount : 0n;
 
   const createOrderParams = {
