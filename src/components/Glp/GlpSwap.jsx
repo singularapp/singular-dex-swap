@@ -88,8 +88,6 @@ import { useTokensAllowanceData } from "domain/synthetics/tokens/useTokenAllowan
 
 import SLP_ICON from "img/logo_SINGULAR_small.png";
 
-import SLP_ICON from "img/logo_SINGULAR_small.png";
-
 const { ZeroAddress } = ethers;
 
 function getNextWednesdayUTC() {

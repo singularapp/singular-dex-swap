@@ -51,6 +51,7 @@ import { useMedia } from "react-use";
 import { MissedCoinsModal } from "components/MissedCoinsModal/MissedCoinsModal";
 import { useMeasureComponentMountTime } from "lib/metrics";
 import { PerpectualGuide } from "components/Guide/PerpectualGuide";
+import Footer from "components/Footer/Footer";
 
 export type Props = {
   openSettings: () => void;

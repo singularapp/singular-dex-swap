@@ -33,7 +33,7 @@ export const LOCALE_DATE_LOCALE_MAP: Record<keyof typeof locales, DateLocale> = 
   en: dateEn,
   zh: dateZh,
   ja: dateJa,
-  pseudo: dateEn,
+  // pseudo: dateEn,
 };
 
 type Props = {
