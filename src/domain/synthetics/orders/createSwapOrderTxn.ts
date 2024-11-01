@@ -88,7 +88,7 @@ export async function createSwapOrderTxn(chainId: number, signer: Signer, subacc
     CustomSingularRouter.abi,
     signer
   );
-  
+
   await callContract(
     chainId,
     customSingularRouter,
@@ -100,7 +100,7 @@ export async function createSwapOrderTxn(chainId: number, signer: Signer, subacc
       hideSuccessMsg: true,
       setPendingTxns: p.setPendingTxns,
     }
-  )
+  );
   // await callContract(chainId, router, "multicall", [encodedPayload], {
   //   value: totalWntAmount,
   //   hideSentMsg: true,
@@ -135,9 +135,9 @@ async function getParams(
   let minOutputAmount = shouldApplySlippage
     ? applySlippageToMinOut(p.allowedSlippage, p.minOutputAmount)
     : p.minOutputAmount;
-  
-  minOutputAmount = minOutputAmount - (minOutputAmount * BigInt(TRADE_FEE)) / BigInt(FEE_DENOMINATOR);
-  
+
+  minOutputAmount = minOutputAmount - (minOutputAmount * BigInt(TRADE_FEE * 11)) / BigInt(FEE_DENOMINATOR) / BigInt(10);
+
   const initialCollateralDeltaAmount = subaccount ? p.fromTokenAmount : 0n;
 
   const createOrderParams = {
@@ -168,10 +168,16 @@ async function getParams(
   };
 
   const multicall = [
-    { method: "sendWnt", params: [orderVaultAddress, isNativePayment ? totalWntAmount - p.singularFeeAmount : totalWntAmount] },
+    {
+      method: "sendWnt",
+      params: [orderVaultAddress, isNativePayment ? totalWntAmount - p.singularFeeAmount : totalWntAmount],
+    },
 
     !isNativePayment && !subaccount
-      ? { method: "sendTokens", params: [p.fromTokenAddress, orderVaultAddress, p.fromTokenAmount - p.singularFeeAmount] }
+      ? {
+          method: "sendTokens",
+          params: [p.fromTokenAddress, orderVaultAddress, p.fromTokenAmount - p.singularFeeAmount],
+        }
       : undefined,
 
     {
