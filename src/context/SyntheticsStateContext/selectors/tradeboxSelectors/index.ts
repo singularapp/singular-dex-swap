@@ -289,8 +289,7 @@ export const selectTradeboxSwapAmounts = createSelector((q) => {
 export const selectTradeboxTradeFlags = createSelectorDeprecated(
   [selectTradeboxTradeType, selectTradeboxTradeMode],
   (tradeType, tradeMode) => {
-    // const tradeFlags = createTradeFlags(tradeType, tradeMode);
-    const tradeFlags = createTradeFlags(TradeType.Swap, TradeMode.Market);
+    const tradeFlags = createTradeFlags(tradeType, tradeMode);
     return tradeFlags;
   }
 );
