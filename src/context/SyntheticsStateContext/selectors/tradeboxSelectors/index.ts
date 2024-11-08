@@ -21,6 +21,7 @@ import { TokenData, TokensRatio, convertToUsd, getTokensRatioByPrice } from "dom
 import {
   SwapAmounts,
   TradeFeesType,
+  TradeMode,
   TradeType,
   getMarkPrice,
   getNextPositionExecutionPrice,
@@ -288,7 +289,8 @@ export const selectTradeboxSwapAmounts = createSelector((q) => {
 export const selectTradeboxTradeFlags = createSelectorDeprecated(
   [selectTradeboxTradeType, selectTradeboxTradeMode],
   (tradeType, tradeMode) => {
-    const tradeFlags = createTradeFlags(tradeType, tradeMode);
+    // const tradeFlags = createTradeFlags(tradeType, tradeMode);
+    const tradeFlags = createTradeFlags(TradeType.Swap, TradeMode.Market);
     return tradeFlags;
   }
 );

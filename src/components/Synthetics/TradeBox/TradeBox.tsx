@@ -1340,7 +1340,7 @@ export function TradeBox(p: Props) {
     <>
       <div>
         <div data-qa="tradebox" className={`App-box SwapBox`}>
-          <Tab
+          {/* <Tab
             icons={tradeTypeIcons}
             options={Object.values(TradeType)}
             optionLabels={localizedTradeTypeLabels}
@@ -1358,7 +1358,7 @@ export function TradeBox(p: Props) {
             option={tradeMode}
             onChange={onSelectTradeMode}
             qa="trade-mode"
-          />
+          /> */}
           <form onSubmit={handleFormSubmit} ref={formRef}>
             {(isSwap || isIncrease) && renderTokenInputs()}
             {isTrigger && renderDecreaseSizeInput()}
