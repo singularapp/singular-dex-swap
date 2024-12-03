@@ -46,6 +46,7 @@ import { SyntheticsStats } from "pages/SyntheticsStats/SyntheticsStats";
 import PositionRouter from "abis/PositionRouter.json";
 import VaultV2 from "abis/VaultV2.json";
 import VaultV2b from "abis/VaultV2b.json";
+import LaunchPad from "pages/LaunchPad/LaunchPad";
 
 const LazyUiPage = lazy(() => import("pages/UiPage/UiPage"));
 export const UiPage = () => <Suspense fallback={<Trans>Loading...</Trans>}>{<LazyUiPage />}</Suspense>;
@@ -209,11 +210,14 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
       <Route exact path="/accounts/:account">
         <AccountDashboard />
       </Route>
-
-      {/* <Route exact path="/referrals-tier">
+      <Route exact path="/referrals-tier">
         <ReferralsTier />
       </Route>
-      <Route exact path="/stats">
+      <Route exact path="/launchpad">
+        <LaunchPad />
+      </Route>
+
+      {/* <Route exact path="/stats">
         <Stats />
       </Route>
       <Route exact path="/orders_overview">

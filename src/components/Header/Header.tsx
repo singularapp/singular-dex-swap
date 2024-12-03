@@ -40,9 +40,10 @@ type Props = {
   disconnectAccountAndCloseSettings: () => void;
   openSettings: () => void;
   showRedirectModal: (to: string) => void;
+  openBuyCryptoModal: () => void;
 };
 
-export function Header({ disconnectAccountAndCloseSettings, openSettings, showRedirectModal }: Props) {
+export function Header({ disconnectAccountAndCloseSettings, openSettings, showRedirectModal, openBuyCryptoModal, }: Props) {
   const isMobile = useMedia("(max-width: 1200px)");
 
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
@@ -109,6 +110,7 @@ export function Header({ disconnectAccountAndCloseSettings, openSettings, showRe
                   disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
                   openSettings={openSettings}
                   showRedirectModal={showRedirectModal}
+                  openBuyCryptoModal={openBuyCryptoModal}
                 />
               </div>
             </div>
@@ -137,6 +139,7 @@ export function Header({ disconnectAccountAndCloseSettings, openSettings, showRe
                   openSettings={openSettings}
                   small
                   showRedirectModal={showRedirectModal}
+                  openBuyCryptoModal={openBuyCryptoModal}
                 />
               </div>
             </div>

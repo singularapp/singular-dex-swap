@@ -13,14 +13,16 @@ import { sendUserAnalyticsConnectWalletClickEvent } from "lib/userAnalytics";
 import useWallet from "lib/wallets/useWallet";
 import LanguagePopupHome from "../NetworkDropdown/LanguagePopupHome";
 import NetworkDropdown from "../NetworkDropdown/NetworkDropdown";
-import LanguageDropdown from "../LanguageDropdown/LanguageDropdown";
+import { LanguageDropdown } from "../LanguageDropdown/LanguageDropdown";
 import "./Header.scss";
+import { BuyCryptoButton } from "components/BuyCrypto/BuyCryptoButton";
 
 type Props = {
   openSettings: () => void;
   small?: boolean;
   disconnectAccountAndCloseSettings: () => void;
   showRedirectModal: (to: string) => void;
+  openBuyCryptoModal: () => void;
 };
 
 const NETWORK_OPTIONS = [
@@ -53,7 +55,13 @@ if (isDevelopment()) {
   });
 }
 
-export function AppHeaderUser({ openSettings, small, disconnectAccountAndCloseSettings, showRedirectModal }: Props) {
+export function AppHeaderUser({
+  openSettings,
+  small,
+  disconnectAccountAndCloseSettings,
+  showRedirectModal,
+  openBuyCryptoModal,
+}: Props) {
   const { chainId } = useChainId();
   const { active, account } = useWallet();
   const { openConnectModal } = useConnectModal();
@@ -67,6 +75,7 @@ export function AppHeaderUser({ openSettings, small, disconnectAccountAndCloseSe
       <div className="App-header-user">
         {showConnectionOptions && openConnectModal ? (
           <>
+            <BuyCryptoButton onOpen={openBuyCryptoModal} />
             <LanguageDropdown
               small={small}
               networkOptions={NETWORK_OPTIONS}
@@ -100,6 +109,9 @@ export function AppHeaderUser({ openSettings, small, disconnectAccountAndCloseSe
     <div className="App-header-user">
       {showConnectionOptions ? (
         <>
+          <div>
+            <BuyCryptoButton onOpen={openBuyCryptoModal} />
+          </div>
           <div>
             <AddressDropdown
               account={account}

@@ -198,7 +198,7 @@ function TVChartHeaderInfoMobile() {
           </div>
         </div>
         <div className="flex items-start justify-center">
-          <VersionSwitch />
+          {/* <VersionSwitch /> */}
         </div>
       </div>
       {details}
@@ -464,7 +464,7 @@ function TVChartHeaderInfoDesktop() {
         </div>
       </div>
       <div className="ExchangeChart-info VersionSwitch-wrapper">
-        <VersionSwitch />
+        {/* <VersionSwitch /> */}
       </div>
     </div>
   );

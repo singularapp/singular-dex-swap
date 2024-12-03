@@ -8,14 +8,14 @@ import { useMemo } from "react";
 // uses BCP-47 codes from https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_plural_rules.html
 export const locales = {
   en: "English",
-  es: "Spanish",
+  // es: "Spanish",
   zh: "Chinese",
-  ko: "Korean",
-  ru: "Russian",
+  // ko: "Korean",
+  // ru: "Russian",
   ja: "Japanese",
-  fr: "French",
-  de: "German",
-  ...(isDevelopment() && { pseudo: "Test" }),
+  // fr: "French",
+  // de: "German",
+  // ...(isDevelopment() && { pseudo: "Test" }),
 };
 
 export const defaultLocale = "en";

@@ -59,7 +59,7 @@ const firebaseConfig = {
   storageBucket: "singular-dex.appspot.com",
   messagingSenderId: "28932172976",
   appId: FIREBASE_APP_ID,
-  measurementId: "G-RTQ6SCZKPC"
+  measurementId: "G-RTQ6SCZKPC",
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

@@ -15,6 +15,11 @@
 .network-dropdown {
   display: inline-flex;
 }
+.network-dropdown-icons {
+  display: inline-flex;
+  gap: 0.8rem;
+  padding-left: 0.8rem;
+}
 .network-dropdown-items {
   min-width: 17rem;
   padding-bottom: 0.8rem;
@@ -132,7 +137,7 @@
 .language-popup .Modal-body {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
 }
 
 .language-modal-item {
@@ -204,6 +209,9 @@
 @media (max-width: 450px) {
   .App-header-language {
     margin-left: 0;
+  }
+  .network-dropdown-icons {
+    display: none;
   }
   .network-dropdown > button {
     padding: 0 0.5rem;

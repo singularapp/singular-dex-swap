@@ -1,16 +1,17 @@
+import React from "react";
 import { dynamicActivate, isTestLanguage, locales } from "lib/i18n";
 import { importImage } from "lib/legacy";
 import cx from "classnames";
 import { LANGUAGE_LOCALSTORAGE_KEY } from "config/localStorage";
 import checkedIcon from "img/ic_checked.svg";
 
-type Props = {
+interface LanguageModalContentProps {
   currentLanguage: {
     current: string | undefined;
   };
-};
+}
 
-const LanguageModalContent = ({ currentLanguage }: Props) => {
+export const LanguageModalContent = ({ currentLanguage }: LanguageModalContentProps) => {
   return (
     <>
       {Object.keys(locales).map((item) => {

@@ -56,6 +56,7 @@ import { MissedCoinsModal } from "components/MissedCoinsModal/MissedCoinsModal";
 import { useMeasureComponentMountTime } from "lib/metrics";
 import { useSetOrdersAutoCancelByQueryParams } from "domain/synthetics/orders/useSetOrdersAutoCancelByQueryParams";
 import { getTokenVisualMultiplier } from "config/tokens";
+import { PerpectualGuide } from "components/Guide/PerpectualGuide";
 
 export type Props = {
   openSettings: () => void;
@@ -249,6 +250,7 @@ export function SyntheticsPage(p: Props) {
          `}
         </style>
       </Helmet>
+      <PerpectualGuide />
       <div className="Exchange-content">
         <div className="Exchange-left">
           <TVChart />

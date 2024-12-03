@@ -8,6 +8,7 @@
   align-items: center;
   color: white;
 }
+
 .transak-buy-crypto-button {
   height: 3.6rem;
   border-radius: 0.4rem;
@@ -20,4 +21,10 @@
   color: #fff;
   font-size: 1.25rem;
   cursor: pointer;
+}
+
+@media (max-width: 450px) {
+  .App-header-buy-crypto {
+    margin-right: 0.3rem;
+  }
 }

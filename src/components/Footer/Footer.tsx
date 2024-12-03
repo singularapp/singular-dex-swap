@@ -9,11 +9,8 @@ import { SOCIAL_LINKS, getFooterLinks } from "./constants";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import { UserFeedbackModal } from "../UserFeedbackModal/UserFeedbackModal";
 
-import logoImg from "img/ic_gmx_footer.svg";
+import logoImg from "img/logo_SINGULAR.png";
 
-import { TrackingLink } from "components/TrackingLink/TrackingLink";
-import { userAnalytics } from "lib/userAnalytics";
-import { LandingPageFooterMenuEvent } from "lib/userAnalytics/types";
 import "./Footer.css";
 
 type Props = { showRedirectModal?: (to: string) => void; redirectPopupTimestamp?: number };
@@ -21,6 +18,15 @@ type Props = { showRedirectModal?: (to: string) => void; redirectPopupTimestamp?
 export default function Footer({ showRedirectModal, redirectPopupTimestamp }: Props) {
   const isHome = isHomeSite();
   const [isUserFeedbackModalVisible, setIsUserFeedbackModalVisible] = useState(false);
+
+  const handleLeaveFeedback = () => {
+    const iframe = document.getElementById("meta-crm-widget");
+
+    if (iframe) {
+      const button = iframe["contentWindow"].document.querySelector(".frame-content button");
+      button.click();
+    }
+  };
 
   return (
     <>
@@ -31,25 +37,9 @@ export default function Footer({ showRedirectModal, redirectPopupTimestamp }: Pr
         <div className="Footer-social-link-block">
           {SOCIAL_LINKS.map((platform) => {
             return (
-              <TrackingLink
-                key={platform.name}
-                onClick={async () => {
-                  await userAnalytics.pushEvent<LandingPageFooterMenuEvent>(
-                    {
-                      event: "LandingPageAction",
-                      data: {
-                        action: "FooterMenu",
-                        button: platform.name,
-                      },
-                    },
-                    { instantSend: true }
-                  );
-                }}
-              >
-                <ExternalLink className="App-social-link" href={platform.link}>
-                  <img src={platform.icon} alt={platform.name} />
-                </ExternalLink>
-              </TrackingLink>
+              <ExternalLink key={platform.name} className="App-social-link" href={platform.link}>
+                <img src={platform.icon} alt={platform.name} />
+              </ExternalLink>
             );
           })}
         </div>
@@ -89,7 +79,7 @@ export default function Footer({ showRedirectModal, redirectPopupTimestamp }: Pr
             );
           })}
           {!isHome && (
-            <div className="Footer-link" onClick={() => setIsUserFeedbackModalVisible(true)}>
+            <div className="Footer-link" onClick={handleLeaveFeedback}>
               <Trans>Leave feedback</Trans>
             </div>
           )}

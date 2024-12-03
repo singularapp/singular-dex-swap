@@ -68,6 +68,11 @@ export function AppHeaderLinks({ small, openSettings, clickCloseIcon, showRedire
           <Trans>Referrals</Trans>
         </HeaderLink>
       </div>
+      <div className="App-header-link-container">
+        <HeaderLink qa="launchpad" to="/launchpad" showRedirectModal={showRedirectModal}>
+          <Trans>Launchpad</Trans>
+        </HeaderLink>
+      </div>
       {small && (
         <div className="App-header-link-container">
           <a href="#" onClick={openNotifyModal}>

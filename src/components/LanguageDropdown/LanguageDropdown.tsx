@@ -5,9 +5,46 @@ import { t } from "@lingui/macro";
 import "./LanguageDropdown.css";
 import { defaultLocale, dynamicActivate, isTestLanguage, locales } from "lib/i18n";
 import { LANGUAGE_LOCALSTORAGE_KEY } from "config/localStorage";
+import { LanguageModalContent } from "./LanguageModalContent";
 import { importImage } from "lib/legacy";
 import checkedIcon from "img/ic_checked.svg";
-import LanguageModalContent from "./LanguageModalContent";
+
+export function LanguageDropdown(props) {
+  const currentLanguage = useRef(localStorage.getItem(LANGUAGE_LOCALSTORAGE_KEY) || defaultLocale);
+  const [selectedLanguage, setSelectedLanguage] = useState(currentLanguage);
+
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+
+  return (
+    <>
+      {props.small ? (
+        <div className="App-header-language" onClick={() => setShowLanguageModal(true)}>
+          <div className="language-dropdown">
+            <NavIcons currentLanguage={currentLanguage} />
+          </div>
+        </div>
+      ) : (
+        <DesktopDropdown
+          currentLanguage={selectedLanguage}
+          onChangeLanguage={(lang) => {
+            setSelectedLanguage({
+              current: lang,
+            });
+          }}
+          {...props}
+        />
+      )}
+      <ModalWithPortal
+        className="language-popup"
+        isVisible={showLanguageModal}
+        setIsVisible={() => setShowLanguageModal(false)}
+        label={t`Select Language`}
+      >
+        <LanguageModalContent currentLanguage={currentLanguage} />
+      </ModalWithPortal>
+    </>
+  );
+}
 
 function NavIcons({ currentLanguage }) {
   const image = importImage(`flag_${currentLanguage.current}.svg`);
@@ -18,7 +55,8 @@ function NavIcons({ currentLanguage }) {
     </button>
   );
 }
-function DesktopDropdown({ currentLanguage }) {
+
+function DesktopDropdown({ currentLanguage, onChangeLanguage }) {
   return (
     <div className="App-header-language">
       <Menu>
@@ -27,19 +65,21 @@ function DesktopDropdown({ currentLanguage }) {
         </Menu.Button>
         <Menu.Items as="div" className="menu-items language-dropdown-items">
           <div className="language-dropdown-list">
-            <LanguageMenuItems currentLanguage={currentLanguage} />
+            <LanguageMenuItems currentLanguage={currentLanguage} onChangeLanguage={onChangeLanguage} />
           </div>
         </Menu.Items>
       </Menu>
     </div>
   );
 }
-function LanguageMenuItems({ currentLanguage }) {
+
+function LanguageMenuItems({ currentLanguage, onChangeLanguage }) {
   return (
     <>
       {Object.keys(locales).map((item) => {
         if (isTestLanguage(item)) return null;
         const image = importImage(`flag_${item}.svg`);
+
         return (
           <Menu.Item key={item}>
             <div
@@ -47,6 +87,7 @@ function LanguageMenuItems({ currentLanguage }) {
               onClick={() => {
                 localStorage.setItem(LANGUAGE_LOCALSTORAGE_KEY, item);
                 dynamicActivate(item);
+                onChangeLanguage(item);
               }}
             >
               <div className="menu-item-group">
@@ -65,31 +106,5 @@ function LanguageMenuItems({ currentLanguage }) {
     </>
   );
 }
-
-const LanguageDropdown = (props) => {
-  const currentLanguage = useRef(localStorage.getItem(LANGUAGE_LOCALSTORAGE_KEY) || defaultLocale);
-  const [showLanguageModal, setShowLanguageModal] = useState(false);
-  return (
-    <>
-      {props.small ? (
-        <div className="App-header-language" onClick={() => setShowLanguageModal(true)}>
-          <div className="language-dropdown">
-            <NavIcons currentLanguage={currentLanguage} />
-          </div>
-        </div>
-      ) : (
-        <DesktopDropdown currentLanguage={currentLanguage} {...props} />
-      )}
-      <ModalWithPortal
-        className="language-popup"
-        isVisible={showLanguageModal}
-        setIsVisible={() => setShowLanguageModal(false)}
-        label={t`Select Language`}
-      >
-        <LanguageModalContent currentLanguage={currentLanguage} />
-      </ModalWithPortal>
-    </>
-  );
-};
 
 export default LanguageDropdown;
