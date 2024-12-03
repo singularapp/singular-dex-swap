@@ -13,7 +13,7 @@ import useWallet from "lib/wallets/useWallet";
 
 import type { ModalProps } from "components/Modal/Modal";
 import ModalWithPortal from "../Modal/ModalWithPortal";
-import LanguageModalContent from "./LanguageModalContent";
+// import LanguageModalContent from "./LanguageModalContent";
 
 import language24Icon from "img/ic_language24.svg";
 import settingsIcon from "img/ic_settings_16.svg";
@@ -33,8 +33,8 @@ export default function NetworkDropdown(props) {
 
   function getModalContent(modalName) {
     switch (modalName) {
-      case LANGUAGE_MODAL_KEY:
-        return <LanguageModalContent currentLanguage={currentLanguage} onClose={handleLanguageModalClose} />;
+      // case LANGUAGE_MODAL_KEY:
+      //   return <LanguageModalContent currentLanguage={currentLanguage} onClose={handleLanguageModalClose} />;
       case NETWORK_MODAL_KEY:
         return (
           <NetworkModalContent

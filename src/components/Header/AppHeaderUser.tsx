@@ -112,19 +112,19 @@ export function AppHeaderUser({
           <div>
             <BuyCryptoButton onOpen={openBuyCryptoModal} />
           </div>
-          <div>
-            <AddressDropdown
-              account={account}
-              accountUrl={accountUrl}
-              disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
-            />
-          </div>
           <div data-qa="user-address" className="App-header-user-address">
             <LanguageDropdown
               small={small}
               networkOptions={NETWORK_OPTIONS}
               selectorLabel={selectorLabel}
               openSettings={openSettings}
+            />
+          </div>
+          <div>
+            <AddressDropdown
+              account={account}
+              accountUrl={accountUrl}
+              disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
             />
           </div>
           <NetworkDropdown
