@@ -113,7 +113,7 @@ export default function MarketTokenSelector(props: Props) {
                 <div className="text-12 text-gray-400 group-hover/selector-base:text-[color:inherit]">
                   {isGlv
                     ? getGlvMarketSubtitle(chainId, getGlvOrMarketAddress(currentMarketInfo))
-                    : "GMX Market Tokens"}
+                    : "SD Market Tokens"}
                 </div>
               </div>
             </>
@@ -122,7 +122,7 @@ export default function MarketTokenSelector(props: Props) {
           )}
         </div>
       }
-      modalLabel={t`GMX Market Tokens`}
+      modalLabel={t`SD Market Tokens`}
       mobileModalContentPadding={false}
     >
       <MarketTokenSelectorInternal

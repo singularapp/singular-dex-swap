@@ -21,6 +21,7 @@ import TooltipWithPortal from "components/Tooltip/TooltipWithPortal";
 
 import "./SettingsModal.scss";
 import { AbFlagSettings } from "components/AbFlagsSettings/AbFlagsSettings";
+import { DOCUMENT_LINKS } from "config/links";
 
 export function SettingsModal({
   isSettingsVisible,
@@ -162,11 +163,11 @@ export function SettingsModal({
                   <Trans>
                     The Max Network Fee is set to a higher value to handle potential increases in gas price during order
                     execution. Any excess network fee will be refunded to your account when the order is executed. Only
-                    applicable to GMX V2.
+                    applicable to SD.
                   </Trans>
                   <br />
                   <br />
-                  <ExternalLink href="https://docs.gmx.io/docs/trading/v2/#auto-cancel-tp--sl">Read more</ExternalLink>
+                  <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>Read more</ExternalLink>
                 </div>
               )}
             />
@@ -216,7 +217,7 @@ export function SettingsModal({
                 </Trans>
                 <br />
                 <br />
-                <ExternalLink href="https://docs.gmx.io/docs/trading/v2/#auto-cancel-tp--sl">Read more</ExternalLink>.
+                <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>Read more</ExternalLink>.
               </div>
             )}
           />

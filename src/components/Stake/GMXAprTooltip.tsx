@@ -13,7 +13,7 @@ function renderEscrowedGMXApr(processedData) {
   if (!processedData?.gmxAprForEsGmx || processedData.gmxAprForEsGmx <= 0) return;
   return (
     <StatsTooltipRow
-      label={t`Escrowed GMX APR`}
+      label={t`Escrowed SD APR`}
       showDollar={false}
       value={`${formatKeyAmount(processedData, "gmxAprForEsGmx", 2, 2, true)}%`}
     />
@@ -32,7 +32,7 @@ export default function GMXAprTooltip({ processedData, nativeTokenSymbol, isUser
   return (
     <>
       <div>
-        <StatsTooltipRow label={t`GMX APR`} showDollar={false} value={`${gmxAprForGmxPercentage}%`} />
+        <StatsTooltipRow label={t`SD APR`} showDollar={false} value={`${gmxAprForGmxPercentage}%`} />
         {isUserConnected && escrowedGMXApr && (
           <>
             <br /> {escrowedGMXApr}

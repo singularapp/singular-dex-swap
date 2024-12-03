@@ -1,6 +1,7 @@
 import { Trans } from "@lingui/macro";
 
 import ExternalLink from "components/ExternalLink/ExternalLink";
+import { DOCUMENT_LINKS } from "config/links";
 
 export function ApyTooltipContent() {
   return (
@@ -16,14 +17,11 @@ export function ApyTooltipContent() {
           <li className="p-2">funding fees, which are exchanged between traders</li>
         </ul>
         <p className="mb-12">
-          <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2/#token-pricing">
-            Read more about GM token pricing
-          </ExternalLink>
-          .
+          <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>Read more about GM token pricing</ExternalLink>.
         </p>
         <p>
           Check GM pools' performance against other LP Positions in the{" "}
-          <ExternalLink href="https://dune.com/gmx-io/gmx-analytics#v2-gm-prices">GMX Dune Dashboard</ExternalLink>.
+          <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>GMX Dune Dashboard</ExternalLink>.
         </p>
       </Trans>
     </p>

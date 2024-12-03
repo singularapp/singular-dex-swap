@@ -3,11 +3,13 @@ import { importImage } from "lib/legacy";
 import cx from "classnames";
 import { LANGUAGE_LOCALSTORAGE_KEY } from "config/localStorage";
 import checkedIcon from "img/ic_checked.svg";
+
 type Props = {
   currentLanguage: {
     current: string | undefined;
   };
 };
+
 const LanguageModalContent = ({ currentLanguage }: Props) => {
   return (
     <>

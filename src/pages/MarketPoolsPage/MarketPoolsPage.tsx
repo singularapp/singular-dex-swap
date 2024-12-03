@@ -26,6 +26,7 @@ import { GmSwapBox } from "components/Synthetics/GmSwap/GmSwapBox/GmSwapBox";
 import { MarketStatsWithComposition } from "components/Synthetics/MarketStats/MarketStatsWithComposition";
 import "./MarketPoolsPage.scss";
 import { GmList } from "components/Synthetics/GmList/GmList";
+import { DOCUMENT_LINKS } from "config/links";
 
 export function MarketPoolsPage() {
   const { chainId } = useChainId();
@@ -78,12 +79,12 @@ export function MarketPoolsPage() {
           subtitle={
             <>
               <Trans>
-                Purchase <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2">GM Tokens</ExternalLink>{" "}
+                Purchase <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>GM Tokens</ExternalLink>{" "}
                 to earn fees from swaps and leverage trading.
               </Trans>
               <br />
               <Trans>
-                <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2/#glv-pools">
+                <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>
                   GLV Vaults
                 </ExternalLink>{" "}
                 include multiple GM Tokens and are automatically rebalanced.

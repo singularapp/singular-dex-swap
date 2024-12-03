@@ -6,6 +6,7 @@ import { getConstant } from "config/chains";
 import { useChainId } from "lib/chains";
 import { USD_DECIMALS } from "config/factors";
 import { formatAmount, formatAmountFree } from "lib/numbers";
+import { DOCUMENT_LINKS } from "config/links";
 
 type Fee = { label: string; value: string };
 type ExecutionFees = { fee?: bigint; feeUsd?: bigint };
@@ -124,7 +125,7 @@ function FeesTooltip({
           <br />
           <div className="PositionSeller-fee-item">
             <Trans>
-              <ExternalLink href="https://docs.gmx.io/docs/trading/v1#fees">Read more</ExternalLink> about fees.
+              <ExternalLink href={DOCUMENT_LINKS.AboutFee}>Read more</ExternalLink> about fees.
             </Trans>
           </div>
         </div>

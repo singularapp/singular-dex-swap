@@ -39,7 +39,7 @@ export function AccountDashboard() {
     <div className="default-container page-layout">
       <PageTitle
         chainId={chainId}
-        title={t`GMX ${versionName} Account`}
+        title={t`SD ${versionName} Account`}
         subtitle={
           <>
             <div className="flex flex-wrap items-center gap-4">

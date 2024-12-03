@@ -27,6 +27,7 @@ import { renderNetFeeHeaderTooltipContent } from "components/Synthetics/MarketsL
 import TooltipWithPortal from "components/Tooltip/TooltipWithPortal";
 import { selectSelectedMarketPriceDecimals } from "context/SyntheticsStateContext/selectors/statsSelectors";
 import { useSelector } from "context/SyntheticsStateContext/utils";
+import { DOCUMENT_LINKS } from "config/links";
 
 export type Props = {
   marketInfo?: MarketInfo;
@@ -148,7 +149,7 @@ export function MarketCard({ marketInfo, allowedSlippage, isLong }: Props) {
                   right of the page after connecting your wallet.
                   <br />
                   <br />
-                  <ExternalLink href="https://docs.gmx.io/docs/trading/v2#opening-a-position">Read more</ExternalLink>.
+                  <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>Read more</ExternalLink>.
                 </Trans>
               )}
             />
@@ -187,7 +188,7 @@ export function MarketCard({ marketInfo, allowedSlippage, isLong }: Props) {
                   This exit price will change with the price of the asset.
                   <br />
                   <br />
-                  <ExternalLink href="https://docs.gmx.io/docs/trading/v2#opening-a-position">Read more</ExternalLink>.
+                  <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>Read more</ExternalLink>.
                 </Trans>
               )}
             />

@@ -5,34 +5,10 @@ import { t } from "@lingui/macro";
 import "./LanguageDropdown.css";
 import { defaultLocale, dynamicActivate, isTestLanguage, locales } from "lib/i18n";
 import { LANGUAGE_LOCALSTORAGE_KEY } from "config/localStorage";
-import LanguageModalContent from "./LanguageModalContent";
 import { importImage } from "lib/legacy";
 import checkedIcon from "img/ic_checked.svg";
-export default function LanguageDropdown(props) {
-  const currentLanguage = useRef(localStorage.getItem(LANGUAGE_LOCALSTORAGE_KEY) || defaultLocale);
-  const [showLanguageModal, setShowLanguageModal] = useState(false);
-  return (
-    <>
-      {props.small ? (
-        <div className="App-header-language" onClick={() => setShowLanguageModal(true)}>
-          <div className="language-dropdown">
-            <NavIcons currentLanguage={currentLanguage} />
-          </div>
-        </div>
-      ) : (
-        <DesktopDropdown currentLanguage={currentLanguage} {...props} />
-      )}
-      <ModalWithPortal
-        className="language-popup"
-        isVisible={showLanguageModal}
-        setIsVisible={() => setShowLanguageModal(false)}
-        label={t`Select Language`}
-      >
-        <LanguageModalContent currentLanguage={currentLanguage} />
-      </ModalWithPortal>
-    </>
-  );
-}
+import LanguageModalContent from "./LanguageModalContent";
+
 function NavIcons({ currentLanguage }) {
   const image = importImage(`flag_${currentLanguage.current}.svg`);
   return (
@@ -89,3 +65,31 @@ function LanguageMenuItems({ currentLanguage }) {
     </>
   );
 }
+
+const LanguageDropdown = (props) => {
+  const currentLanguage = useRef(localStorage.getItem(LANGUAGE_LOCALSTORAGE_KEY) || defaultLocale);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  return (
+    <>
+      {props.small ? (
+        <div className="App-header-language" onClick={() => setShowLanguageModal(true)}>
+          <div className="language-dropdown">
+            <NavIcons currentLanguage={currentLanguage} />
+          </div>
+        </div>
+      ) : (
+        <DesktopDropdown currentLanguage={currentLanguage} {...props} />
+      )}
+      <ModalWithPortal
+        className="language-popup"
+        isVisible={showLanguageModal}
+        setIsVisible={() => setShowLanguageModal(false)}
+        label={t`Select Language`}
+      >
+        <LanguageModalContent currentLanguage={currentLanguage} />
+      </ModalWithPortal>
+    </>
+  );
+};
+
+export default LanguageDropdown;

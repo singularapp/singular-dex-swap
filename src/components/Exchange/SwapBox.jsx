@@ -61,7 +61,7 @@ import BuyInputSection from "components/BuyInputSection/BuyInputSection";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import { LeverageSlider } from "components/LeverageSlider/LeverageSlider";
 import ToggleSwitch from "components/ToggleSwitch/ToggleSwitch";
-import { get1InchSwapUrl } from "config/links";
+import { DOCUMENT_LINKS, get1InchSwapUrl } from "config/links";
 import { getPriceDecimals, getToken, getV1Tokens, getWhitelistedV1Tokens } from "config/tokens";
 import { useUserReferralCode } from "domain/referrals/hooks";
 import {
@@ -2304,10 +2304,7 @@ export default function SwapBox(props) {
                 trigger orders. <br />
                 <br />
                 For screenshots and more information, please see the{" "}
-                <ExternalLink href="https://docs.gmx.io/docs/trading/v1#stop-loss--take-profit-orders">
-                  docs
-                </ExternalLink>
-                .
+                <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>docs</ExternalLink>.
               </Trans>
             </div>
           )}
@@ -2391,10 +2388,7 @@ export default function SwapBox(props) {
                           top right of the page after connecting your wallet.
                           <br />
                           <br />
-                          <ExternalLink href="https://docs.gmx.io/docs/trading/v1#opening-a-position">
-                            Read more
-                          </ExternalLink>
-                          .
+                          <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>Read more</ExternalLink>.
                         </Trans>
                       </div>
                     );
@@ -2421,10 +2415,7 @@ export default function SwapBox(props) {
                           This exit price will change with the price of the asset.
                           <br />
                           <br />
-                          <ExternalLink href="https://docs.gmx.io/docs/trading/v1#opening-a-position">
-                            Read more
-                          </ExternalLink>
-                          .
+                          <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>Read more</ExternalLink>.
                         </Trans>
                       </div>
                     );
@@ -2461,7 +2452,7 @@ export default function SwapBox(props) {
                           </div>
                         )}
                         <br />
-                        <ExternalLink href="https://docs.gmx.io/docs/trading/v1#opening-a-position">
+                        <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>
                           <Trans>Read more</Trans>
                         </ExternalLink>
                         .

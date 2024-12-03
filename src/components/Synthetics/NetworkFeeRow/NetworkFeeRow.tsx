@@ -15,6 +15,7 @@ import TooltipWithPortal from "components/Tooltip/TooltipWithPortal";
 
 import "./NetworkFeeRow.scss";
 import { bigMath } from "lib/bigmath";
+import { DOCUMENT_LINKS } from "config/links";
 
 type Props = {
   executionFee?: ExecutionFee;
@@ -54,7 +55,7 @@ export function NetworkFeeRow({ executionFee, isAdditionOrdersMsg }: Props) {
         <Trans>
           Max Network Fee includes fees for additional orders. It will be sent back in full to your account if they
           don't trigger and are cancelled.{" "}
-          <ExternalLink href="https://docs.gmx.io/docs/trading/v2#execution-fee">Read more</ExternalLink>.
+          <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>Read more</ExternalLink>.
         </Trans>
       ),
     [isAdditionOrdersMsg]
@@ -119,7 +120,7 @@ export function NetworkFeeRow({ executionFee, isAdditionOrdersMsg }: Props) {
                 The max network fee is overestimated, including by the buffer set under settings. Upon execution, any
                 excess network fee is sent back to your account.
               </Trans>{" "}
-              <ExternalLink className="inline" href="https://docs.gmx.io/docs/trading/v2#execution-fee">
+              <ExternalLink className="inline" href={DOCUMENT_LINKS.PerpetualsTrading}>
                 <Trans>Read more</Trans>
               </ExternalLink>
               .

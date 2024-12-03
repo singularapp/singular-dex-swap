@@ -91,7 +91,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
       <Route exact path="/">
         <Redirect to="/perpetuals" />
       </Route>
-      <Route exact path="/price_impact_rebates_stats">
+      {/* <Route exact path="/price_impact_rebates_stats">
         <PriceImpactRebatesStatsPage />
       </Route>
       <Route exact path="/v1/:tradeType?">
@@ -127,7 +127,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
         ) : (
           <SyntheticsFallbackPage />
         )}
-      </Route>
+      </Route> */}
 
       <Route exact path="/perpetuals/:tradeType?">
         {getIsSyntheticsSupported(chainId) ? (
@@ -142,7 +142,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
       <Route exact path="/slp">
         <BuyGlp />
       </Route>
-      <Route exact path="/jobs">
+      {/* <Route exact path="/jobs">
         <Jobs />
       </Route>
       <Route exact path="/buy_gmx">
@@ -177,8 +177,8 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
         ) : (
           <SyntheticsFallbackPage />
         )}
-      </Route>
-      <Route exact path="/referrals">
+      </Route> */}
+      {/* <Route exact path="/referrals">
         <Referrals />
       </Route>
       <Route exact path="/referrals/:account">
@@ -189,9 +189,9 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
       </Route>
       <Route exact path="/claim_es_gmx">
         <ClaimEsGmx />
-      </Route>
+      </Route> */}
 
-      <Route exact path="/actions/:v/:account">
+      {/* <Route exact path="/actions/:v/:account">
         {({ match }) => (
           <Redirect
             to={buildAccountDashboardUrl(match?.params.account as Address, chainId, match?.params.v === "v1" ? 1 : 2)}
@@ -201,7 +201,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
       <Redirect exact from="/actions/v1" to={`/accounts?${VERSION_QUERY_PARAM}=1`} />
       <Redirect exact from="/actions/v2" to="/accounts" />
       <Redirect exact from="/actions" to="/accounts" />
-      <Redirect exact from="/actions/:account" to="/accounts/:account" />
+      <Redirect exact from="/actions/:account" to="/accounts/:account" /> */}
 
       <Route exact path="/accounts">
         <AccountsRouter />
@@ -210,7 +210,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
         <AccountDashboard />
       </Route>
 
-      <Route exact path="/referrals-tier">
+      {/* <Route exact path="/referrals-tier">
         <ReferralsTier />
       </Route>
       <Route exact path="/stats">
@@ -232,7 +232,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
         <Route exact path="/ui">
           <UiPage />
         </Route>
-      )}
+      )} */}
 
       <Route path="*">
         <PageNotFound />

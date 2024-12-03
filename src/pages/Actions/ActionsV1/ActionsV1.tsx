@@ -69,12 +69,12 @@ function ActionsV1({
         <div className="Actions-title">
           <PageTitle
             isTop
-            title={t`GMX V1 Actions`}
+            title={t`SD V1 Actions`}
             chainId={chainId}
             subtitle={
               <>
                 <Trans>
-                  GMX {versionName} {networkName} actions for all accounts.
+                  SD {versionName} {networkName} actions for all accounts.
                 </Trans>
                 <VersionNetworkSwitcherRow chainId={chainId} version={1} />
               </>
