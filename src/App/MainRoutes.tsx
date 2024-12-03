@@ -89,7 +89,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
   return (
     <Switch>
       <Route exact path="/">
-        <Redirect to="/trade" />
+        <Redirect to="/perpetuals" />
       </Route>
       <Route exact path="/price_impact_rebates_stats">
         <PriceImpactRebatesStatsPage />
@@ -129,7 +129,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
         )}
       </Route>
 
-      <Route exact path="/trade/:tradeType?">
+      <Route exact path="/perpetuals/:tradeType?">
         {getIsSyntheticsSupported(chainId) ? (
           <SyntheticsStateContextProvider skipLocalReferralCode={false} pageType="trade">
             <SyntheticsPage openSettings={openSettings} />
@@ -138,8 +138,8 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
           <SyntheticsFallbackPage />
         )}
       </Route>
-      <Redirect from="/v2" to="/trade" />
-      <Route exact path="/buy_glp">
+      <Redirect from="/v2" to="/perpetuals" />
+      <Route exact path="/slp">
         <BuyGlp />
       </Route>
       <Route exact path="/jobs">

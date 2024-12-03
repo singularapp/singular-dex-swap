@@ -1,13 +1,11 @@
 import SEO from "components/Common/SEO";
-import Footer from "components/Footer/Footer";
 import { getPageTitle } from "lib/legacy";
 import "./PageNotFound.css";
 import { Trans, t } from "@lingui/macro";
-import { getHomeUrl, getTradePageUrl } from "lib/legacy";
+import { getPerpetualsPageUrl } from "lib/legacy";
 
 function PageNotFound() {
-  const homeUrl = getHomeUrl();
-  const tradePageUrl = getTradePageUrl();
+  const perpetualsPageUrl = getPerpetualsPageUrl();
 
   return (
     <SEO title={getPageTitle(t`Page not found`)}>
@@ -20,12 +18,11 @@ function PageNotFound() {
             <p className="go-back">
               <Trans>
                 <span>Return to </span>
-                <a href={homeUrl}>Homepage</a> <span>or </span> <a href={tradePageUrl}>Trade</a>
+                <a href={perpetualsPageUrl}>Perpetuals</a>
               </Trans>
             </p>
           </div>
         </div>
-        <Footer />
       </div>
     </SEO>
   );

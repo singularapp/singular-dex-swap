@@ -831,7 +831,7 @@ export function TradeBox(p: Props) {
   function onTradeTypeChange(type: TradeType) {
     onSelectTradeType(type);
     if (tradeType !== type) {
-      history.push(`/trade/${type.toLowerCase()}`);
+      history.push(`/perpetuals/${type.toLowerCase()}`);
     }
   }
 

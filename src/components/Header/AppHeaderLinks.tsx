@@ -1,4 +1,3 @@
-import React, { useCallback } from "react";
 import { FiX } from "react-icons/fi";
 import { Trans } from "@lingui/macro";
 import { Link } from "react-router-dom";
@@ -6,9 +5,9 @@ import { Link } from "react-router-dom";
 import { useNotifyModalState } from "lib/useNotifyModalState";
 import { HeaderLink } from "./HeaderLink";
 import "./Header.scss";
-import { isHomeSite } from "lib/legacy";
+import { getSwapAppUrl, isHomeSite } from "lib/legacy";
 import ExternalLink from "components/ExternalLink/ExternalLink";
-import logoImg from "img/logo_GMX.svg";
+import logoImg from "img/logo_SINGULAR.png";
 import { userAnalytics } from "lib/userAnalytics";
 import { ReferralTopMenuClickEvent } from "lib/userAnalytics/types";
 
@@ -22,16 +21,12 @@ type Props = {
 export function AppHeaderLinks({ small, openSettings, clickCloseIcon, showRedirectModal }: Props) {
   const { openNotifyModal } = useNotifyModalState();
 
-  const isLeaderboardActive = useCallback(
-    (match, location) => Boolean(match) || location.pathname.startsWith("/competitions"),
-    []
-  );
   return (
     <div className="App-header-links">
       {small && (
         <div className="App-header-links-header">
           <Link className="App-header-link-main" to="/">
-            <img src={logoImg} alt="GMX Logo" />
+            <img src={logoImg} alt="SINGULAR Logo" />
           </Link>
           <div
             className="App-header-menu-icon-block mobile-cross-menu"
@@ -42,18 +37,18 @@ export function AppHeaderLinks({ small, openSettings, clickCloseIcon, showRedire
         </div>
       )}
       <div className="App-header-link-container">
-        <HeaderLink qa="dashboard" to="/dashboard" showRedirectModal={showRedirectModal}>
-          <Trans>Dashboard</Trans>
+        <HeaderLink qa="perpetuals" to="/perpetuals" showRedirectModal={showRedirectModal}>
+          <Trans>Perpetuals</Trans>
         </HeaderLink>
       </div>
       <div className="App-header-link-container">
-        <HeaderLink qa="earn" to="/earn" showRedirectModal={showRedirectModal}>
-          <Trans>Earn</Trans>
-        </HeaderLink>
+        <ExternalLink href={getSwapAppUrl()} newTab={true}>
+          <Trans>Swap</Trans>
+        </ExternalLink>
       </div>
       <div className="App-header-link-container">
-        <HeaderLink qa="buy" to="/buy" showRedirectModal={showRedirectModal}>
-          <Trans>Buy</Trans>
+        <HeaderLink qa="slp" to="/slp" showRedirectModal={showRedirectModal}>
+          <Trans>SLP</Trans>
         </HeaderLink>
       </div>
       <div className="App-header-link-container">
@@ -72,26 +67,6 @@ export function AppHeaderLinks({ small, openSettings, clickCloseIcon, showRedire
         >
           <Trans>Referrals</Trans>
         </HeaderLink>
-      </div>
-      <div className="App-header-link-container">
-        <HeaderLink
-          qa="leaderboard"
-          to="/leaderboard"
-          showRedirectModal={showRedirectModal}
-          isActive={isLeaderboardActive}
-        >
-          <Trans>Leaderboard</Trans>
-        </HeaderLink>
-      </div>
-      <div className="App-header-link-container">
-        <HeaderLink qa="ecosystem" to="/ecosystem" showRedirectModal={showRedirectModal}>
-          <Trans>Ecosystem</Trans>
-        </HeaderLink>
-      </div>
-      <div className="App-header-link-container">
-        <ExternalLink href="https://docs.gmx.io/">
-          <Trans>Docs</Trans>
-        </ExternalLink>
       </div>
       {small && (
         <div className="App-header-link-container">
