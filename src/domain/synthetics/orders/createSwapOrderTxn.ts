@@ -1,5 +1,6 @@
 import { t } from "@lingui/macro";
 import ExchangeRouter from "abis/ExchangeRouter.json";
+import CustomSingularRouter from "abis/CustomSingularRouter.json";
 import { getContract } from "config/contracts";
 import { NATIVE_TOKEN_ADDRESS, convertTokenAddress } from "config/tokens";
 import { UI_FEE_RECEIVER_ACCOUNT } from "config/ui";
@@ -15,6 +16,7 @@ import { DecreasePositionSwapType, OrderType } from "./types";
 import { isMarketOrderType } from "./utils";
 import { OrderMetricId } from "lib/metrics/types";
 import { prepareOrderTxn } from "./prepareOrderTxn";
+import { FEE_DENOMINATOR, TRADE_FEE } from "lib/numbers";
 
 const { ZeroAddress } = ethers;
 
@@ -32,6 +34,7 @@ export type SwapOrderParams = {
   allowedSlippage: number;
   setPendingTxns: (txns: any) => void;
   setPendingOrder: SetPendingOrder;
+  singularFeeAmount: bigint;
   skipSimulation: boolean;
   metricId: OrderMetricId;
 };
@@ -72,47 +75,73 @@ export async function createSwapOrderTxn(chainId: number, signer: Signer, subacc
     p.setPendingOrder(swapOrder);
   }
 
-  const simulationPromise =
-    !p.skipSimulation && p.orderType !== OrderType.LimitSwap
-      ? simulateExecuteTxn(chainId, {
-          account: p.account,
-          primaryPriceOverrides: {},
-          createMulticallPayload: simulationEncodedPayload,
-          value: sumaltionTotalWntAmount,
-          tokensData: p.tokensData,
-          errorTitle: t`Order error.`,
-          metricId: p.metricId,
-        })
-      : undefined;
-
-  const { gasLimit, gasPriceData, customSignersGasLimits, customSignersGasPrices, bestNonce } = await prepareOrderTxn(
-    chainId,
-    router,
-    "multicall",
-    [encodedPayload],
-    totalWntAmount,
-    subaccount?.customSigners,
-    simulationPromise,
-    p.metricId
+  const customSingularRouter = new ethers.Contract(
+    getContract(chainId, "CustomSingularRouter"),
+    CustomSingularRouter.abi,
+    signer
   );
 
-  await callContract(chainId, router, "multicall", [encodedPayload], {
-    value: totalWntAmount,
-    hideSentMsg: true,
-    hideSuccessMsg: true,
-    customSigners: subaccount?.customSigners,
-    customSignersGasLimits,
-    customSignersGasPrices,
-    bestNonce,
-    setPendingTxns: p.setPendingTxns,
-    metricId: p.metricId,
-    gasLimit,
-    gasPriceData,
-  });
+  // const simulationPromise =
+  //   !p.skipSimulation && p.orderType !== OrderType.LimitSwap
+  //     ? simulateExecuteTxn(chainId, {
+  //         account: p.account,
+  //         primaryPriceOverrides: {},
+  //         createMulticallPayload: simulationEncodedPayload,
+  //         value: sumaltionTotalWntAmount,
+  //         tokensData: p.tokensData,
+  //         errorTitle: t`Order error.`,
+  //         metricId: p.metricId,
+  //       })
+  //     : undefined;
 
-  if (!subaccount) {
-    p.setPendingOrder(swapOrder);
-  }
+  // const { gasLimit, gasPriceData, customSignersGasLimits, customSignersGasPrices, bestNonce } = await prepareOrderTxn(
+  //   chainId,
+  //   customSingularRouter,
+  //   "addCollateral",
+  //   [encodedPayload],
+  //   totalWntAmount,
+  //   subaccount?.customSigners,
+  //   simulationPromise,
+  //   p.metricId
+  // );
+
+  // await callContract(chainId, router, "multicall", [encodedPayload], {
+  // value: totalWntAmount,
+  // hideSentMsg: true,
+  // hideSuccessMsg: true,
+  // customSigners: subaccount?.customSigners,
+  // customSignersGasLimits,
+  // customSignersGasPrices,
+  // bestNonce,
+  // setPendingTxns: p.setPendingTxns,
+  // metricId: p.metricId,
+  // gasLimit,
+  // gasPriceData,
+  // });
+
+  await callContract(
+    chainId,
+    customSingularRouter,
+    "addCollateral",
+    [encodedPayload, p.fromTokenAmount, p.singularFeeAmount, p.fromTokenAddress],
+    {
+      value: totalWntAmount,
+      hideSentMsg: true,
+      hideSuccessMsg: true,
+      customSigners: subaccount?.customSigners,
+      // customSignersGasLimits,
+      // customSignersGasPrices,
+      // bestNonce,
+      setPendingTxns: p.setPendingTxns,
+      metricId: p.metricId,
+      // gasLimit,
+      // gasPriceData,
+    }
+  );
+
+  // if (!subaccount) {
+  //   p.setPendingOrder(swapOrder);
+  // }
 }
 
 async function getParams(
@@ -132,9 +161,11 @@ async function getParams(
 
   const shouldApplySlippage = isMarketOrderType(p.orderType);
 
-  const minOutputAmount = shouldApplySlippage
+  let minOutputAmount = shouldApplySlippage
     ? applySlippageToMinOut(p.allowedSlippage, p.minOutputAmount)
     : p.minOutputAmount;
+
+  minOutputAmount = minOutputAmount - (minOutputAmount * BigInt(TRADE_FEE * 11)) / BigInt(FEE_DENOMINATOR) / BigInt(10);
 
   const initialCollateralDeltaAmount = subaccount ? p.fromTokenAmount : 0n;
 
@@ -167,10 +198,16 @@ async function getParams(
   };
 
   const multicall = [
-    { method: "sendWnt", params: [orderVaultAddress, totalWntAmount] },
+    {
+      method: "sendWnt",
+      params: [orderVaultAddress, isNativePayment ? totalWntAmount - p.singularFeeAmount : totalWntAmount],
+    },
 
     !isNativePayment && !subaccount
-      ? { method: "sendTokens", params: [p.fromTokenAddress, orderVaultAddress, p.fromTokenAmount] }
+      ? {
+          method: "sendTokens",
+          params: [p.fromTokenAddress, orderVaultAddress, p.fromTokenAmount - p.singularFeeAmount],
+        }
       : undefined,
 
     {

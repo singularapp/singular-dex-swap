@@ -1,5 +1,6 @@
 import { t } from "@lingui/macro";
 import ExchangeRouter from "abis/ExchangeRouter.json";
+import CustomSingularRouter from "abis/CustomSingularRouter.json";
 import { getContract } from "config/contracts";
 import { NATIVE_TOKEN_ADDRESS, convertTokenAddress } from "config/tokens";
 import { UI_FEE_RECEIVER_ACCOUNT } from "config/ui";
@@ -46,6 +47,7 @@ type IncreaseOrderParams = {
   setPendingTxns: (txns: any) => void;
   setPendingOrder: SetPendingOrder;
   setPendingPosition: SetPendingPosition;
+  singularFeeAmount: bigint;
 };
 
 type SecondaryOrderCommonParams = {
@@ -217,44 +219,70 @@ export async function createIncreaseOrderTxn({
 
   const finalPayload = [...encodedPayload, ...decreaseEncodedPayload, ...cancelEncodedPayload, ...updateEncodedPayload];
 
-  const simulationPromise = !p.skipSimulation
-    ? simulateExecuteTxn(chainId, {
-        account: p.account,
-        tokensData: p.tokensData,
-        primaryPriceOverrides,
-        createMulticallPayload: simulationEncodedPayload,
-        value: totalWntAmount,
-        errorTitle: t`Order error.`,
-        metricId,
-      })
-    : undefined;
+  // const simulationPromise = !p.skipSimulation
+  //   ? simulateExecuteTxn(chainId, {
+  //       account: p.account,
+  //       tokensData: p.tokensData,
+  //       primaryPriceOverrides,
+  //       createMulticallPayload: simulationEncodedPayload,
+  //       value: totalWntAmount,
+  //       errorTitle: t`Order error.`,
+  //       metricId,
+  //     })
+  //   : undefined;
 
-  const { gasLimit, gasPriceData, customSignersGasLimits, customSignersGasPrices, bestNonce } = await prepareOrderTxn(
-    chainId,
-    router,
-    "multicall",
-    [finalPayload],
-    totalWntAmount,
-    subaccount?.customSigners,
-    simulationPromise,
-    metricId
-  );
+  // const { gasLimit, gasPriceData, customSignersGasLimits, customSignersGasPrices, bestNonce } = await prepareOrderTxn(
+  //   chainId,
+  //   router,
+  //   "multicall",
+  //   [finalPayload],
+  //   totalWntAmount,
+  //   subaccount?.customSigners,
+  //   simulationPromise,
+  //   metricId
+  // );
 
   const txnCreatedAt = Date.now();
 
-  await callContract(chainId, router, "multicall", [finalPayload], {
-    value: totalWntAmount,
-    hideSentMsg: true,
-    hideSuccessMsg: true,
-    customSigners: subaccount?.customSigners,
-    customSignersGasLimits,
-    customSignersGasPrices,
-    metricId,
-    gasLimit,
-    gasPriceData,
-    bestNonce,
-    setPendingTxns: p.setPendingTxns,
-  });
+  const customSingularRouter = new ethers.Contract(
+    getContract(chainId, "CustomSingularRouter"),
+    CustomSingularRouter.abi,
+    signer
+  );
+
+  // await callContract(chainId, router, "multicall", [finalPayload], {
+  //   value: totalWntAmount,
+  //   hideSentMsg: true,
+  //   hideSuccessMsg: true,
+  //   customSigners: subaccount?.customSigners,
+  //   customSignersGasLimits,
+  //   customSignersGasPrices,
+  //   metricId,
+  //   gasLimit,
+  //   gasPriceData,
+  //   bestNonce,
+  //   setPendingTxns: p.setPendingTxns,
+  // });
+
+  await callContract(
+    chainId,
+    customSingularRouter,
+    "addCollateral",
+    [finalPayload, p.initialCollateralAmount, p.singularFeeAmount, p.initialCollateralAddress],
+    {
+      value: totalWntAmount,
+      hideSentMsg: true,
+      hideSuccessMsg: true,
+      customSigners: subaccount?.customSigners,
+      // customSignersGasLimits,
+      // customSignersGasPrices,
+      metricId,
+      // gasLimit,
+      // gasPriceData,
+      // bestNonce,
+      setPendingTxns: p.setPendingTxns,
+    }
+  );
 
   if (!subaccount) {
     p.setPendingOrder([increaseOrder, ...orders]);
@@ -306,10 +334,16 @@ async function createEncodedPayload({
     isNativePayment,
   });
   const multicall = [
-    { method: "sendWnt", params: [orderVaultAddress, totalWntAmount] },
+    {
+      method: "sendWnt",
+      params: [orderVaultAddress, isNativePayment ? totalWntAmount - p.singularFeeAmount : totalWntAmount],
+    },
 
     !isNativePayment && !subaccount
-      ? { method: "sendTokens", params: [p.initialCollateralAddress, orderVaultAddress, p.initialCollateralAmount] }
+      ? {
+          method: "sendTokens",
+          params: [p.initialCollateralAddress, orderVaultAddress, p.initialCollateralAmount - p.singularFeeAmount],
+        }
       : undefined,
 
     {

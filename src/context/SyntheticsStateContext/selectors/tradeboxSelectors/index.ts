@@ -29,7 +29,7 @@ import {
 } from "domain/synthetics/trade";
 import { bigMath } from "lib/bigmath";
 import { getPositionKey } from "lib/legacy";
-import { parseValue } from "lib/numbers";
+import { FEE_DENOMINATOR, parseValue, TRADE_FEE } from "lib/numbers";
 import { getByKey } from "lib/objects";
 import { mustNeverExist } from "lib/types";
 import {
@@ -252,15 +252,20 @@ export const selectTradeboxSwapAmounts = createSelector((q) => {
     const usdAmount = convertToUsd(tokenAmount, fromToken.decimals, fromTokenPrice)!;
     const price = fromTokenPrice;
 
+    const singularFeeAmount = tokenAmount * BigInt(TRADE_FEE) / BigInt(FEE_DENOMINATOR);
+    const singularFeeUsd = usdAmount * BigInt(TRADE_FEE) / BigInt(FEE_DENOMINATOR);
+
     const swapAmounts: SwapAmounts = {
-      amountIn: tokenAmount,
-      usdIn: usdAmount!,
-      amountOut: tokenAmount,
-      usdOut: usdAmount!,
+      amountIn: amountBy === "from" ? tokenAmount : tokenAmount + singularFeeAmount,
+      usdIn: amountBy === "from" ? usdAmount : usdAmount + singularFeeUsd,
+      amountOut: amountBy === "from" ? tokenAmount - singularFeeAmount : tokenAmount,
+      usdOut: amountBy === "from" ? usdAmount - singularFeeUsd : usdAmount,
       swapPathStats: undefined,
       priceIn: price,
       priceOut: price,
       minOutputAmount: tokenAmount,
+      singularFeeAmount,
+      singularFeeUsd,
     };
 
     return swapAmounts;

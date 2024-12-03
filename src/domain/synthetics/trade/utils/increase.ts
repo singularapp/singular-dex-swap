@@ -64,6 +64,9 @@ export function getIncreasePositionAmounts(p: {
     initialCollateralAmount: 0n,
     initialCollateralUsd: 0n,
 
+    singularFeeAmount: 0n,
+    singularFeeUsd: 0n,
+
     collateralDeltaAmount: 0n,
     collateralDeltaUsd: 0n,
 
@@ -145,6 +148,9 @@ export function getIncreasePositionAmounts(p: {
       findSwapPath,
       uiFeeFactor,
     });
+
+    values.singularFeeAmount = swapAmounts.singularFeeAmount;
+    values.singularFeeUsd = swapAmounts.singularFeeUsd;
 
     values.swapPathStats = swapAmounts.swapPathStats;
 
@@ -248,6 +254,9 @@ export function getIncreasePositionAmounts(p: {
 
     values.swapPathStats = swapAmounts.swapPathStats;
 
+    values.singularFeeAmount = swapAmounts.singularFeeAmount;
+    values.singularFeeUsd = swapAmounts.singularFeeUsd
+
     values.initialCollateralAmount = swapAmounts.amountIn;
     values.initialCollateralUsd = convertToUsd(
       values.initialCollateralAmount,
@@ -290,6 +299,9 @@ export function getIncreasePositionAmounts(p: {
         findSwapPath,
         uiFeeFactor,
       });
+
+      values.singularFeeAmount = swapAmounts.singularFeeAmount;
+      values.singularFeeUsd = swapAmounts.singularFeeUsd
 
       values.swapPathStats = swapAmounts.swapPathStats;
       values.swapUiFeeUsd = applyFactor(getTotalSwapVolumeFromSwapStats(values.swapPathStats?.swapSteps), uiFeeFactor);

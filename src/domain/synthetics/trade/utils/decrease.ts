@@ -106,6 +106,9 @@ export function getDecreasePositionAmounts(p: {
     triggerOrderType: orderType,
     triggerThresholdType: undefined,
     decreaseSwapType: DecreasePositionSwapType.NoSwap,
+
+    singularFeeAmount: 0n,
+    singularFeeUsd: 0n,
   };
 
   const pnlToken = isLong ? marketInfo.longToken : marketInfo.shortToken;

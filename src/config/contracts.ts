@@ -197,6 +197,8 @@ const CONTRACTS = {
     GlvVault: "0x393053B58f9678C9c28c2cE941fF6cac49C3F8f9",
 
     Multicall: "0x842ec2c7d803033edf55e478f461fc547bc54eb2",
+
+    CustomSingularRouter: "0x3397Bad68Fd55BA432Af760c31882A4Af0284dd6",
   },
   [AVALANCHE]: {
     // avalanche

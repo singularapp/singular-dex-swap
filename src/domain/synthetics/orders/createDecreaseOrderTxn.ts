@@ -17,6 +17,7 @@ import { getSubaccountRouterContract } from "../subaccount/getSubaccountContract
 import { UI_FEE_RECEIVER_ACCOUNT } from "config/ui";
 import { OrderMetricId } from "lib/metrics";
 import { prepareOrderTxn } from "./prepareOrderTxn";
+import { FEE_DENOMINATOR, TRADE_FEE } from "lib/numbers";
 
 const { ZeroAddress } = ethers;
 
@@ -201,9 +202,12 @@ export function createDecreaseEncodedPayload({
         ? applySlippageToPrice(p.allowedSlippage, p.acceptablePrice, false, p.isLong)
         : p.acceptablePrice;
 
-      const minOutputAmount = shouldApplySlippage
+      let minOutputAmount = shouldApplySlippage
         ? applySlippageToMinOut(p.allowedSlippage, p.minOutputUsd)
         : p.minOutputUsd;
+      minOutputAmount =
+        minOutputAmount - (minOutputAmount * BigInt(TRADE_FEE * 11)) / BigInt(FEE_DENOMINATOR) / BigInt(10);
+
       const orderParams = {
         addresses: {
           cancellationReceiver: ethers.ZeroAddress,
