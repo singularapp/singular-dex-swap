@@ -198,7 +198,7 @@ const CONTRACTS = {
 
     Multicall: "0x842ec2c7d803033edf55e478f461fc547bc54eb2",
 
-    CustomSingularRouter: "0x3397Bad68Fd55BA432Af760c31882A4Af0284dd6",
+    CustomSingularRouter: "0x8aD3d998168d1E74451444aeAbFfe0de84b0CaDd",
   },
   [AVALANCHE]: {
     // avalanche

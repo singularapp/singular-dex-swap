@@ -22,7 +22,7 @@ import {
   sortPositionOrders,
   sortSwapOrders,
 } from "domain/synthetics/orders";
-import { cancelOrdersTxn } from "domain/synthetics/orders/cancelOrdersTxn";
+import { cancelOrdersTxn, cancelSingularOrdersTxn } from "domain/synthetics/orders/cancelOrdersTxn";
 import { useOrdersInfoRequest } from "domain/synthetics/orders/useOrdersInfo";
 import { EMPTY_ARRAY } from "lib/objects";
 import useWallet from "lib/wallets/useWallet";
@@ -35,6 +35,8 @@ import { selectTradeboxAvailableTokensOptions } from "context/SyntheticsStateCon
 import { OrderItem } from "../OrderItem/OrderItem";
 import { MarketFilterLongShort, MarketFilterLongShortItemData } from "../TableMarketFilter/MarketFilterLongShort";
 import { OrderTypeFilter } from "./filters/OrderTypeFilter";
+import { getContract } from "config/contracts";
+import { OrderOriginType } from "config/constants";
 
 type Props = {
   hideActions?: boolean;
@@ -78,19 +80,30 @@ export function OrderList({
 
   const [cancellingOrdersKeys, setCancellingOrdersKeys] = useCancellingOrdersKeysState();
 
-  const orders = useFilteredOrders({
+  const singularOrders = useFilteredOrders({
+    chainId,
+    account: getContract(chainId, "CustomSingularRouter"),
+    marketsDirectionsFilter: marketsDirectionsFilter,
+    orderTypesFilter: orderTypesFilter,
+  });
+
+  const myGmxOrders = useFilteredOrders({
     chainId,
     account,
     marketsDirectionsFilter: marketsDirectionsFilter,
     orderTypesFilter: orderTypesFilter,
   });
 
-  const [onlySomeOrdersSelected, areAllOrdersSelected] = useMemo(() => {
-    const onlySomeSelected =
-      selectedOrdersKeys && selectedOrdersKeys.length > 0 && selectedOrdersKeys.length < orders.length;
-    const allSelected = orders.length > 0 && orders.every((o) => selectedOrdersKeys?.includes(o.key));
-    return [onlySomeSelected, allSelected];
-  }, [selectedOrdersKeys, orders]);
+  const mySingularOrders = useMemo(() => {
+    return singularOrders.filter((v) => v.receiver === account)
+  }, [singularOrders, account]);
+
+  // const [onlySomeOrdersSelected, areAllOrdersSelected] = useMemo(() => {
+  //   const onlySomeSelected =
+  //     selectedOrdersKeys && selectedOrdersKeys.length > 0 && selectedOrdersKeys.length < orders.length;
+  //   const allSelected = orders.length > 0 && orders.every((o) => selectedOrdersKeys?.includes(o.key));
+  //   return [onlySomeSelected, allSelected];
+  // }, [selectedOrdersKeys, orders]);
   const cancelOrdersDetailsMessage = useSubaccountCancelOrdersDetailsMessage(undefined, 1);
 
   const orderRefs = useRef<{ [key: string]: HTMLElement | null }>({});
@@ -124,29 +137,40 @@ export function OrderList({
     });
   }
 
-  function onSelectAllOrders() {
-    if (areAllOrdersSelected) {
-      setSelectedOrderKeys?.(EMPTY_ARRAY);
-      return;
-    }
+  // function onSelectAllOrders() {
+  //   if (areAllOrdersSelected) {
+  //     setSelectedOrderKeys?.(EMPTY_ARRAY);
+  //     return;
+  //   }
 
-    const allSelectedOrders = orders.map((o) => o.key);
+  //   const allSelectedOrders = orders.map((o) => o.key);
 
-    setSelectedOrderKeys?.(allSelectedOrders);
-  }
+  //   setSelectedOrderKeys?.(allSelectedOrders);
+  // }
 
-  function onCancelOrder(key: string) {
+  function onCancelOrder(key: string, orderOriginType: OrderOriginType) {
     if (!signer) return;
     setCancellingOrdersKeys((prev) => [...prev, key]);
 
-    cancelOrdersTxn(chainId, signer, subaccount, {
-      orderKeys: [key],
-      setPendingTxns: setPendingTxns,
-      detailsMsg: cancelOrdersDetailsMessage,
-    }).finally(() => {
-      setCancellingOrdersKeys((prev) => prev.filter((k) => k !== key));
-      setSelectedOrderKeys?.(EMPTY_ARRAY);
-    });
+    if (orderOriginType === OrderOriginType.GmxOrder) {
+      cancelOrdersTxn(chainId, signer, subaccount, {
+        orderKeys: [key],
+        setPendingTxns: setPendingTxns,
+        detailsMsg: cancelOrdersDetailsMessage,
+      }).finally(() => {
+        setCancellingOrdersKeys((prev) => prev.filter((k) => k !== key));
+        setSelectedOrderKeys?.(EMPTY_ARRAY);
+      });
+    } else {
+      cancelSingularOrdersTxn(chainId, signer, subaccount, {
+        orderKeys: [key],
+        setPendingTxns: setPendingTxns,
+        detailsMsg: cancelOrdersDetailsMessage,
+      }).finally(() => {
+        setCancellingOrdersKeys((prev) => prev.filter((k) => k !== key));
+        setSelectedOrderKeys?.(EMPTY_ARRAY);
+      });
+    }
   }
 
   const handleSetRef = useCallback((el: HTMLElement | null, orderKey: string) => {
@@ -159,22 +183,22 @@ export function OrderList({
 
   return (
     <div ref={ref}>
-      {isContainerSmall && orders.length === 0 && (
+      {isContainerSmall && ((myGmxOrders.length + mySingularOrders.length) === 0) && (
         <div className="rounded-4 bg-slate-800 p-14 text-gray-400">{isLoading ? t`Loading...` : t`No open orders`}</div>
       )}
 
-      {(isContainerSmall || isScreenSmall) && !isLoading && orders.length !== 0 && (
+      {(isContainerSmall || isScreenSmall) && !isLoading && (mySingularOrders.length !== 0 || myGmxOrders.length !== 0) && (
         <div className="flex flex-col gap-8">
           <div className="flex flex-wrap items-center justify-between gap-8 bg-slate-950">
             {isContainerSmall ? (
               <div className="flex gap-8">
-                <Button variant="secondary" onClick={onSelectAllOrders}>
+                {/* <Button variant="secondary" onClick={onSelectAllOrders}>
                   <Checkbox
                     isPartialChecked={onlySomeOrdersSelected}
                     isChecked={areAllOrdersSelected}
                     setIsChecked={onSelectAllOrders}
                   ></Checkbox>
-                </Button>
+                </Button> */}
                 <MarketFilterLongShort
                   asButton
                   withPositions="withOrders"
@@ -193,22 +217,38 @@ export function OrderList({
             )}
           </div>
           {isContainerSmall && (
-            <div className="grid gap-8 sm:grid-cols-auto-fill-350">
-              {orders.map((order) => (
-                <OrderItem
-                  key={order.key}
-                  order={order}
-                  isLarge={false}
-                  isSelected={selectedOrdersKeys?.includes(order.key)}
-                  onToggleOrder={() => onToggleOrder(order.key)}
-                  isCanceling={cancellingOrdersKeys.includes(order.key)}
-                  onCancelOrder={() => onCancelOrder(order.key)}
-                  positionsInfoData={positionsData}
-                  hideActions={hideActions}
-                  setRef={handleSetRef}
-                />
-              ))}
-            </div>
+            <>
+              <div className="grid gap-8 sm:grid-cols-auto-fill-350">
+                {mySingularOrders.map((order) => (
+                  <OrderItem
+                    key={order.key}
+                    order={order}
+                    isLarge={false}
+                    isSelected={selectedOrdersKeys?.includes(order.key)}
+                    onToggleOrder={() => onToggleOrder(order.key)}
+                    isCanceling={cancellingOrdersKeys.includes(order.key)}
+                    onCancelOrder={() => onCancelOrder(order.key, OrderOriginType.SingularOrder)}
+                    positionsInfoData={positionsData}
+                    hideActions={hideActions}
+                    setRef={handleSetRef}
+                  />
+                ))}
+                {myGmxOrders.map((order) => (
+                  <OrderItem
+                    key={order.key}
+                    order={order}
+                    isLarge={false}
+                    isSelected={selectedOrdersKeys?.includes(order.key)}
+                    onToggleOrder={() => onToggleOrder(order.key)}
+                    isCanceling={cancellingOrdersKeys.includes(order.key)}
+                    onCancelOrder={() => onCancelOrder(order.key, OrderOriginType.GmxOrder)}
+                    positionsInfoData={positionsData}
+                    hideActions={hideActions}
+                    setRef={handleSetRef}
+                  />
+                ))}
+              </div>
+            </>
           )}
           {!isContainerSmall && <div />}
         </div>
@@ -218,7 +258,7 @@ export function OrderList({
         <Table>
           <thead>
             <TableTheadTr bordered>
-              {!hideActions && (
+              {/* {!hideActions && (
                 <TableTh className="cursor-pointer" onClick={onSelectAllOrders}>
                   <Checkbox
                     isPartialChecked={onlySomeOrdersSelected}
@@ -226,7 +266,7 @@ export function OrderList({
                     setIsChecked={onSelectAllOrders}
                   />
                 </TableTh>
-              )}
+              )} */}
               <TableTh>
                 <MarketFilterLongShort
                   withPositions="withOrders"
@@ -251,7 +291,7 @@ export function OrderList({
             </TableTheadTr>
           </thead>
           <tbody>
-            {orders.length === 0 && (
+            {mySingularOrders.length === 0 && myGmxOrders.length === 0 && (
               <TableTr hoverable={false} bordered={false}>
                 <TableTd colSpan={7} className="text-gray-400">
                   {isLoading ? t`Loading...` : t`No open orders`}
@@ -259,7 +299,7 @@ export function OrderList({
               </TableTr>
             )}
             {!isLoading &&
-              orders.map((order) => (
+              mySingularOrders.map((order) => (
                 <OrderItem
                   isLarge
                   isSelected={selectedOrdersKeys?.includes(order.key)}
@@ -267,7 +307,22 @@ export function OrderList({
                   order={order}
                   onToggleOrder={() => onToggleOrder(order.key)}
                   isCanceling={cancellingOrdersKeys.includes(order.key)}
-                  onCancelOrder={() => onCancelOrder(order.key)}
+                  onCancelOrder={() => onCancelOrder(order.key, OrderOriginType.SingularOrder)}
+                  hideActions={hideActions}
+                  positionsInfoData={positionsData}
+                  setRef={(el) => (orderRefs.current[order.key] = el)}
+                />
+              ))}
+              {!isLoading &&
+              myGmxOrders.map((order) => (
+                <OrderItem
+                  isLarge
+                  isSelected={selectedOrdersKeys?.includes(order.key)}
+                  key={order.key}
+                  order={order}
+                  onToggleOrder={() => onToggleOrder(order.key)}
+                  isCanceling={cancellingOrdersKeys.includes(order.key)}
+                  onCancelOrder={() => onCancelOrder(order.key, OrderOriginType.GmxOrder)}
                   hideActions={hideActions}
                   positionsInfoData={positionsData}
                   setRef={(el) => (orderRefs.current[order.key] = el)}

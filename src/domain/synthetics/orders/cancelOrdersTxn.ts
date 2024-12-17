@@ -1,5 +1,6 @@
 import { plural, t } from "@lingui/macro";
 import ExchangeRouter from "abis/ExchangeRouter.json";
+import CustomSingularRouter from "abis/CustomSingularRouter.json";
 import { getContract } from "config/contracts";
 import { Subaccount } from "context/SubaccountContext/SubaccountContext";
 import { Signer, ethers } from "ethers";
@@ -35,6 +36,36 @@ export async function cancelOrdersTxn(chainId: number, signer: Signer, subaccoun
     detailsMsg: p.detailsMsg,
     customSigners: subaccount?.customSigners,
   });
+}
+
+export async function cancelSingularOrdersTxn(chainId: number, signer: Signer, subaccount: Subaccount, p: CancelOrderParams) {
+  const customSingularRouter = new ethers.Contract(
+    getContract(chainId, "CustomSingularRouter"),
+    CustomSingularRouter.abi,
+    signer
+  );
+
+  const count = p.orderKeys.length;
+
+  const ordersText = plural(count, {
+    one: "Order",
+    other: "# Orders",
+  });
+
+  return callContract(
+    chainId,
+    customSingularRouter,
+    "cancelOrder",
+    [p.orderKeys[0]],
+    {
+      sentMsg: t`Cancelling ${ordersText}`,
+      successMsg: t`${ordersText} cancelled`,
+      failMsg: t`Failed to cancel ${ordersText}`,
+      setPendingTxns: p.setPendingTxns,
+      detailsMsg: p.detailsMsg,
+      customSigners: subaccount?.customSigners,
+    }
+  );
 }
 
 export function createCancelEncodedPayload({

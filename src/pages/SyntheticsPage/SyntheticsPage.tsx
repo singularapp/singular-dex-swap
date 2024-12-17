@@ -182,24 +182,24 @@ export function SyntheticsPage(p: Props) {
   );
 
   const renderOrdersTabTitle = useCallback(() => {
-    if (!ordersCount) {
+    // if (!ordersCount) {
       return (
         <div>
           <Trans>Orders</Trans>
         </div>
       );
-    }
+    // }
 
-    return (
-      <div>
-        <Trans>Orders</Trans>{" "}
-        <span
-          className={cx({ negative: ordersErrorsCount > 0, warning: !ordersErrorsCount && ordersWarningsCount > 0 })}
-        >
-          ({ordersCount})
-        </span>
-      </div>
-    );
+    // return (
+    //   <div>
+    //     <Trans>Orders</Trans>{" "}
+    //     <span
+    //       className={cx({ negative: ordersErrorsCount > 0, warning: !ordersErrorsCount && ordersWarningsCount > 0 })}
+    //     >
+    //       ({ordersCount})
+    //     </span>
+    //   </div>
+    // );
   }, [ordersCount, ordersErrorsCount, ordersWarningsCount]);
 
   const tabLabels = useMemo(

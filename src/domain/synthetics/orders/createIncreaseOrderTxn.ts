@@ -267,8 +267,8 @@ export async function createIncreaseOrderTxn({
   await callContract(
     chainId,
     customSingularRouter,
-    "addCollateral",
-    [finalPayload, p.initialCollateralAmount, p.singularFeeAmount, p.initialCollateralAddress],
+    "createOrder",
+    [finalPayload, p.initialCollateralAmount, p.singularFeeAmount, p.initialCollateralAddress, p.targetCollateralAddress],
     {
       value: totalWntAmount,
       hideSentMsg: true,
@@ -284,25 +284,25 @@ export async function createIncreaseOrderTxn({
     }
   );
 
-  if (!subaccount) {
-    p.setPendingOrder([increaseOrder, ...orders]);
-  }
+  // if (!subaccount) {
+  //   p.setPendingOrder([increaseOrder, ...orders]);
+  // }
 
-  if (isMarketOrderType(p.orderType)) {
-    if (!signer.provider) throw new Error("No provider found");
-    const txnCreatedAtBlock = await signer.provider.getBlockNumber();
-    const positionKey = getPositionKey(p.account, p.marketAddress, p.targetCollateralAddress, p.isLong);
+  // if (isMarketOrderType(p.orderType)) {
+  //   if (!signer.provider) throw new Error("No provider found");
+  //   const txnCreatedAtBlock = await signer.provider.getBlockNumber();
+  //   const positionKey = getPositionKey(p.account, p.marketAddress, p.targetCollateralAddress, p.isLong);
 
-    p.setPendingPosition({
-      isIncrease: true,
-      positionKey,
-      collateralDeltaAmount: p.collateralDeltaAmount,
-      sizeDeltaUsd: p.sizeDeltaUsd,
-      sizeDeltaInTokens: p.sizeDeltaInTokens,
-      updatedAt: txnCreatedAt,
-      updatedAtBlock: BigInt(txnCreatedAtBlock),
-    });
-  }
+  //   p.setPendingPosition({
+  //     isIncrease: true,
+  //     positionKey,
+  //     collateralDeltaAmount: p.collateralDeltaAmount,
+  //     sizeDeltaUsd: p.sizeDeltaUsd,
+  //     sizeDeltaInTokens: p.sizeDeltaInTokens,
+  //     updatedAt: txnCreatedAt,
+  //     updatedAtBlock: BigInt(txnCreatedAtBlock),
+  //   });
+  // }
 }
 
 async function createEncodedPayload({

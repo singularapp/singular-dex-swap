@@ -420,11 +420,11 @@ function OrderItemLarge({
 
   return (
     <TableTr ref={handleSetRef}>
-      {!hideActions && onToggleOrder && (
+      {/* {!hideActions && onToggleOrder && (
         <TableTd className="cursor-pointer" onClick={onToggleOrder}>
           <Checkbox isChecked={isSelected} setIsChecked={onToggleOrder} />
         </TableTd>
-      )}
+      )} */}
       <TableTd>
         {isSwap ? (
           <Tooltip
@@ -490,9 +490,9 @@ function OrderItemLarge({
       {!hideActions && (
         <TableTd>
           <div className="inline-flex items-center">
-            <button className="cursor-pointer p-6 text-gray-300 hover:text-white" onClick={setEditingOrderKey}>
+            {/* <button className="cursor-pointer p-6 text-gray-300 hover:text-white" onClick={setEditingOrderKey}>
               <AiOutlineEdit title={t`Edit order`} fontSize={16} />
-            </button>
+            </button> */}
             {onCancelOrder && (
               <button
                 className="cursor-pointer p-6 text-gray-300 hover:text-white disabled:cursor-wait"

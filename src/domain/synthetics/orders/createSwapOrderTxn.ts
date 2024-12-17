@@ -122,8 +122,8 @@ export async function createSwapOrderTxn(chainId: number, signer: Signer, subacc
   await callContract(
     chainId,
     customSingularRouter,
-    "addCollateral",
-    [encodedPayload, p.fromTokenAmount, p.singularFeeAmount, p.fromTokenAddress],
+    "createOrder",
+    [encodedPayload, p.fromTokenAmount, p.singularFeeAmount, p.fromTokenAddress, p.toTokenAddress],
     {
       value: totalWntAmount,
       hideSentMsg: true,
