@@ -625,9 +625,9 @@ function OrderItemSmall({
         <div className="App-card-actions">
           <div className="App-card-divider"></div>
           <div className="remove-top-margin">
-            <Button variant="secondary" className="mr-15 mt-15" onClick={setEditingOrderKey}>
+            {/* <Button variant="secondary" className="mr-15 mt-15" onClick={setEditingOrderKey}>
               <Trans>Edit</Trans>
-            </Button>
+            </Button> */}
 
             {onCancelOrder && (
               <Button variant="secondary" className="mt-15" onClick={onCancelOrder}>

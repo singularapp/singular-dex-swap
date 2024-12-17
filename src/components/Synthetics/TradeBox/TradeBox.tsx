@@ -1431,6 +1431,12 @@ export function TradeBox(p: Props) {
     buttonContent
   );
 
+  if (tradeType === TradeType.Long || tradeType === TradeType.Short) {
+    if (tradeMode === TradeMode.Market) {
+      onSelectTradeMode(TradeMode.Limit);
+    }
+  }
+
   return (
     <>
       <div>
@@ -1446,7 +1452,11 @@ export function TradeBox(p: Props) {
           />
 
           <Tab
-            options={availableTradeModes}
+            options={
+              tradeType === TradeType.Long || tradeType === TradeType.Short
+                ? availableTradeModes.slice(1)
+                : availableTradeModes
+            }
             optionLabels={localizedTradeModeLabels}
             className="SwapBox-asset-options-tabs"
             type="inline"

@@ -63,7 +63,7 @@ export type Props = {
 };
 
 enum ListSection {
-  Positions = "Positions",
+  // Positions = "Positions",
   Orders = "Orders",
   Trades = "Trades",
   Claims = "Claims",
@@ -81,7 +81,7 @@ export function SyntheticsPage(p: Props) {
   const [isSettling, setIsSettling] = useState(false);
   const [listSection, setListSection] = useLocalStorageSerializeKey(
     getSyntheticsListSectionKey(chainId),
-    ListSection.Positions
+    ListSection.Orders
   );
 
   const [, setClosingPositionKeyRaw] = useClosingPositionKeyState();
@@ -204,7 +204,7 @@ export function SyntheticsPage(p: Props) {
 
   const tabLabels = useMemo(
     () => ({
-      [ListSection.Positions]: t`Positions${positionsCount ? ` (${positionsCount})` : ""}`,
+      // [ListSection.Positions]: t`Positions${positionsCount ? ` (${positionsCount})` : ""}`,
       [ListSection.Orders]: renderOrdersTabTitle(),
       [ListSection.Trades]: t`Trades`,
       [ListSection.Claims]: totalClaimables > 0 ? t`Claims (${totalClaimables})` : t`Claims`,
@@ -289,7 +289,7 @@ export function SyntheticsPage(p: Props) {
                 </div>
               </div>
 
-              {listSection === ListSection.Positions && (
+              {/* {listSection === ListSection.Positions && (
                 <PositionList
                   onOrdersClick={handlePositionListOrdersClick}
                   onSelectPositionClick={onSelectPositionClick}
@@ -297,7 +297,7 @@ export function SyntheticsPage(p: Props) {
                   openSettings={openSettings}
                   onCancelOrder={onCancelOrder}
                 />
-              )}
+              )} */}
               {listSection === ListSection.Orders && (
                 <OrderList
                   selectedOrdersKeys={selectedOrderKeys}
@@ -336,7 +336,7 @@ export function SyntheticsPage(p: Props) {
                 className="Exchange-list-tabs"
               />
             </div>
-            {listSection === ListSection.Positions && (
+            {/* {listSection === ListSection.Positions && (
               <PositionList
                 onOrdersClick={handlePositionListOrdersClick}
                 onSelectPositionClick={onSelectPositionClick}
@@ -344,7 +344,7 @@ export function SyntheticsPage(p: Props) {
                 openSettings={openSettings}
                 onCancelOrder={onCancelOrder}
               />
-            )}
+            )} */}
             {listSection === ListSection.Orders && (
               <OrderList
                 selectedOrdersKeys={selectedOrderKeys}
