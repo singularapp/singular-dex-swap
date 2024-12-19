@@ -187,8 +187,8 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
       </Route>
       <Route exact path="/referrals/:account">
         <Referrals />
-      </Route>
-      <Route exact path="/nft_wallet">
+      </Route> */}
+      {/* <Route exact path="/nft_wallet">
         <NftWallet />
       </Route>
       <Route exact path="/claim_es_gmx">
