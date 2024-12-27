@@ -465,7 +465,6 @@ msgstr "No pools matched."
 #: src/pages/AccountDashboard/HistoricalLists.tsx
 #: src/pages/Exchange/Exchange.tsx
 #: src/pages/SyntheticsPage/SyntheticsPage.tsx
-#: src/pages/SyntheticsPage/SyntheticsPage.tsx
 msgid "Orders"
 msgstr "Orders"
 
@@ -2418,6 +2417,7 @@ msgid "The order will not be executed as its trigger price is beyond the positio
 msgstr "The order will not be executed as its trigger price is beyond the position's liquidation price."
 
 #: src/domain/synthetics/orders/cancelOrdersTxn.ts
+#: src/domain/synthetics/orders/cancelOrdersTxn.ts
 msgid "Failed to cancel {ordersText}"
 msgstr "Failed to cancel {ordersText}"
 
@@ -3261,7 +3261,6 @@ msgid "{col3}"
 msgstr "{col3}"
 
 #: src/pages/AccountDashboard/HistoricalLists.tsx
-#: src/pages/SyntheticsPage/SyntheticsPage.tsx
 msgid "Positions{0}"
 msgstr "Positions{0}"
 
@@ -5054,7 +5053,6 @@ msgstr "UTILIZATION"
 msgid "GMX Announcements"
 msgstr "GMX Announcements"
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Referrals/Referrals.tsx
 #: src/pages/Referrals/Referrals.tsx
 msgid "Referrals"
@@ -5772,7 +5770,6 @@ msgstr "Longs Net Rate / 1h"
 #: src/components/Exchange/OrdersList.jsx
 #: src/components/Exchange/OrdersList.jsx
 #: src/components/Exchange/OrdersList.jsx
-#: src/components/Synthetics/OrderItem/OrderItem.tsx
 msgid "Edit"
 msgstr "Edit"
 
@@ -5824,8 +5821,8 @@ msgid "Receiver Address"
 msgstr "Receiver Address"
 
 #: src/pages/AccountDashboard/AccountDashboard.tsx
-msgid "GMX {versionName} {networkName} information for account:"
-msgstr "GMX {versionName} {networkName} information for account:"
+#~ msgid "GMX {versionName} {networkName} information for account:"
+#~ msgstr "GMX {versionName} {networkName} information for account:"
 
 #: src/pages/AccountDashboard/DailyAndCumulativePnL.tsx
 msgid "From"
@@ -6439,6 +6436,10 @@ msgstr "Max leverage of 100x was exceeded, the remaining collateral after deduct
 msgid "Dashboard for SD referral stats"
 msgstr "Dashboard for SD referral stats"
 
+#: src/pages/AccountDashboard/AccountDashboard.tsx
+msgid "SD {versionName} {networkName} information for account:"
+msgstr "SD {versionName} {networkName} information for account:"
+
 #: src/components/Synthetics/GmSwap/GmSwapBox/GmDepositWithdrawalBox/useSubmitButtonState.tsx
 msgid "Shifting {symbol}..."
 msgstr "Shifting {symbol}..."
@@ -6999,7 +7000,6 @@ msgstr "Update Limit"
 
 #: src/components/Exchange/OrderEditor.jsx
 #: src/components/Exchange/OrderEditor.jsx
-#: src/components/Synthetics/OrderItem/OrderItem.tsx
 msgid "Edit order"
 msgstr "Edit order"
 
@@ -7623,6 +7623,7 @@ msgstr "Leave feedback"
 msgid "Traders"
 msgstr "Traders"
 
+#: src/domain/synthetics/orders/cancelOrdersTxn.ts
 #: src/domain/synthetics/orders/cancelOrdersTxn.ts
 msgid "{ordersText} cancelled"
 msgstr "{ordersText} cancelled"
@@ -8536,6 +8537,7 @@ msgid "I am aware of the trigger orders"
 msgstr "I am aware of the trigger orders"
 
 #: src/domain/synthetics/orders/cancelOrdersTxn.ts
+#: src/domain/synthetics/orders/cancelOrdersTxn.ts
 msgid "{count, plural, one {Order} other {# Orders}}"
 msgstr "{count, plural, one {Order} other {# Orders}}"
 
@@ -8611,6 +8613,7 @@ msgstr "Deposit not enough to cover fees"
 msgid "Migrate"
 msgstr "Migrate"
 
+#: src/domain/synthetics/orders/cancelOrdersTxn.ts
 #: src/domain/synthetics/orders/cancelOrdersTxn.ts
 msgid "Cancelling {ordersText}"
 msgstr "Cancelling {ordersText}"

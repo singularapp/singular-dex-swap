@@ -465,7 +465,6 @@ msgstr ""
 #: src/pages/AccountDashboard/HistoricalLists.tsx
 #: src/pages/Exchange/Exchange.tsx
 #: src/pages/SyntheticsPage/SyntheticsPage.tsx
-#: src/pages/SyntheticsPage/SyntheticsPage.tsx
 msgid "Orders"
 msgstr "订单"
 
@@ -2418,6 +2417,7 @@ msgid "The order will not be executed as its trigger price is beyond the positio
 msgstr ""
 
 #: src/domain/synthetics/orders/cancelOrdersTxn.ts
+#: src/domain/synthetics/orders/cancelOrdersTxn.ts
 msgid "Failed to cancel {ordersText}"
 msgstr ""
 
@@ -3261,7 +3261,6 @@ msgid "{col3}"
 msgstr ""
 
 #: src/pages/AccountDashboard/HistoricalLists.tsx
-#: src/pages/SyntheticsPage/SyntheticsPage.tsx
 msgid "Positions{0}"
 msgstr ""
 
@@ -5051,7 +5050,6 @@ msgstr "使用方法"
 msgid "GMX Announcements"
 msgstr ""
 
-#: src/components/Header/AppHeaderLinks.tsx
 #: src/pages/Referrals/Referrals.tsx
 #: src/pages/Referrals/Referrals.tsx
 msgid "Referrals"
@@ -5769,7 +5767,6 @@ msgstr "做多净率 / 1小时"
 #: src/components/Exchange/OrdersList.jsx
 #: src/components/Exchange/OrdersList.jsx
 #: src/components/Exchange/OrdersList.jsx
-#: src/components/Synthetics/OrderItem/OrderItem.tsx
 msgid "Edit"
 msgstr "編輯"
 
@@ -5821,8 +5818,8 @@ msgid "Receiver Address"
 msgstr "收取地址"
 
 #: src/pages/AccountDashboard/AccountDashboard.tsx
-msgid "GMX {versionName} {networkName} information for account:"
-msgstr ""
+#~ msgid "GMX {versionName} {networkName} information for account:"
+#~ msgstr ""
 
 #: src/pages/AccountDashboard/DailyAndCumulativePnL.tsx
 msgid "From"
@@ -6436,6 +6433,10 @@ msgstr "超过100倍的最大杠杆率，扣除损失和费用后的剩余抵押
 msgid "Dashboard for SD referral stats"
 msgstr ""
 
+#: src/pages/AccountDashboard/AccountDashboard.tsx
+msgid "SD {versionName} {networkName} information for account:"
+msgstr ""
+
 #: src/components/Synthetics/GmSwap/GmSwapBox/GmDepositWithdrawalBox/useSubmitButtonState.tsx
 msgid "Shifting {symbol}..."
 msgstr ""
@@ -6993,7 +6994,6 @@ msgstr ""
 
 #: src/components/Exchange/OrderEditor.jsx
 #: src/components/Exchange/OrderEditor.jsx
-#: src/components/Synthetics/OrderItem/OrderItem.tsx
 msgid "Edit order"
 msgstr "编辑订单"
 
@@ -7617,6 +7617,7 @@ msgstr ""
 msgid "Traders"
 msgstr ""
 
+#: src/domain/synthetics/orders/cancelOrdersTxn.ts
 #: src/domain/synthetics/orders/cancelOrdersTxn.ts
 msgid "{ordersText} cancelled"
 msgstr ""
@@ -8530,6 +8531,7 @@ msgid "I am aware of the trigger orders"
 msgstr "我了解触发的指令"
 
 #: src/domain/synthetics/orders/cancelOrdersTxn.ts
+#: src/domain/synthetics/orders/cancelOrdersTxn.ts
 msgid "{count, plural, one {Order} other {# Orders}}"
 msgstr ""
 
@@ -8605,6 +8607,7 @@ msgstr ""
 msgid "Migrate"
 msgstr "转移"
 
+#: src/domain/synthetics/orders/cancelOrdersTxn.ts
 #: src/domain/synthetics/orders/cancelOrdersTxn.ts
 msgid "Cancelling {ordersText}"
 msgstr ""
