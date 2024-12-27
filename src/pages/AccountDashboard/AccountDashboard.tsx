@@ -44,7 +44,7 @@ export function AccountDashboard() {
           <>
             <div className="flex flex-wrap items-center gap-4">
               <Trans>
-                GMX {versionName} {networkName} information for account:
+                SD {versionName} {networkName} information for account:
               </Trans>
               <AddressView noLink address={account} size={20} breakpoint={isMobile ? "XL" : undefined} />
             </div>
