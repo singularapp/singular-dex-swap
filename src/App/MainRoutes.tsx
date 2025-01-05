@@ -90,10 +90,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
   return (
     <Switch>
       <Route exact path="/">
-        <Redirect to="/perpetuals/swap" />
-      </Route>
-      <Route exact path="/perpetuals">
-        <Redirect to="/perpetuals/swap" />
+        <Redirect to="/perpetuals" />
       </Route>
       {/* <Route exact path="/price_impact_rebates_stats">
         <PriceImpactRebatesStatsPage />
@@ -142,7 +139,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
           <SyntheticsFallbackPage />
         )}
       </Route>
-      <Redirect from="/v2" to="/perpetuals/swap" />
+      <Redirect from="/v2" to="/perpetuals" />
       <Route exact path="/slp">
         <BuyGlp />
       </Route>
