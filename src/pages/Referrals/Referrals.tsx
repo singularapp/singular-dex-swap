@@ -31,6 +31,7 @@ import PageTitle from "components/PageTitle/PageTitle";
 import { usePendingTxns } from "context/PendingTxnsContext/PendingTxnsContext";
 import { serializeBigIntsInObject } from "lib/numbers";
 import { useLocalizedMap } from "lib/i18n";
+import { DOCUMENT_LINKS } from "config/links";
 
 const TRADERS = "Traders";
 const AFFILIATES = "Affiliates";
@@ -128,10 +129,10 @@ function Referrals() {
           title={t`Referrals`}
           subtitle={
             <Trans>
-              Get fee discounts and earn rebates through the GMX referral program.
+              Get fee discounts and earn rebates through the SD referral program.
               <br />
               For more information, please read the{" "}
-              <ExternalLink href="https://docs.gmx.io/docs/referrals">referral program details</ExternalLink>.
+              <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>referral program details</ExternalLink>.
             </Trans>
           }
           qa="referrals-page"

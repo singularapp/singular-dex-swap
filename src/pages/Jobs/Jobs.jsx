@@ -37,8 +37,8 @@ function NoJob() {
       <div className="body-para">
         <p className="subheading">
           <Trans>
-            GMX is not actively looking for new hires at the moment. However, if you think you can contribute to the
-            project, please email <ExternalLink href="mailto:jobs@gmx.io">jobs@gmx.io</ExternalLink>.
+            SINGULAR is not actively looking for new hires at the moment. However, if you think you can contribute to the
+            project, please email <ExternalLink href="mailto:jobs@gmx.io">jobs@singulardao.com</ExternalLink>.
           </Trans>
         </p>
       </div>

@@ -1,4 +1,3 @@
-import { useMedia } from "react-use";
 import { Trans } from "@lingui/macro";
 import cx from "classnames";
 import { useState } from "react";
@@ -10,61 +9,45 @@ import { SOCIAL_LINKS, getFooterLinks } from "./constants";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import { UserFeedbackModal } from "../UserFeedbackModal/UserFeedbackModal";
 
-import logoImg from "img/logo_GMX.svg";
+import logoImg from "img/logo_SINGULAR.png";
 
-import { TrackingLink } from "components/TrackingLink/TrackingLink";
-import { userAnalytics } from "lib/userAnalytics";
-import { LandingPageFooterMenuEvent } from "lib/userAnalytics/types";
+import "./Footer.css";
 
-type Props = {
-  showRedirectModal?: (to: string) => void;
-  redirectPopupTimestamp?: number;
-  isMobileTradePage?: boolean;
-};
+type Props = { showRedirectModal?: (to: string) => void; redirectPopupTimestamp?: number };
 
-export default function Footer({ showRedirectModal, redirectPopupTimestamp, isMobileTradePage }: Props) {
+export default function Footer({ showRedirectModal, redirectPopupTimestamp }: Props) {
   const isHome = isHomeSite();
   const [isUserFeedbackModalVisible, setIsUserFeedbackModalVisible] = useState(false);
 
-  const isMobile = useMedia("(max-width: 1024px)");
-  const isVerySmall = useMedia("(max-width: 580px)");
+  const handleLeaveFeedback = () => {
+    const iframe = document.getElementById("meta-crm-widget");
 
-  const linkClassName = cx("cursor-pointer !text-slate-100 !no-underline hover:!text-white ", {
-    "text-body-medium": !isVerySmall,
-    "text-body-small": isVerySmall,
-  });
+    if (iframe) {
+      const button = iframe["contentWindow"].document.querySelector(".frame-content button");
+      button.click();
+    }
+  };
 
   return (
     <>
-      <div
-        className={cx(
-          "absolute bottom-0 left-0 w-full border-t border-t-stroke-primary px-32 pt-40",
-          isMobileTradePage ? "pb-92" : "pb-40",
-          {
-            "grid grid-cols-[1fr_2fr_1fr]": !isMobile,
-            "flex flex-col gap-20": isMobile,
-          }
-        )}
-      >
-        <div
-          className={cx("flex items-center", {
-            "justify-center": isMobile,
-            "justify-start": !isMobile,
-          })}
-        >
-          <img src={logoImg} alt="GMX Logo" />
+      <div className={cx("Footer-wrapper", { home: isHome })}>
+        <div className="Footer-logo">
+          <img src={logoImg} alt="MetaMask" />
         </div>
-        <div
-          className={cx("flex flex-row items-center justify-center", {
-            "gap-32": !isMobile,
-            "gap-24": isMobile && !isVerySmall,
-            "gap-16": isVerySmall,
+        <div className="Footer-social-link-block">
+          {SOCIAL_LINKS.map((platform) => {
+            return (
+              <ExternalLink key={platform.name} className="App-social-link" href={platform.link}>
+                <img src={platform.icon} alt={platform.name} />
+              </ExternalLink>
+            );
           })}
-        >
+        </div>
+        <div className="Footer-links">
           {getFooterLinks(isHome).map(({ external, label, link, isAppLink }) => {
             if (external) {
               return (
-                <ExternalLink key={label} href={link} className={linkClassName}>
+                <ExternalLink key={label} href={link} className="Footer-link">
                   {label}
                 </ExternalLink>
               );
@@ -74,7 +57,7 @@ export default function Footer({ showRedirectModal, redirectPopupTimestamp, isMo
                 return (
                   <div
                     key={label}
-                    className={linkClassName}
+                    className="Footer-link a"
                     onClick={() => showRedirectModal && showRedirectModal(link)}
                   >
                     {label}
@@ -83,53 +66,23 @@ export default function Footer({ showRedirectModal, redirectPopupTimestamp, isMo
               } else {
                 const baseUrl = getAppBaseUrl();
                 return (
-                  <a key={label} href={baseUrl + link} className={linkClassName}>
+                  <a key={label} href={baseUrl + link} className="Footer-link">
                     {label}
                   </a>
                 );
               }
             }
             return (
-              <NavLink key={link} to={link} className={linkClassName} activeClassName="active">
+              <NavLink key={link} to={link} className="Footer-link" activeClassName="active">
                 {label}
               </NavLink>
             );
           })}
           {!isHome && (
-            <div className={linkClassName} onClick={() => setIsUserFeedbackModalVisible(true)}>
+            <div className="Footer-link" onClick={handleLeaveFeedback}>
               <Trans>Leave feedback</Trans>
             </div>
           )}
-        </div>
-        <div
-          className={cx("flex gap-24", {
-            "justify-center": isMobile,
-            "justify-end": !isMobile,
-          })}
-        >
-          {SOCIAL_LINKS.map((platform) => {
-            return (
-              <TrackingLink
-                key={platform.name}
-                onClick={async () => {
-                  await userAnalytics.pushEvent<LandingPageFooterMenuEvent>(
-                    {
-                      event: "LandingPageAction",
-                      data: {
-                        action: "FooterMenu",
-                        button: platform.name,
-                      },
-                    },
-                    { instantSend: true }
-                  );
-                }}
-              >
-                <ExternalLink href={platform.link} className="h-24 w-24">
-                  <img src={platform.icon} alt={platform.name} width="100%" />
-                </ExternalLink>
-              </TrackingLink>
-            );
-          })}
         </div>
       </div>
       {!isHome && (

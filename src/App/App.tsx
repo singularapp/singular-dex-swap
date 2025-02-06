@@ -32,11 +32,34 @@ import { TokensBalancesContextProvider } from "context/TokensBalancesContext/Tok
 import { TokensFavoritesContextProvider } from "context/TokensFavoritesContext/TokensFavoritesContextProvider";
 import { WebsocketContextProvider } from "context/WebsocketContext/WebsocketContextProvider";
 
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
 // @ts-ignore
 if (window?.ethereum?.autoRefreshOnNetworkChange) {
   // @ts-ignore
   window.ethereum.autoRefreshOnNetworkChange = false;
 }
+
+// --------------------------------
+// Firebase init ------------------
+// --------------------------------
+const FIREBASE_API_KEY = import.meta.env.VITE_APP_FIREBASE_API_KEY;
+const FIREBASE_APP_ID = import.meta.env.VITE_APP_FIREBASE_APP_ID;
+const firebaseConfig = {
+  apiKey: FIREBASE_API_KEY,
+  authDomain: "singular-dex.firebaseapp.com",
+  projectId: "singular-dex",
+  storageBucket: "singular-dex.appspot.com",
+  messagingSenderId: "28932172976",
+  appId: FIREBASE_APP_ID,
+  measurementId: "G-RTQ6SCZKPC"
+};
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+// --------------------------------
+// --------------------------------
 
 function App() {
   const { chainId } = useChainId();

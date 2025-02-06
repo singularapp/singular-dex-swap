@@ -13,7 +13,7 @@ import useWallet from "lib/wallets/useWallet";
 
 import type { ModalProps } from "components/Modal/Modal";
 import ModalWithPortal from "../Modal/ModalWithPortal";
-import LanguageModalContent from "./LanguageModalContent";
+// import LanguageModalContent from "./LanguageModalContent";
 
 import language24Icon from "img/ic_language24.svg";
 import settingsIcon from "img/ic_settings_16.svg";
@@ -33,8 +33,8 @@ export default function NetworkDropdown(props) {
 
   function getModalContent(modalName) {
     switch (modalName) {
-      case LANGUAGE_MODAL_KEY:
-        return <LanguageModalContent currentLanguage={currentLanguage} onClose={handleLanguageModalClose} />;
+      // case LANGUAGE_MODAL_KEY:
+      //   return <LanguageModalContent currentLanguage={currentLanguage} onClose={handleLanguageModalClose} />;
       case NETWORK_MODAL_KEY:
         return (
           <NetworkModalContent
@@ -99,10 +99,6 @@ function NavIcons({ selectorLabel }) {
   return (
     <>
       <button className="transparent">
-        <img className="network-dropdown-icon" src={icon} alt={selectorLabel} />
-      </button>
-      <div className="network-dropdown-seperator" />
-      <button className="transparent">
         <HiDotsVertical color="white" size={20} />
       </button>
     </>
@@ -136,21 +132,6 @@ function DesktopDropdown({ setActiveModal, selectorLabel, networkOptions, openSe
                 </div>
                 <span className="network-dropdown-item-label">
                   <Trans>Settings</Trans>
-                </span>
-              </div>
-            </div>
-          </Menu.Item>
-          <Menu.Item>
-            <div
-              className="network-dropdown-menu-item menu-item last-dropdown-menu"
-              onClick={() => setActiveModal(LANGUAGE_MODAL_KEY)}
-            >
-              <div className="menu-item-group">
-                <div className="menu-item-icon">
-                  <img className="network-dropdown-icon" src={language24Icon} alt="" />
-                </div>
-                <span className="network-dropdown-item-label">
-                  <Trans>Language</Trans>
                 </span>
               </div>
             </div>

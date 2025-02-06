@@ -1463,7 +1463,7 @@ export function getHomeUrl() {
     return "http://localhost:3010";
   }
 
-  return "https://gmx.io";
+  return "https://singulardex.com";
 }
 
 export function getAppBaseUrl() {
@@ -1471,7 +1471,7 @@ export function getAppBaseUrl() {
     return "http://localhost:3011/#";
   }
 
-  return "https://app.gmx.io/#";
+  return "https://dapp.singulardex.com";
 }
 
 export function getRootShareApiUrl() {
@@ -1479,15 +1479,19 @@ export function getRootShareApiUrl() {
     return "https://gmxs.vercel.app";
   }
 
-  return "https://share.gmx.io";
+  return "https://share.singulardex.com";
 }
 
-export function getTradePageUrl() {
+export function getPerpetualsPageUrl() {
   if (isLocal()) {
-    return "http://localhost:3011/#/trade";
+    return "http://localhost:3010/#/perpetuals";
   }
 
-  return "https://app.gmx.io/#/trade";
+  return "https://dapp.singulardex.com/#/perpetuals";
+}
+
+export function getSwapAppUrl () {
+  return "https://app.singulardex.com/#/"
 }
 
 // Resolves all images in the folder that match the pattern and store them as `fileName -> path` pairs

@@ -43,6 +43,7 @@ import { useGlvGmMarketsWithComposition } from "./hooks/useMarketGlvGmMarketsCom
 const MIN_MARKETS_FOR_SCROLL = 10;
 
 import "./MarketStats.scss";
+import { DOCUMENT_LINKS } from "config/links";
 
 type Props = {
   marketsInfoData?: GlvAndGmMarketsInfoData;
@@ -187,12 +188,12 @@ export function MarketStatsWithComposition(p: Props) {
                 <div>
                   {marketInfo?.isSameCollaterals ? (
                     <Trans>
-                      {marketInfo?.longToken.symbol} can be used to buy GM for this market up to the specified buying
+                      {marketInfo?.longToken.symbol} can be used to buy SD for this market up to the specified buying
                       caps.
                     </Trans>
                   ) : (
                     <Trans>
-                      {marketInfo?.longToken.symbol} and {marketInfo?.shortToken.symbol} can be used to buy GM for this
+                      {marketInfo?.longToken.symbol} and {marketInfo?.shortToken.symbol} can be used to buy SD for this
                       market up to the specified buying caps.
                     </Trans>
                   )}
@@ -261,12 +262,12 @@ export function MarketStatsWithComposition(p: Props) {
               <div>
                 {marketInfo?.isSameCollaterals ? (
                   <Trans>
-                    GM can be sold for {longToken?.symbol} for this market up to the specified selling caps. The
+                    SD can be sold for {longToken?.symbol} for this market up to the specified selling caps. The
                     remaining tokens in the pool are reserved for currently open positions.
                   </Trans>
                 ) : (
                   <Trans>
-                    GM can be sold for {longToken?.symbol} and {shortToken?.symbol} for this market up to the specified
+                    SD can be sold for {longToken?.symbol} and {shortToken?.symbol} for this market up to the specified
                     selling caps. The remaining tokens in the pool are reserved for currently open positions.
                   </Trans>
                 )}
@@ -390,7 +391,7 @@ export function MarketStatsWithComposition(p: Props) {
                     return (
                       <div>
                         <Trans>
-                          GLV token pricing is affected by the underlying GM tokens it is composed of and their prices.
+                          GLV token pricing is affected by the underlying SD tokens it is composed of and their prices.
                         </Trans>
                       </div>
                     );
@@ -399,12 +400,12 @@ export function MarketStatsWithComposition(p: Props) {
                   return (
                     <div>
                       <Trans>
-                        GM token pricing includes price impact pool amounts, the pending PnL of open positions, and
+                        SD token pricing includes price impact pool amounts, the pending PnL of open positions, and
                         borrowing fees. It excludes funding fees, which are exchanged between traders.
                         <br />
                         <br />
-                        <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2/#token-pricing">
-                          Read more about GM token pricing
+                        <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>
+                          Read more about SD token pricing
                         </ExternalLink>
                         .
                       </Trans>

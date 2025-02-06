@@ -1,0 +1,49 @@
+.subtext {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+.disclaimer {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 2rem 0px;
+}
+
+.buy-crypto-modal-bank-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+
+  .row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .icon {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    background: #222933;
+    border-radius: 100px;
+    display: inline-block;
+    width: 120px;
+    height: 26px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon-img {
+    height: 16px;
+  }
+}

@@ -2,6 +2,7 @@ import { Trans, t } from "@lingui/macro";
 import ExternalLink from "components/ExternalLink/ExternalLink";
 import { ToastifyDebug } from "components/ToastifyDebug/ToastifyDebug";
 import { EXECUTION_FEE_CONFIG_V2, getChainName } from "config/chains";
+import { DOCUMENT_LINKS } from "config/links";
 import { BaseContract, Overrides, Provider, Signer, TransactionRequest } from "ethers";
 import { helperToast } from "lib/helperToast";
 import { ErrorEvent } from "lib/metrics";
@@ -64,7 +65,7 @@ export function getErrorMessage(chainId: number, ex: TxError, txnMessage?: strin
             <ExternalLink href="https://chainlist.org">chainlist.org</ExternalLink>.
             <br />
             <br />
-            <ExternalLink href="https://docs.gmx.io/docs/trading/v1#rpc-urls">Read more</ExternalLink>.
+            <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>Read more</ExternalLink>.
           </Trans>
           <br />
           <br />

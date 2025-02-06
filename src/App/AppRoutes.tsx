@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import { Hash } from "viem";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { ToastContainer, cssTransition } from "react-toastify";
 import { useDisconnect } from "wagmi";
@@ -33,6 +33,9 @@ import { useWalletConnectedUserAnalyticsEvent } from "lib/userAnalytics/useWalle
 import { userAnalytics } from "lib/userAnalytics/UserAnalytics";
 import { LandingPageAgreementConfirmationEvent } from "lib/userAnalytics/types";
 import { useSettings } from "context/SettingsContext/SettingsContextProvider";
+import { GateFiDisplayModeEnum, GateFiSDK } from "@gatefi/js-sdk";
+import { BuyCryptoModal } from "components/BuyCrypto/BuyCryptoModal";
+import classNames from "classnames";
 
 const Zoom = cssTransition({
   enter: "zoomIn",
@@ -41,6 +44,17 @@ const Zoom = cssTransition({
   collapse: true,
   collapseDuration: 200,
 });
+
+const randomHash = (nChar: any) => {
+  let nBytes = Math.ceil((nChar = (+nChar || 8) / 2));
+  let u = new Uint8Array(nBytes);
+  window.crypto.getRandomValues(u);
+  let zpad = (str) => "00".slice(str.length) + str;
+  let a = Array.prototype.map.call(u, (x) => zpad(x.toString(16)));
+  let str = a.join("").toUpperCase();
+  if (nChar % 2) str = str.slice(1);
+  return str;
+}
 
 export function AppRoutes() {
   const { disconnect } = useDisconnect();
@@ -86,6 +100,46 @@ export function AppRoutes() {
     setIsSettingsVisible(false);
   };
 
+  /**
+   * Buy Crypto via Fiat - Transak & Unlimit Crypto
+   */
+  const [isBuyCryptoModalVisible, setBuyCryptoModalVisible] = useState(false);
+  const overlayInstanceSDK = useRef<GateFiSDK | null>(null);
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+  const handleLaunchUnlimitCrypto = () => {
+    setBuyCryptoModalVisible(false);
+    try {
+      if (overlayInstanceSDK.current) {
+        if (isOverlayVisible) {
+          overlayInstanceSDK.current.hide();
+          setIsOverlayVisible(false);
+        } else {
+          overlayInstanceSDK.current.show();
+          setIsOverlayVisible(true);
+        }
+      } else {
+        const randomString = randomHash(64);
+        overlayInstanceSDK.current = new GateFiSDK({
+          merchantId: import.meta.env.VITE_APP_UNLIMIT_CRYPTO_PARTNER_ID || "",
+          displayMode: GateFiDisplayModeEnum.Overlay,
+          nodeSelector: "#overlay-button",
+          isSandbox: true,
+          externalId: randomString,
+          defaultFiat: {
+            currency: "USD",
+            amount: "0",
+          },
+          defaultCrypto: {
+            currency: "ETH",
+          },
+        });
+      }
+      overlayInstanceSDK.current?.show();
+      setIsOverlayVisible(true);
+    } catch (e) {}
+  };
+  // ---------------------------------------------------------------------------
+
   const [redirectModalVisible, setRedirectModalVisible] = useState(false);
   const [shouldHideRedirectModal, setShouldHideRedirectModal] = useState(false);
 
@@ -122,11 +176,12 @@ export function AppRoutes() {
   return (
     <>
       <div className="App">
-        <div className="App-content">
+        <div className={classNames("App-content", { launchpad: location.pathname.includes("/launchpad") })}>
           <Header
             disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
             openSettings={openSettings}
             showRedirectModal={showRedirectModal}
+            openBuyCryptoModal={() => setBuyCryptoModalVisible(true)}
           />
           {isHome && <HomeRoutes showRedirectModal={showRedirectModal} />}
           {!isHome && <MainRoutes openSettings={openSettings} />}
@@ -153,9 +208,15 @@ export function AppRoutes() {
         setShouldHideRedirectModal={setShouldHideRedirectModal}
         shouldHideRedirectModal={shouldHideRedirectModal}
       />
+      <BuyCryptoModal
+        show={isBuyCryptoModalVisible}
+        setShow={setBuyCryptoModalVisible}
+        onLaunchUnlimitCryptoOverlay={handleLaunchUnlimitCrypto}
+      />
       <SettingsModal isSettingsVisible={isSettingsVisible} setIsSettingsVisible={setIsSettingsVisible} />
       <SubaccountModal />
       <NotifyModal />
+      <div id="overlay-button"></div>
     </>
   );
 }

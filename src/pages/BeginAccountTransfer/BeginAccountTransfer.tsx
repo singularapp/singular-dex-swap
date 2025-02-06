@@ -162,10 +162,10 @@ export default function BeginAccountTransfer() {
       return t`Wallet is not connected`;
     }
     if (hasVestedGmx) {
-      return t`Vested GMX not withdrawn`;
+      return t`Vested SD not withdrawn`;
     }
     if (hasVestedGlp) {
-      return t`Vested GLP not withdrawn`;
+      return t`Vested SLP not withdrawn`;
     }
     if (!receiver || receiver.length === 0) {
       return t`Enter Receiver Address`;
@@ -175,11 +175,11 @@ export default function BeginAccountTransfer() {
     }
 
     if (hasVestedAffiliate && !isAffiliateVesterSkipValidation) {
-      return t`Vested GMX not withdrawn`;
+      return t`Vested SD not withdrawn`;
     }
 
     if (hasStakedGmx || hasStakedGlp) {
-      return t`Receiver has staked GMX/GLP before`;
+      return t`Receiver has staked SD/SLP before`;
     }
 
     if ((parsedReceiver || "").toString().toLowerCase() === (account || "").toString().toLowerCase()) {
@@ -226,7 +226,7 @@ export default function BeginAccountTransfer() {
       return error;
     }
     if (needApproval) {
-      return t`Approve GMX`;
+      return t`Approve SD`;
     }
     if (isApproving) {
       return t`Approving...`;
@@ -317,9 +317,9 @@ export default function BeginAccountTransfer() {
           <Trans>
             Please only use this for full account transfers.
             <br />
-            This will transfer all your GMX, esGMX, GLP, Multiplier Points and voting power to your new account.
+            This will transfer all your SD, esSD, SLP, Multiplier Points and voting power to your new account.
             <br />
-            Transfers are only supported if the receiving account has not staked GMX or GLP tokens before.
+            Transfers are only supported if the receiving account has not staked SD or SLP tokens before.
             <br />
             Transfers are one-way, you will not be able to transfer staked tokens back to the sending account.
           </Trans>
@@ -349,10 +349,10 @@ export default function BeginAccountTransfer() {
           </div>
           <div className="BeginAccountTransfer-validations">
             <ValidationRow isValid={!hasVestedGmx}>
-              <Trans>Sender has withdrawn all tokens from GMX Vesting Vault</Trans>
+              <Trans>Sender has withdrawn all tokens from SD Vesting Vault</Trans>
             </ValidationRow>
             <ValidationRow isValid={!hasVestedGlp}>
-              <Trans>Sender has withdrawn all tokens from GLP Vesting Vault</Trans>
+              <Trans>Sender has withdrawn all tokens from SLP Vesting Vault</Trans>
             </ValidationRow>
             <ValidationRow isValid={!hasVestedAffiliate}>
               <Trans>Sender has withdrawn all tokens from Affiliate Vesting Vault</Trans>
@@ -361,7 +361,7 @@ export default function BeginAccountTransfer() {
               <>
                 <p className="soft-error">
                   <Trans>
-                    You have esGMX tokens in the Affiliate Vault, you need to withdraw these tokens if you want to
+                    You have esSD tokens in the Affiliate Vault, you need to withdraw these tokens if you want to
                     transfer them to the new account
                   </Trans>
                 </p>
@@ -371,17 +371,17 @@ export default function BeginAccountTransfer() {
                   setIsChecked={setIsAffiliateVesterSkipValidation}
                 >
                   <span className="text-sm text-yellow-500">
-                    <Trans>I do not want to transfer the Affiliate esGMX tokens</Trans>
+                    <Trans>I do not want to transfer the Affiliate esSD tokens</Trans>
                   </span>
                 </Checkbox>
               </>
             )}
 
             <ValidationRow isValid={!hasStakedGmx}>
-              <Trans>Receiver has not staked GMX tokens before</Trans>
+              <Trans>Receiver has not staked SD tokens before</Trans>
             </ValidationRow>
             <ValidationRow isValid={!hasStakedGlp}>
-              <Trans>Receiver has not staked GLP tokens before</Trans>
+              <Trans>Receiver has not staked SLP tokens before</Trans>
             </ValidationRow>
           </div>
 

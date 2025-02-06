@@ -26,6 +26,7 @@ import ExternalLink from "components/ExternalLink/ExternalLink";
 import { getPriceDecimals } from "sdk/configs/tokens";
 import Button from "components/Button/Button";
 import TokenIcon from "components/TokenIcon/TokenIcon";
+import { DOCUMENT_LINKS } from "config/links";
 
 function getOrderTitle(order, indexTokenSymbol) {
   const orderTypeText = order.type === INCREASE ? t`Increase` : t`Decrease`;
@@ -354,7 +355,7 @@ export default function OrdersList(props) {
                     </p>
                     <p>
                       This can also cause limit/triggers to not be executed if the price is not reached for long enough.{" "}
-                      <ExternalLink href="https://docs.gmx.io/docs/trading/v1#stop-loss--take-profit-orders">
+                      <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>
                         Read more
                       </ExternalLink>
                       .

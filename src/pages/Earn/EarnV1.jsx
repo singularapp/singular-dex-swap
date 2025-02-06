@@ -787,8 +787,8 @@ export default function EarnV1() {
       </div>
       <div className="App-warning Stake-warning">
         <Trans>
-          The <Link to="/migrate">GMX migration</Link> is in progress, please migrate your GMT, xGMT, GMT-USDG and
-          xGMT-USDG tokens.
+          The <Link to="/migrate">SD migration</Link> is in progress, please migrate your SDT, xSDT, SDT-USDG and
+          xSDT-USDG tokens.
           <br />
           USDG tokens will continue to function as before and do not need to be migrated.
         </Trans>
@@ -872,7 +872,7 @@ export default function EarnV1() {
           </div>
         </div>
         <div className="App-card">
-          <div className="Stake-card-title App-card-title">xGMT</div>
+          <div className="Stake-card-title App-card-title">xSDT</div>
           <div className="Stake-card-bottom App-card-content">
             <div className="Stake-info App-card-row">
               <div className="label">APR</div>
@@ -931,7 +931,7 @@ export default function EarnV1() {
             </div>
             <div className="App-card-options">
               <ExternalLink className="App-button-option App-card-option" href={buyXgmtUrl}>
-                Get xGMT
+                Get xSDT
               </ExternalLink>
               {active && (
                 <button
@@ -950,7 +950,7 @@ export default function EarnV1() {
           </div>
         </div>
         <div className="App-card">
-          <div className="Stake-card-title App-card-title">GMT-USDG LP</div>
+          <div className="Stake-card-title App-card-title">SDT-USDG LP</div>
           <div className="Stake-card-bottom App-card-content">
             <div className="Stake-info App-card-row">
               <div className="label">
@@ -991,7 +991,7 @@ export default function EarnV1() {
                   processedData.gmtUsdgNativeRewards &&
                   processedData.gmtUsdgNativeRewards > 0 &&
                   `${formatKeyAmount(processedData, "gmtUsdgNativeRewards", 18, 8, true)} WBNB, `}
-                {formatKeyAmount(processedData, "gmtUsdgXgmtRewards", 18, 4, true)} xGMT
+                {formatKeyAmount(processedData, "gmtUsdgXgmtRewards", 18, 4, true)} xSDT
               </div>
             </div>
             <div className="Stake-info App-card-row">
@@ -1005,7 +1005,7 @@ export default function EarnV1() {
             </div>
             <div className="App-card-options">
               <ExternalLink className="App-button-option App-card-option" href={buyGmtUrl}>
-                Get GMT
+                Get SDT
               </ExternalLink>
               <ExternalLink className="App-button-option App-card-option" href={addGmtUsdgLpUrl}>
                 <Trans>Create</Trans>
@@ -1032,7 +1032,7 @@ export default function EarnV1() {
           </div>
         </div>
         <div className="App-card">
-          <div className="Stake-card-title App-card-title">xGMT-USDG LP</div>
+          <div className="Stake-card-title App-card-title">xSDT-USDG LP</div>
           <div className="Stake-card-bottom App-card-content">
             <div className="Stake-info App-card-row">
               <div className="label">
@@ -1073,7 +1073,7 @@ export default function EarnV1() {
                   processedData.xgmtUsdgNativeRewards &&
                   processedData.xgmtUsdgNativeRewards > 0 &&
                   `${formatKeyAmount(processedData, "xgmtUsdgNativeRewards", 18, 8, true)} WBNB, `}
-                {formatKeyAmount(processedData, "xgmtUsdgXgmtRewards", 18, 4, true)} xGMT
+                {formatKeyAmount(processedData, "xgmtUsdgXgmtRewards", 18, 4, true)} xSDT
               </div>
             </div>
             <div className="Stake-info App-card-row">
@@ -1087,7 +1087,7 @@ export default function EarnV1() {
             </div>
             <div className="App-card-options">
               <ExternalLink className="App-button-option App-card-option" href={buyXgmtUrl}>
-                Get xGMT
+                Get xSDT
               </ExternalLink>
               <ExternalLink className="App-button-option App-card-option" href={addXgmtUsdgLpUrl}>
                 <Trans>Create</Trans>
@@ -1144,7 +1144,7 @@ export default function EarnV1() {
               <div className="label">
                 <Trans>Rewards</Trans>
               </div>
-              <div>{formatKeyAmount(processedData, "autoUsdgXgmtRewards", 18, 4, true)} xGMT</div>
+              <div>{formatKeyAmount(processedData, "autoUsdgXgmtRewards", 18, 4, true)} xSDT</div>
             </div>
             <div className="Stake-info App-card-row">
               <div className="label">

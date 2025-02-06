@@ -2,7 +2,7 @@
   display: grid;
   grid-auto-flow: column;
   font-size: var(--font-size-body-medium);
-  border-radius: 3px;
+  border-radius: 99px;
   overflow: hidden;
   color: var(--color-slate-100);
   background: var(--color-cold-blue-900);

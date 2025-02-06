@@ -168,19 +168,19 @@ export default function EarnV2() {
   if (totalRewardAndLpTokens && totalRewardAndLpTokens > 0) {
     let gmxAmountStr;
     if (processedData?.gmxInStakedGmx && processedData.gmxInStakedGmx > 0) {
-      gmxAmountStr = formatAmount(processedData.gmxInStakedGmx, 18, 2, true) + " GMX";
+      gmxAmountStr = formatAmount(processedData.gmxInStakedGmx, 18, 2, true) + " SD";
     }
     let esGmxAmountStr;
     if (processedData?.esGmxInStakedGmx && processedData.esGmxInStakedGmx > 0) {
-      esGmxAmountStr = formatAmount(processedData.esGmxInStakedGmx, 18, 2, true) + " esGMX";
+      esGmxAmountStr = formatAmount(processedData.esGmxInStakedGmx, 18, 2, true) + " esSD";
     }
     let glpStr;
     if (processedData?.glpBalance && processedData.glpBalance > 0) {
-      glpStr = formatAmount(processedData.glpBalance, 18, 2, true) + " GLP";
+      glpStr = formatAmount(processedData.glpBalance, 18, 2, true) + " SLP";
     }
     let gmStr;
     if (userTotalGmInfo?.balance && userTotalGmInfo.balance > 0) {
-      gmStr = formatAmount(userTotalGmInfo.balance, 18, 2, true) + " GM";
+      gmStr = formatAmount(userTotalGmInfo.balance, 18, 2, true) + " SD";
     }
     const amountStr = [gmxAmountStr, esGmxAmountStr, gmStr, glpStr].filter((s) => s).join(", ");
     earnMsg = (
@@ -200,7 +200,7 @@ export default function EarnV2() {
         isVisible={isStakeGmxModalVisible}
         setIsVisible={setIsStakeGmxModalVisible}
         chainId={chainId}
-        title={t`Stake GMX`}
+        title={t`Stake SD`}
         maxAmount={processedData?.gmxBalance}
         value={stakeGmxValue}
         setValue={setStakeGmxValue}
@@ -256,9 +256,9 @@ export default function EarnV2() {
         subtitle={
           <div>
             <Trans>
-              Stake <ExternalLink href="https://docs.gmx.io/docs/tokenomics/gmx-token">GMX</ExternalLink> and buy{" "}
-              <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2">GM</ExternalLink> or{" "}
-              <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v1">GLP</ExternalLink> to earn rewards.
+              Stake <ExternalLink href="https://docs.gmx.io/docs/tokenomics/gmx-token">SD</ExternalLink> and buy{" "}
+              <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2">SD</ExternalLink> or{" "}
+              <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v1">SLP</ExternalLink> to earn rewards.
             </Trans>
             {earnMsg && <div className="Page-descriptionж">{earnMsg}</div>}
             {incentivesMessage}
@@ -311,7 +311,7 @@ export default function EarnV2() {
             isDeposit={false}
           />
           <PageTitle
-            title={t`Select a GM Pool`}
+            title={t`Select a SD Pool`}
             showNetworkIcon={false}
             subtitle={
               <Trans>Pools that enable trading for a single market, backed by the tokens listed in brackets.</Trans>
@@ -336,9 +336,9 @@ export default function EarnV2() {
           title={t`Incentives & Prizes`}
           subtitle={
             incentiveStats?.lp?.isActive || incentiveStats?.trading?.isActive ? (
-              <Trans>Earn {incentivesToken} token incentives by purchasing GM tokens or trading in GMX V2.</Trans>
+              <Trans>Earn {incentivesToken} token incentives by purchasing SD tokens or trading in SD V2.</Trans>
             ) : (
-              <Trans>Earn prizes by participating in GMX Trading Competitions.</Trans>
+              <Trans>Earn prizes by participating in SD Trading Competitions.</Trans>
             )
           }
         />

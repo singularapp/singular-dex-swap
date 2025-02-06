@@ -14,6 +14,13 @@ const oneInchTokensMap = {
   },
 };
 
+export enum DOCUMENT_LINKS {
+  PerpetualsTrading = "https://singulardao.gitbook.io/singular-dao/tokenomics-and-governance/perpetual-dex/perpetuals-trading",
+  AboutFee = "https://singulardao.gitbook.io/singular-dao/tokenomics-and-governance/perpetual-dex/perpetuals-trading",
+  AdaptiveFunding = "https://singulardao.gitbook.io/singular-dao/tokenomics-and-governance/perpetual-dex/perpetuals-trading",
+  IncentiveDistribution = "https://singulardao.gitbook.io/singular-dao/tokenomics-and-governance/perpetual-dex/perpetuals-trading",
+}
+
 export function get1InchSwapUrl(chainId: number, from?: string, to?: string) {
   const rootUrl = `https://app.1inch.io/#/${chainId}/simple/swap`;
   const chainTokensMap = TOKENS_BY_SYMBOL_MAP[chainId];
@@ -42,10 +49,10 @@ export function getLeaderboardLink(chainId) {
 }
 
 export const DOCS_LINKS = {
-  multiplierPoints: "https://docs.gmx.io/docs/tokenomics/rewards/#multiplier-points",
-  fundingFees: "https://docs.gmx.io/docs/trading/v2/#funding-fees",
-  adaptiveFunding: "https://docs.gmx.io/docs/trading/v2/#adaptive-funding",
-  borrowingFees: "https://docs.gmx.io/docs/trading/v2/#borrowing-fees",
+  multiplierPoints: DOCUMENT_LINKS.PerpetualsTrading,
+  fundingFees: DOCUMENT_LINKS.AboutFee,
+  adaptiveFunding: DOCUMENT_LINKS.AdaptiveFunding,
+  borrowingFees: DOCUMENT_LINKS.AboutFee,
 };
 
 export const ARBITRUM_INCENTIVES_V2_URL =
@@ -54,13 +61,17 @@ export const AVALANCHE_INCENTIVES_V2_URL =
   "https://gmxio.notion.site/GMX-Summer-Boost-provide-liquidity-and-trade-perpetuals-to-grab-your-share-of-AVAX-rewards-13638f2e28934460a242f72def4f7d36";
 
 export function getIncentivesV2Url(chainId: number): string {
-  if (chainId === ARBITRUM) {
-    return ARBITRUM_INCENTIVES_V2_URL;
-  }
+  return DOCUMENT_LINKS.IncentiveDistribution;
+  // if (chainId === ARBITRUM) {
+  //   return ARBITRUM_INCENTIVES_V2_URL;
+  // }
 
-  if (chainId === AVALANCHE) {
-    return AVALANCHE_INCENTIVES_V2_URL;
-  }
+  // if (chainId === AVALANCHE) {
+  //   return AVALANCHE_INCENTIVES_V2_URL;
+  // }
+  // return ARBITRUM_INCENTIVES_V2_URL;
+}
 
-  return ARBITRUM_INCENTIVES_V2_URL;
+export enum STATIC_LINKS {
+  PrivacyPolicy = "https://singulardex.com/privacy-policy.html",
 }

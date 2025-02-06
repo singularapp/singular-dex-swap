@@ -56,6 +56,7 @@ import { TradeBoxResponsiveContainer } from "components/Synthetics/TradeBox/Trad
 import { TradeHistory } from "components/Synthetics/TradeHistory/TradeHistory";
 import { Chart } from "components/Synthetics/TVChart/Chart";
 import Tab from "components/Tab/Tab";
+import { PerpectualGuide } from "components/Guide/PerpectualGuide";
 
 export type Props = {
   openSettings: () => void;
@@ -243,6 +244,7 @@ export function SyntheticsPage(p: Props) {
         "!pb-[333px]": isMobile,
       })}
     >
+      <PerpectualGuide />
       <div className="-mt-15 grid grid-cols-[1fr_auto] gap-15 px-10 pt-0 max-[1100px]:grid-cols-1 max-[800px]:p-10">
         <div className="Exchange-left">
           <Chart />
@@ -367,7 +369,7 @@ export function SyntheticsPage(p: Props) {
       <PositionEditor allowedSlippage={savedAllowedSlippage} setPendingTxns={setPendingTxns} />
       <InterviewModal isVisible={isInterviewModalVisible} setIsVisible={setIsInterviewModalVisible} />
       <NpsModal />
-      <Footer isMobileTradePage={isMobile} />
+      <Footer />
     </div>
   );
 }

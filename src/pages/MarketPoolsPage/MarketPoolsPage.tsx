@@ -28,6 +28,7 @@ import { GmList } from "components/Synthetics/GmList/GmList";
 import { MarketStatsWithComposition } from "components/Synthetics/MarketStats/MarketStatsWithComposition";
 
 import "./MarketPoolsPage.scss";
+import { DOCUMENT_LINKS } from "config/links";
 
 export function MarketPoolsPage() {
   const { chainId } = useChainId();
@@ -80,18 +81,18 @@ export function MarketPoolsPage() {
           subtitle={
             <>
               <Trans>
-                Purchase <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2">GM Tokens</ExternalLink>{" "}
+                Purchase <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>SD Tokens</ExternalLink>{" "}
                 to earn fees from swaps and leverage trading.
               </Trans>
               <br />
               <Trans>
-                <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2/#glv-pools">
+                <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>
                   GLV Vaults
                 </ExternalLink>{" "}
-                include multiple GM Tokens and are automatically rebalanced.
+                include multiple SD Tokens and are automatically rebalanced.
               </Trans>
               <br />
-              <Trans>Shift GM Tokens between eligible pools without paying buy/sell fees.</Trans>
+              <Trans>Shift SD Tokens between eligible pools without paying buy/sell fees.</Trans>
             </>
           }
           qa="pools-page"
@@ -143,7 +144,7 @@ export function MarketPoolsPage() {
           isDeposit
         />
         <PageTitle
-          title={t`Select a GM Pool`}
+          title={t`Select a SD Pool`}
           showNetworkIcon={false}
           subtitle={
             <Trans>Pools that enable trading for a single market, backed by the tokens listed in brackets.</Trans>

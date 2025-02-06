@@ -1,6 +1,6 @@
 import { Trans } from "@lingui/macro";
 import ExternalLink from "components/ExternalLink/ExternalLink";
-import { getLeaderboardLink } from "config/links";
+import { DOCUMENT_LINKS, getLeaderboardLink } from "config/links";
 import cx from "classnames";
 import { useChainId } from "lib/chains";
 
@@ -16,7 +16,7 @@ export default function UsefulLinks({ className }) {
       <div className="App-card-divider"></div>
       <div className="Exchange-info-row">
         <div className="Exchange-info-label-button">
-          <ExternalLink href="https://docs.gmx.io/docs/trading/v1">
+          <ExternalLink href={DOCUMENT_LINKS.PerpetualsTrading}>
             <Trans>Trading guide</Trans>
           </ExternalLink>
         </div>
@@ -25,13 +25,6 @@ export default function UsefulLinks({ className }) {
         <div className="Exchange-info-label-button">
           <ExternalLink href={leaderBoardLink}>
             <Trans>Leaderboard</Trans>
-          </ExternalLink>
-        </div>
-      </div>
-      <div className="Exchange-info-row">
-        <div className="Exchange-info-label-button">
-          <ExternalLink href="https://docs.gmx.io/docs/trading/v1/#rpc-urls">
-            <Trans>Speed up page loading</Trans>
           </ExternalLink>
         </div>
       </div>

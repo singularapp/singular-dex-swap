@@ -22,7 +22,7 @@ export function TradeBoxHeaderTabs({ isInCurtain }: { isInCurtain?: boolean }) {
     (type: TradeType) => {
       onSelectTradeType(type);
       if (tradeType !== type) {
-        history.push(`/trade/${type.toLowerCase()}`);
+        history.push(`/perpetuals/${type.toLowerCase()}`);
       }
     },
     [history, onSelectTradeType, tradeType]

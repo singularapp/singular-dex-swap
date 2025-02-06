@@ -54,6 +54,7 @@ export default function Tab(props: Props) {
         const optionClassName = opt === option ? className?.active : className?.regular;
         return (
           <div
+            id={`trade-type-${opt}`}
             className={cx("Tab-option flex items-center justify-center gap-8", optionClassName, {
               active: opt === option,
             })}

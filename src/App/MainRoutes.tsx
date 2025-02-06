@@ -47,6 +47,7 @@ import PositionRouter from "sdk/abis/PositionRouter.json";
 import VaultV2 from "sdk/abis/VaultV2.json";
 import VaultV2b from "sdk/abis/VaultV2b.json";
 import { ParseTransactionPage } from "pages/ParseTransaction/ParseTransaction";
+import LaunchPad from "pages/LaunchPad/LaunchPad";
 
 const LazyUiPage = lazy(() => import("pages/UiPage/UiPage"));
 export const UiPage = () => <Suspense fallback={<Trans>Loading...</Trans>}>{<LazyUiPage />}</Suspense>;
@@ -90,9 +91,9 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
   return (
     <Switch>
       <Route exact path="/">
-        <Redirect to="/trade" />
+        <Redirect to="/perpetuals" />
       </Route>
-      <Route exact path="/price_impact_rebates_stats">
+      {/* <Route exact path="/price_impact_rebates_stats">
         <PriceImpactRebatesStatsPage />
       </Route>
       <Route exact path="/v1/:tradeType?">
@@ -128,9 +129,9 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
         ) : (
           <SyntheticsFallbackPage />
         )}
-      </Route>
+      </Route> */}
 
-      <Route exact path="/trade/:tradeType?">
+      <Route exact path="/perpetuals/:tradeType?">
         {getIsSyntheticsSupported(chainId) ? (
           <SyntheticsStateContextProvider skipLocalReferralCode={false} pageType="trade">
             <SyntheticsPage openSettings={openSettings} />
@@ -139,11 +140,11 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
           <SyntheticsFallbackPage />
         )}
       </Route>
-      <Redirect from="/v2" to="/trade" />
-      <Route exact path="/buy_glp">
+      <Redirect from="/v2" to="/perpetuals" />
+      <Route exact path="/slp">
         <BuyGlp />
       </Route>
-      <Route exact path="/jobs">
+      {/* <Route exact path="/jobs">
         <Jobs />
       </Route>
       <Route exact path="/buy_gmx">
@@ -178,14 +179,14 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
         ) : (
           <SyntheticsFallbackPage />
         )}
-      </Route>
-      <Route exact path="/referrals">
+      </Route>*/}
+      {/* <Route exact path="/referrals">
         <Referrals />
       </Route>
       <Route exact path="/referrals/:account">
         <Referrals />
-      </Route>
-      <Route exact path="/nft_wallet">
+      </Route> */}
+      {/*<Route exact path="/nft_wallet">
         <NftWallet />
       </Route>
       <Route exact path="/claim_es_gmx">
@@ -198,11 +199,11 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
             to={buildAccountDashboardUrl(match?.params.account as Address, chainId, match?.params.v === "v1" ? 1 : 2)}
           />
         )}
-      </Route>
+      </Route> 
       <Redirect exact from="/actions/v1" to={`/accounts?${VERSION_QUERY_PARAM}=1`} />
       <Redirect exact from="/actions/v2" to="/accounts" />
       <Redirect exact from="/actions" to="/accounts" />
-      <Redirect exact from="/actions/:account" to="/accounts/:account" />
+      <Redirect exact from="/actions/:account" to="/accounts/:account" />*/}
 
       <Route exact path="/accounts">
         <AccountsRouter />
@@ -211,10 +212,13 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
         <AccountDashboard />
       </Route>
 
-      <Route exact path="/referrals-tier">
+      {/* <Route exact path="/referrals-tier">
         <ReferralsTier />
+      </Route> */}
+      <Route exact path="/launchpad">
+        <LaunchPad />
       </Route>
-      <Route exact path="/stats">
+      {/* <Route exact path="/stats">
         <Stats />
       </Route>
       <Route exact path="/orders_overview">
@@ -236,7 +240,7 @@ export function MainRoutes({ openSettings }: { openSettings: () => void }) {
       )}
       <Route path="/parsetx/:network/:tx">
         <ParseTransactionPage />
-      </Route>
+      </Route> */}
 
       <Route path="*">
         <PageNotFound />

@@ -147,11 +147,11 @@ export function getCodeError(value) {
 }
 
 export function getReferralCodeTradeUrl(referralCode) {
-  return `${getRootUrl()}/#/trade/?${REFERRAL_CODE_QUERY_PARAM}=${referralCode}`;
+  return `${getRootUrl()}/#/perpetuals/?${REFERRAL_CODE_QUERY_PARAM}=${referralCode}`;
 }
 
 export function getTwitterShareUrl(referralCode) {
-  const message = ["Trying out trading on @GMX_IO, up to 100x leverage on $BTC, $ETH 📈", "For fee discounts use:"];
+  const message = ["Trying out trading on @singulardao, up to 100x leverage on $BTC, $ETH 📈", "For fee discounts use:"];
   const shareURL = getReferralCodeTradeUrl(referralCode);
 
   return getTwitterIntentURL(message, shareURL);

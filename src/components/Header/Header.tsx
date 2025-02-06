@@ -8,8 +8,8 @@ import { useMedia } from "react-use";
 import { AppHeaderLinks } from "./AppHeaderLinks";
 import { AppHeaderUser } from "./AppHeaderUser";
 
-import logoImg from "img/logo_GMX.svg";
-import logoSmallImg from "img/logo_GMX_small.svg";
+import logoImg from "img/logo_SINGULAR.png";
+import logoSmallImg from "img/logo_SINGULAR_small.png";
 
 import { Trans } from "@lingui/macro";
 import { HeaderPromoBanner } from "components/HeaderPromoBanner/HeaderPromoBanner";
@@ -41,9 +41,10 @@ type Props = {
   disconnectAccountAndCloseSettings: () => void;
   openSettings: () => void;
   showRedirectModal: (to: string) => void;
+  openBuyCryptoModal: () => void;
 };
 
-export function Header({ disconnectAccountAndCloseSettings, openSettings, showRedirectModal }: Props) {
+export function Header({ disconnectAccountAndCloseSettings, openSettings, showRedirectModal, openBuyCryptoModal }: Props) {
   const isMobile = useMedia("(max-width: 1200px)");
 
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
@@ -101,23 +102,22 @@ export function Header({ disconnectAccountAndCloseSettings, openSettings, showRe
       <header data-qa="header">
         {!isMobile && (
           <div className="App-header large">
-            <div className="App-header-container-left">
-              <Link className="App-header-link-main" to="/">
-                <img src={logoImg} className="big" alt="GMX Logo" />
-                <img src={logoSmallImg} className="small" alt="GMX Logo" />
-              </Link>
-              {isHomeSite() ? (
-                <HomeHeaderLinks showRedirectModal={showRedirectModal} />
-              ) : (
+            <div className="App-header-content">
+              <div className="App-header-container-left">
+                <Link className="App-header-link-main" to="/">
+                  <img src={logoImg} className="big" alt="SINGULAR Logo" />
+                  <img src={logoSmallImg} className="small" alt="SINGULAR Logo" />
+                </Link>
                 <AppHeaderLinks showRedirectModal={showRedirectModal} />
-              )}
-            </div>
-            <div className="App-header-container-right">
-              <AppHeaderUser
-                disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
-                openSettings={openSettings}
-                showRedirectModal={showRedirectModal}
-              />
+              </div>
+              <div className="App-header-container-right">
+                <AppHeaderUser
+                  disconnectAccountAndCloseSettings={disconnectAccountAndCloseSettings}
+                  openSettings={openSettings}
+                  showRedirectModal={showRedirectModal}
+                  openBuyCryptoModal={openBuyCryptoModal}
+                />
+              </div>
             </div>
           </div>
         )}
@@ -130,8 +130,8 @@ export function Header({ disconnectAccountAndCloseSettings, openSettings, showRe
             >
               <div className="App-header-container-left">
                 <div className="App-header-link-main clickable" onClick={toggleDrawer}>
-                  <img src={logoImg} className="big" alt="GMX Logo" />
-                  <img src={logoSmallImg} className="small" alt="GMX Logo" />
+                  <img src={logoImg} className="big" alt="SINGULAR Logo" />
+                  <img src={logoSmallImg} className="small" alt="SINGULAR Logo" />
                 </div>
               </div>
               <div className="App-header-container-right">
@@ -145,6 +145,7 @@ export function Header({ disconnectAccountAndCloseSettings, openSettings, showRe
                       <RiMenuLine className="App-header-menu-icon" />
                     </div>
                   }
+                  openBuyCryptoModal={openBuyCryptoModal}
                 />
               </div>
             </div>

@@ -17,11 +17,19 @@ $app-card-padding: 1.5rem;
   display: flex;
   justify-content: space-between;
   position: relative;
-  padding-left: 3.2rem;
-  padding-right: 3.2rem;
   background: transparent 0% 0% no-repeat padding-box;
   border-bottom: 1px solid var(--color-slate-700);
   z-index: 1;
+}
+
+.App-header.large .App-header-content {
+  width: 100%;
+  max-width: 155rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px auto;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
 }
 
 .App-header.large::after {
@@ -255,6 +263,7 @@ button.App-connect-wallet:hover {
   align-items: center;
   color: var(--color-white);
   position: relative;
+  // margin-right: 1.5rem;
 }
 
 .mobile-menu-divider {
@@ -750,6 +759,14 @@ button.App-button-option:disabled {
 
 .App-content {
   position: static !important;
+
+  &.launchpad {
+    background: black;
+    background-image: url('../img/launchpad_bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .App-footer {
@@ -1200,6 +1217,9 @@ button.App-button {
 @media (max-width: 450px) {
   .App-header-user {
     gap: 0.6rem;
+  }
+  .App-header-user-address {
+    margin-right: 0.3rem;
   }
   .App-header-trade-link a {
     padding: 0 0.8rem;

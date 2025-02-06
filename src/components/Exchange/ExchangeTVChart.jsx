@@ -356,7 +356,7 @@ export default function ExchangeTVChart(props) {
           </div>
         </div>
         <div className="ExchangeChart-info VersionSwitch-wrapper">
-          <VersionSwitch />
+          {/* <VersionSwitch /> */}
         </div>
       </div>
       <div className="ExchangeChart-bottom App-box App-box-border">

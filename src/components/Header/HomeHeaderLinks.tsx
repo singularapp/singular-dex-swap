@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import logoImg from "img/logo_GMX.svg";
+import logoImg from "img/logo_SINGULAR.png";
 import { FiX } from "react-icons/fi";
 
 import ExternalLink from "components/ExternalLink/ExternalLink";
@@ -63,7 +63,7 @@ export function HomeHeaderLinks({ small, clickCloseIcon, showRedirectModal }: Pr
       {small && (
         <div className="App-header-links-header">
           <Link className="App-header-link-main" to="/">
-            <img src={logoImg} alt="GMX Logo" />
+            <img src={logoImg} alt="SINGULAR Logo" />
           </Link>
           <div
             className="App-header-menu-icon-block mobile-cross-menu"
