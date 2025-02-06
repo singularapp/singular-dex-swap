@@ -172,11 +172,11 @@ export default function GlpSwap(props) {
   const tabOptionClassNames = useMemo(
     () => ({
       [tabOptions[0]]: {
-        active: "!bg-[#1F3445] border-b border-b-green-500",
+        active: "!bg-[#55c3e7]",
         regular: "border-b border-b-[transparent]",
       },
       [tabOptions[1]]: {
-        active: "!bg-[#392A46] border-b border-b-red-500",
+        active: "!bg-[#55c3e7]",
         regular: "border-b border-b-[transparent]",
       },
     }),
